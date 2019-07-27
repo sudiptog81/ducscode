@@ -69,8 +69,8 @@ int *getInputs()
 int main()
 {
     int *inputs = getInputs();
-    int x = *(inputs + 0);
-    int y = *(inputs + 1);
+    int x = inputs[0];
+    int y = inputs[1];
 
     for (int z = 0; z <= 5; z++)
     {
