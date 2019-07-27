@@ -6,7 +6,7 @@ using namespace std;
 void manipGeneral()
 {
     cout << setw(10) << 123 << endl;                 // prints seven spaces before 123
-    cout << setw(10) << setfill('*') << 123 << endl; // filss spaces with '*'
+    cout << setw(10) << setfill('*') << 123 << endl; // fills spaces with '*'
 }
 
 void manipFloat()
