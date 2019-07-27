@@ -1,0 +1,3 @@
+Declared Constant: 3.1415
+Memory Constant: 3.1415
+Literal Constant: 3.1415

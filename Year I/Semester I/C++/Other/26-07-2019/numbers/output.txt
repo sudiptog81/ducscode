@@ -1,7 +1,10 @@
 Enter X: 1
-Enter Y: 3
-Sum: 4
-Difference: -2
-Product: 3
-Quotient: 0.333333
+Enter Y: 2
+ 
+Sum: 3
+Difference: -1
+Product: 2
+Quotient: 0.5
+Modulus: 1
+
 Exiting...

@@ -1,0 +1,8 @@
+Integer (short): 3256
+Integer (int): 65412
+Integer (long): 34123432
+Float (float): 31313.2
+Float (double): 1.32423
+Float (long double): 3.13277e+18
+Character: A (65)
+Boolean: 1
