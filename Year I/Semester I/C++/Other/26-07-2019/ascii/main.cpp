@@ -10,7 +10,7 @@ int main()
 
     for (int i = 0; i < 26; i++)
     {
-        cout << alphabet << "\t" << int(alphabet) << endl;
+        cout << alphabet << "\t" << (int)alphabet << endl;
         alphabet++;
     }
 
@@ -20,7 +20,7 @@ int main()
 
     for (int i = 0; i < 26; i++)
     {
-        cout << alphabetCaps << "\t" << int(alphabetCaps) << endl;
+        cout << alphabetCaps << "\t" << (int)alphabetCaps << endl;
         alphabetCaps++;
     }
 
@@ -30,7 +30,7 @@ int main()
 
     for (int i = 0; i < 7; i++)
     {
-        cout << symbol << "\t" << int(symbol) << endl;
+        cout << symbol << "\t" << (int)symbol << endl;
         symbol++;
     }
 

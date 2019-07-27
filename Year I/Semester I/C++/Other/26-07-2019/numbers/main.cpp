@@ -35,6 +35,24 @@ float quotient(float a, float b)
     return q;
 }
 
+int _modulus(int a, int b)
+{
+    int m;
+    try
+    {
+        if (b == 0)
+        {
+            throw 0;
+        }
+        m = a % b;
+    }
+    catch (int errCode)
+    {
+        m = errCode;
+    }
+    return m;
+}
+
 int *getInputs()
 {
     static int inputs[2];
@@ -43,6 +61,7 @@ int *getInputs()
     cin >> inputs[0];
     cout << "Enter Y: ";
     cin >> inputs[1];
+    cout << endl;
 
     return inputs;
 }
@@ -53,7 +72,7 @@ int main()
     int x = *(inputs + 0);
     int y = *(inputs + 1);
 
-    for (int z = 0; z < 5; z++)
+    for (int z = 0; z <= 5; z++)
     {
         switch (z)
         {
@@ -69,12 +88,14 @@ int main()
         case 4:
             cout << "Quotient: " << quotient(float(x), float(y)) << endl;
             break;
+        case 5:
+            cout << "Modulus: " << _modulus(x, y) << endl;
         default:
             break;
         }
     }
 
-    cout << "Exiting...";
+    cout << "\nExiting...\n";
 
     return 0;
 }
