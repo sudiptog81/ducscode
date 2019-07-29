@@ -1,0 +1,14 @@
+Enter number of sold items:   34
+Enter the unit price:         12.89
+Enter the discount rate (%):  7
+Enter the tax rate (%):       7.902
+
+Quantity Sold:            34
+Unit Price:            12.89
+                     -------
+Subtotal:             438.26
+Discount:           -  30.68
+Discounted Total:     407.58
+Sales Tax:          +  34.63
+                     -------
+Total Sales:          442.21
