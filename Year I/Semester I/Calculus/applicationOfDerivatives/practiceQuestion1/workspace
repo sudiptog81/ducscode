@@ -1,0 +1,544 @@
+# Created by Octave 4.2.2, Tue Jul 30 22:45:01 2019 IST <sudipto@linux>
+# name: _
+# type: function handle
+@<anonymous>
+@(x) (x / ((x .^ 2) + 1))
+
+
+# name: ans
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 62
+[  0   ]
+[      ]
+[   ___]
+[-\/ 3 ]
+[      ]
+[  ___ ]
+[\/ 3  ]
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 36
+Matrix([[0], [-sqrt(3)], [sqrt(3)]])
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 122
+MutableDenseMatrix([[Integer(0)], [Mul(Integer(-1), Pow(Integer(3), Rational(1, 2)))], [Pow(Integer(3), Rational(1, 2))]])
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 3 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 53
+⎡ 0 ⎤
+⎢   ⎥
+⎢-√3⎥
+⎢   ⎥
+⎣√3 ⎦
+
+
+
+
+
+
+
+# name: critical_points
+# type: matrix
+# rows: 2
+# columns: 1
+ -1
+ 1
+
+
+# name: extrema
+# type: matrix
+# rows: 2
+# columns: 1
+ -0.5
+ 0.5
+
+
+# name: extrema_points
+# type: matrix
+# rows: 2
+# columns: 1
+ -0.5
+ 0.5
+
+
+# name: f
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 27
+  x   
+------
+ 2    
+x  + 1
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+x/(x**2 + 1)
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 81
+Mul(Symbol('x'), Pow(Add(Pow(Symbol('x'), Integer(2)), Integer(1)), Integer(-1)))
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 39
+  x   
+──────
+ 2    
+x  + 1
+
+
+
+
+
+
+
+# name: f_dash
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 69
+         2   
+    1 - x    
+-------------
+ 4      2    
+x  + 2*x  + 1
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+(1 - x**2)/(x**4 + 2*x**2 + 1)
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 180
+Mul(Add(Integer(1), Mul(Integer(-1), Pow(Symbol('x'), Integer(2)))), Pow(Add(Pow(Symbol('x'), Integer(4)), Mul(Integer(2), Pow(Symbol('x'), Integer(2))), Integer(1)), Integer(-1)))
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 97
+         2   
+    1 - x    
+─────────────
+ 4      2    
+x  + 2⋅x  + 1
+
+
+
+
+
+
+
+# name: f_double_dash
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 104
+        / 2    \    
+    2*x*\x  - 3/    
+--------------------
+ 6      4      2    
+x  + 3*x  + 3*x  + 1
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 43
+2*x*(x**2 - 3)/(x**6 + 3*x**4 + 3*x**2 + 1)
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 235
+Mul(Integer(2), Symbol('x'), Add(Pow(Symbol('x'), Integer(2)), Integer(-3)), Pow(Add(Pow(Symbol('x'), Integer(6)), Mul(Integer(3), Pow(Symbol('x'), Integer(4))), Mul(Integer(3), Pow(Symbol('x'), Integer(2))), Integer(1)), Integer(-1)))
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 160
+        ⎛ 2    ⎞    
+    2⋅x⋅⎝x  - 3⎠    
+────────────────────
+ 6      4      2    
+x  + 3⋅x  + 3⋅x  + 1
+
+
+
+
+
+
+
+# name: h
+# type: matrix
+# rows: 7
+# columns: 1
+ -20.35036017869117
+ -1.49544406659182
+ -2.760475228186476
+ -3.984751664574839
+ -4.935003986146765
+ -5.684445016698705
+ -14.38318833132126
+
+
+# name: i
+# type: scalar
+3
+
+
+# name: inflection_points
+# type: matrix
+# rows: 3
+# columns: 1
+ 0
+ -1.732050807568877
+ 1.732050807568877
+
+
+# name: inflections
+# type: matrix
+# rows: 3
+# columns: 1
+ 0
+ -0.4330127326521642
+ 0.4330127018922193
+
+
+# name: x
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+x
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+x
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+Symbol('x')
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+x
+
+
+
+
+
+
+
