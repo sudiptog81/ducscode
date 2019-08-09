@@ -1,0 +1,120 @@
+
+Test Case 1:
+------------
+Type of vehicle?                   C      
+Hour vehicle entered lot (0-24)?   12
+Minute vehicle entered lot (0-60)? 40
+Hour vehicle left lot (0-24)?      14
+Minute vehicle left lot (0-60)?    22
+
+       PARKING LOT CHARGE
+
+Type of Vehicle:            Car
+
+  TIME-IN                12:40
+  TIME-OUT               14:22
+                        ------- 
+  PARKING TIME           01:42
+  ROUNDED TOTAL            2
+                        ------- 
+  TOTAL CHARGE          $  0.00
+
+Test Case 2:
+------------
+Type of vehicle?                   B
+Hour vehicle entered lot (0-24)?   8
+Minute vehicle entered lot (0-60)? 20
+Hour vehicle left lot (0-24)?      8
+Minute vehicle left lot (0-60)?    40
+
+       PARKING LOT CHARGE
+
+Type of Vehicle:            Bus
+
+  TIME-IN                08:20
+  TIME-OUT               08:40
+                        ------- 
+  PARKING TIME           00:20
+  ROUNDED TOTAL            0
+                        ------- 
+  TOTAL CHARGE          $  2.00
+
+Test Case 3:
+------------
+Type of vehicle?                   T
+Hour vehicle entered lot (0-24)?   2
+Minute vehicle entered lot (0-60)? 0
+Hour vehicle left lot (0-24)?      3
+Minute vehicle left lot (0-60)?    59
+
+       PARKING LOT CHARGE
+
+Type of Vehicle:          Truck
+
+  TIME-IN                02:00
+  TIME-OUT               03:59
+                        ------- 
+  PARKING TIME           01:59
+  ROUNDED TOTAL            2
+                        ------- 
+  TOTAL CHARGE          $  2.00
+
+Test Case 4:
+------------
+Type of vehicle?                   C
+Hour vehicle entered lot (0-24)?   12
+Minute vehicle entered lot (0-60)? 40
+Hour vehicle left lot (0-24)?      16
+Minute vehicle left lot (0-60)?    22
+
+       PARKING LOT CHARGE
+
+Type of Vehicle:            Car
+
+  TIME-IN                12:40
+  TIME-OUT               16:22
+                        ------- 
+  PARKING TIME           03:42
+  ROUNDED TOTAL            4
+                        ------- 
+  TOTAL CHARGE          $  1.50
+
+Test Case 5:
+------------
+Type of vehicle?                   B
+Hour vehicle entered lot (0-24)?   8
+Minute vehicle entered lot (0-60)? 20
+Hour vehicle left lot (0-24)?      14
+Minute vehicle left lot (0-60)?    20
+
+       PARKING LOT CHARGE
+
+Type of Vehicle:            Bus
+
+  TIME-IN                08:20
+  TIME-OUT               14:20
+                        ------- 
+  PARKING TIME           06:00
+  ROUNDED TOTAL            6
+                        ------- 
+  TOTAL CHARGE          $ 20.50
+
+Test Case 6:
+------------
+Type of vehicle?                   T
+Hour vehicle entered lot (0-24)?   2
+Minute vehicle entered lot (0-60)? 0
+Hour vehicle left lot (0-24)?      12
+Minute vehicle left lot (0-60)?    0
+
+       PARKING LOT CHARGE
+
+Type of Vehicle:          Truck
+
+  TIME-IN                02:00
+  TIME-OUT               12:00
+                        ------- 
+  PARKING TIME           10:00
+  ROUNDED TOTAL           10
+                        ------- 
+  TOTAL CHARGE          $ 20.40

@@ -1,0 +1,12 @@
+Enter the first number: 2
+Enter the second number: 3
+
+X: 2    Y: 3
+
+Swapping X and Y ...
+
+X: 3    Y: 2
+
+Swapping X and Y again ...
+
+X: 2    Y: 3
