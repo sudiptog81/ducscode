@@ -118,3 +118,20 @@ Type of Vehicle:          Truck
   ROUNDED TOTAL           10
                         ------- 
   TOTAL CHARGE          $ 20.40
+
+
+Test Case 7:
+------------
+Type of vehicle?                   C
+Hour vehicle entered lot (0-24)?   23
+Minute vehicle entered lot (0-60)? 30
+Hour vehicle left lot (0-24)?      08
+Minute vehicle left lot (0-60)?    50
+
+Vehicle towed away!
+
+Test Case 8:
+------------
+Type of vehicle?                   P
+
+Vehicle not allowed!
