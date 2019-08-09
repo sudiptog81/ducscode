@@ -1,7 +1,0 @@
-Choice - (1) if...else (2) switch: 1
-Enter your marks out of 100: 93.5
-Grade: A
-
-Choice - (1) if...else (2) switch: 2
-Enter your marks out of 100: -1
-Grade: E
