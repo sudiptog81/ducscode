@@ -16,28 +16,22 @@ inflectionPoints = solve(f_double_dash, 'Real', true)
 otherPoints = solve(f, 'Real', true)
 miscPoints = [1; 2.5; 3]
 
-fplot(f, [-8 8])
+allPoints = [criticalPoints; inflectionPoints; otherPoints; miscPoints];
+
+fh = fplot(f, [-8 8]);
+fh.LineWidth = 2;
 hold on
 grid on
+box off
 title('Graph of f(x)')
-xlabel('x')
-ylabel('f(x)')
-plot(double(inflectionPoints), double(subs(f,inflectionPoints)),'ro')
-plot(double(otherPoints), double(subs(f, otherPoints)), 'ro')
-plot(double(miscPoints), double(subs(f, miscPoints)), 'ro')
-for i = (1:length(miscPoints))
-    text(miscPoints(i) + 0.45, subs(f, miscPoints(i)), ...
-        string(double(miscPoints(i))) + ', ' ...
-        + string(double(subs(f, miscPoints(i))))) 
+for i = 1:length(allPoints)      
+    temp1 = allPoints(i);
+    for j = 1:length(allPoints(i))
+        temp2 = temp1(j);
+        plot(double(temp2), double(subs(f,temp2)),'r.', 'MarkerSize', 20)
+    end
 end
-for i = (1:length(otherPoints))
-    text(otherPoints(i) - 0.45, subs(f, inflectionPoints(i)) - 0.35, ...
-        string(double(otherPoints(i))) + ', ' ...
-        + string(double(subs(f, otherPoints(i))))) 
-end
-for i = (1:length(inflectionPoints))
-    text(inflectionPoints(i) - 0.25, subs(f, inflectionPoints(i)) + 0.45, ...
-        string(double(inflectionPoints(i))) + ', ' ... 
-        + string(double(subs(f, inflectionPoints(i)))))
-end
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
 hold off
