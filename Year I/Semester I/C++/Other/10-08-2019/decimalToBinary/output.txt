@@ -1,0 +1,44 @@
+Case 1:
+-------
+Enter a valid binary number: 10100011
+
+Binary:        10100011
+Decimal:       163
+
+Case 2:
+-------
+Enter a valid binary number: 101101
+
+Binary:        101101
+Decimal:       45
+
+Case 3:
+-------
+Enter a valid binary number: 110100101010
+
+Binary:        110100101010
+Decimal:       3370
+
+Case 4:
+-------
+Enter a valid binary number: 11101111
+
+Binary:        11101111
+Decimal:       239
+
+Case 5:
+-------
+Enter a valid binary number: 1000010
+
+Binary:        1000010
+Decimal:       66
+
+Case 6:
+-------
+Enter a valid binary number: 12345
+Not a valid binary!
+
+Enter a valid binary number: 1101
+
+Binary:        1101
+Decimal:       13
