@@ -1,0 +1,11 @@
+for Loop
+----------
+Choice - (1) for Loop (2) do...while Loop: 1
+Enter a number:     123
+Reversed Number:    321
+
+do...while
+----------
+Choice - (1) for Loop (2) do...while Loop: 2
+Enter a number:     123
+Reversed Number:    321
