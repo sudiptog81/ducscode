@@ -9,13 +9,24 @@ int main()
 
     cout << left;
 
-    cout << "Choice - (1) for Loop (2) do...while loop: ";
+    cout << "Choice - (1) for loop (2) do...while loop (3) while loop: ";
     cin >> choice;
 
     cout << setw(20) << "Enter a number: ";
     cin >> num;
 
-    if (choice == 2)
+    if (choice == 3)
+    {
+        rem = 0, sum = 0, product = 1;
+        while (num != 0)
+        {
+            rem = num % 10;
+            sum += rem;
+            product *= rem;
+            num /= 10;
+        }
+    }
+    else if (choice == 2)
     {
         rem = 0, sum = 0, product = 1;
         do

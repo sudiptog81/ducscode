@@ -1,0 +1,27 @@
+Enter X: 1
+Enter Y: 0
+Enter Z: 2
+X: 1
+Y: 0
+Z: 3
+
+Enter X: 2
+Enter Y: 0
+Enter Z: 3
+X: 2
+Y: 0
+Z: 5
+
+Enter X: 3
+Enter Y: 5
+Enter Z: 0
+X: 3
+Y: 25
+Z: 0
+
+Enter X: 4
+Enter Y: 2
+Enter Z: 1
+X: 4
+Y: 2
+Z: 0

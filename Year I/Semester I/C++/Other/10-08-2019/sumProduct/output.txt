@@ -1,13 +1,20 @@
 do...while
 ----------
-Choice - (1) for Loop (2) do...while loop: 2
+Choice - (1) for loop (2) do...while loop (3) while loop: 2
 Enter a number:     234
 Sum of digits:      9       
 Product of digits:  24      
 
 for loop
 ----------
-Choice - (1) for Loop (2) do...while loop: 1
+Choice - (1) for loop (2) do...while loop (3) while loop: 1
+Enter a number:     234
+Sum of digits:      9       
+Product of digits:  24
+
+while loop
+----------
+Choice - (1) for loop (2) do...while loop (3) while loop: 3
 Enter a number:     234
 Sum of digits:      9       
 Product of digits:  24

@@ -1,0 +1,23 @@
+Enter X: 2
+Enter Y: -1
+X: 2
+Y: 3
+Z: 3
+
+Enter X: 3
+Enter Y: 0
+X: 3
+Y: 4
+Z: 4
+
+Enter X: 2
+Enter Y: 3
+X: 2
+Y: 3
+Z: 4
+
+Enter X: -3
+Enter Y: 2
+X: -3
+Y: -4
+Z: -6

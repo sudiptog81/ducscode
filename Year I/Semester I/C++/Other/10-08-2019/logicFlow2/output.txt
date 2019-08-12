@@ -1,0 +1,18 @@
+Enter A: 1
+Enter B: 2
+Enter C: 3
+a is smallest
+
+Enter A: 1
+Enter B: 0
+Enter C: 2
+c is largest
+
+Enter A: 2
+Enter B: 0
+Enter C: 1
+a is largest
+
+Enter A: 2
+Enter B: 3
+Enter C: 0
