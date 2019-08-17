@@ -19,7 +19,7 @@ int main()
     cout << "Enter an integer n upto which the sum is desired: ";
     cin >> n;
 
-    // iterate over the range [1,n]
+    // calculate sum of the series
     for (int i = 1; i <= n; i++)
     {
         // if i is even (where i belongs to [1,n]),

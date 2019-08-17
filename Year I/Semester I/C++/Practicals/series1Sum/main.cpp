@@ -14,17 +14,16 @@ using namespace std;
 int main()
 {
     int n;
-    float sum = 0, denom = 1.0;
+    float sum = 0;
 
     // prompt user and accept n which is the upper limit of the sum
     cout << "Enter an integer n upto which the sum is desired: ";
     cin >> n;
 
-    // iterate over the interval [1,n] and add
-    // (1/denom) to the sum on each iteration
-    for (int i = 1; i <= n; denom++, i++)
+    // calculate sum of the series
+    for (int i = 1; i <= n; i++)
     {
-        sum = sum + (1 / denom);
+        sum += ((float)1 / (float)i);
     }
 
     // print the sum of the series upto n terms to stdout
