@@ -37,33 +37,33 @@ int main()
     cout << left << setw(35) << setfill('-') << "" << endl;
 
     cout << left << setw(25) << setfill(' ') << " BASIC PAY";
-    cout << right << setw(8) << setprecision(2) << basic << endl;
+    cout << right << setw(9) << setprecision(2) << basic << endl;
 
-    cout << left << setw(24) << setfill(' ') << " HRA";
+    cout << left << setw(25) << setfill(' ') << " HRA";
     cout << '+';
     cout << right << setw(8) << setprecision(2) << hra << endl;
 
-    cout << left << setw(24) << setfill(' ') << " DA";
+    cout << left << setw(25) << setfill(' ') << " DA";
     cout << '+';
     cout << right << setw(8) << setprecision(2) << da << endl;
 
-    cout << left << setw(24) << setfill(' ') << " TA";
+    cout << left << setw(25) << setfill(' ') << " TA";
     cout << '+';
     cout << right << setw(8) << setprecision(2) << ta << endl;
 
     cout << left << setw(35) << setfill('-') << "" << endl;
 
     cout << left << setw(25) << setfill(' ') << " GROSS SALARY";
-    cout << right << setw(8) << setprecision(2) << basic + ta + da + hra << endl;
+    cout << right << setw(9) << setprecision(2) << basic + ta + da + hra << endl;
 
-    cout << left << setw(24) << setfill(' ') << " TAX DEDUCTIONS";
+    cout << left << setw(25) << setfill(' ') << " TAX DEDUCTIONS";
     cout << '-';
     cout << right << setw(8) << setprecision(2) << tax << endl;
 
     cout << left << setw(35) << setfill('-') << "" << endl;
 
     cout << left << setw(25) << setfill(' ') << " NET SALARY";
-    cout << right << setw(8) << setprecision(2) << basic + ta + da + hra - tax << endl;
+    cout << right << setw(9) << setprecision(2) << basic + ta + da + hra - tax << endl;
 
     cout << endl;
 

@@ -13,11 +13,15 @@ int main()
 {
     int num, factor;
 
+    // prompt user and accept num
     cout << "Enter an integer: ";
     cin >> num;
 
     cout << "Factors: ";
 
+    // iterating over the interval [1, num],
+    //   integral values in the range that divide
+    //   num completely are printed to stdout
     for (int i = 1; i <= num; i++)
     {
         if (num % i == 0)

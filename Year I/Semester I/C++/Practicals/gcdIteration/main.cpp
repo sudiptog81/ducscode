@@ -11,28 +11,37 @@ using namespace std;
 
 int main()
 {
-    int a, b, least, gcd;
+    int a, b, gcd;
 
+    // prompt the user and accept
+    // values for A and B
     cout << "Enter A: ";
     cin >> a;
-
     cout << "Enter B: ";
     cin >> b;
 
+    // swap A and B if A > B
+    // to make sure A is smaller
     if (a > b)
-        least = b;
-    if (b > a)
-        least = a;
-
-    for (int i = 1; i <= least; i++)
     {
+        a = a + b;
+        b = a - b;
+        a = a - b;
+    }
+
+    for (int i = 1; i <= a; i++)
+    {
+        // GCD will be the value of i
+        // which will fully divide both
+        // A and B completely
         if (a % i == 0 && b % i == 0)
         {
             gcd = i;
         }
     }
 
-    cout << "GCD: " << gcd << endl;
+    // print the value of the GCD to stdout
+    cout << "GCD of A and B: " << gcd << endl;
 
     return 0;
 }
