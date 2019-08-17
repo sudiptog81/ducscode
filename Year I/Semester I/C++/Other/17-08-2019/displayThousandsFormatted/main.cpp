@@ -3,13 +3,13 @@
 
 using namespace std;
 
-int getHundreds(int);
-int getThousands(int);
-void displayFormatted(int);
+int getHundreds(long);
+int getThousands(long);
+void displayFormatted(long);
 
 int main()
 {
-    int num;
+    long num;
 
     cout << "Enter an integer: ";
     cin >> num;
@@ -21,19 +21,20 @@ int main()
     return 0;
 }
 
-int getHundreds(int x)
+int getHundreds(long x)
 {
     return x % 1000;
 }
 
-int getThousands(int x)
+int getThousands(long x)
 {
     return x / 1000;
 }
 
-void displayFormatted(int x)
+void displayFormatted(long x)
 {
     cout << "Formatted: "
+         << setw(3) << setfill('0')
          << getThousands(x) << ','
          << setw(3) << setfill('0')
          << getHundreds(x);
