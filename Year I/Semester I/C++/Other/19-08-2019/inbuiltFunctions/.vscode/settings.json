@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.m": "matlab",
-        "cstdlib": "cpp",
-        "ostream": "cpp",
-        "cmath": "cpp"
-    }
-}

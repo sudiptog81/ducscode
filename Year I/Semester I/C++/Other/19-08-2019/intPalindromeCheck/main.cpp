@@ -17,7 +17,7 @@ int main()
     if (rev == num)
         cout << "This is a palindrome :)\n\n";
     else
-        cout << "This is a palindrome :)\n\n";
+        cout << "This is not a palindrome :(\n\n";
 
     return 0;
 }

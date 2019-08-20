@@ -1,0 +1,5 @@
+Enter an integer: 1231
+This is not a palindrome :(
+
+Enter an integer: 12321
+This is a palindrome :)

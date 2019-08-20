@@ -1,0 +1,9 @@
+Absolute of -3: 3
+Absolute of -99931293129313: 99931293129313
+Absolute of -342.15: 342.15
+Ceiling of 0.1: 1
+Floor of -0.1: -1
+2 to the power 5: 32
+0 to the power -5: inf
+-2 to the power 5.1: -nan
+
