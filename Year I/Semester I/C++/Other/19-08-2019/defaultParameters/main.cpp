@@ -7,6 +7,7 @@ void display(int a, int b = 5);
 int main()
 {
     display(1);
+    display(1, 10);
     return 0;
 }
 
