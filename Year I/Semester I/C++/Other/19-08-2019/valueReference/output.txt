@@ -1,12 +1,42 @@
-Enter A: 2
-Enter B: 3
+Enter A: 4
+Enter B: 5
+
 Initial Values:
-a: 2    b: 3
+---------------
+a: 4    b: 5
+
 Swap by Value:
-a: 2    b: 3
+---------------
+Before Call:
+a: 4    b: 5
+Inside Function:
+a: 5    b: 4
+After Call:
+a: 4    b: 5
+
 Swap by Reference:
-a: 3    b: 2
-Changed by Value:
-a: 3    b: 2
-Changed by Reference:
-a: 1    b: 4
+---------------
+Before Call:
+a: 4    b: 5
+Inside Function:
+a: 5    b: 4
+After Call:
+a: 5    b: 4
+
+Change by Value:
+---------------
+Before Call:
+a: 5    b: 4
+Inside Function:
+a: 1    b: 2
+After Call:
+a: 5    b: 4
+
+Change by Reference:
+---------------
+Before Call:
+a: 5    b: 4
+Inside Function:
+a: 1    b: 2
+After Call:
+a: 1    b: 2

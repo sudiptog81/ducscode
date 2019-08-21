@@ -75,7 +75,7 @@
 <!ATTLIST RAMWindowInfo ram IDREF #REQUIRED cellSize CDATA "1" top CDATA "50" left CDATA "50" width CDATA "450" height CDATA "450" contentsbase (Decimal|Binary|Hexadecimal|Ascii|UnsignedDec|Unicode) "Decimal" addressbase (Decimal|Binary|Hexadecimal) "Decimal">
 ]>
 
-<Machine name="machine" >
+<Machine name="machineV4" >
 	<!--............. Punctuation Options .............-->
 	<PunctChar char="!" use="symbol" />
 	<PunctChar char="#" use="symbol" />
@@ -107,39 +107,39 @@
 	<PunctChar char=";" use="comment" />
 
 	<!--......... machine instruction fields ............-->
-	<Field name="address" type="required" numBits="12" relativity="absolute" signed="true" defaultValue="0" id="model.Field2f7c90db">
+	<Field name="address" type="required" numBits="12" relativity="absolute" signed="true" defaultValue="0" id="model.Field32ca4f24">
 	</Field>
-	<Field name="opcode" type="required" numBits="4" relativity="absolute" signed="true" defaultValue="0" id="model.Field52056718">
+	<Field name="opcode" type="required" numBits="4" relativity="absolute" signed="true" defaultValue="0" id="model.Field39a1c13b">
 	</Field>
-	<Field name="operation" type="required" numBits="16" relativity="absolute" signed="true" defaultValue="0" id="model.Field6da4df55">
+	<Field name="operation" type="required" numBits="16" relativity="absolute" signed="true" defaultValue="0" id="model.Field1bba094b">
 	</Field>
 
 	<!--............. FileChannels .................-->
 	<!-- none -->
 
 	<!--............. registers .....................-->
-	<Register name="ac" width="16" initialValue="0" readOnly="false" id="model.module.Register4b5887b1" />
-	<Register name="ar" width="12" initialValue="0" readOnly="false" id="model.module.Register4d02154e" />
-	<Register name="dr" width="16" initialValue="0" readOnly="false" id="model.module.Register60ee2bc0" />
-	<Register name="e" width="1" initialValue="0" readOnly="false" id="model.module.Register3b4a619" />
-	<Register name="fgi" width="1" initialValue="0" readOnly="false" id="model.module.Registercdedcd1" />
-	<Register name="fgo" width="1" initialValue="0" readOnly="false" id="model.module.Register51ab0061" />
-	<Register name="i" width="1" initialValue="0" readOnly="false" id="model.module.Register408a91bf" />
-	<Register name="inpr" width="8" initialValue="0" readOnly="false" id="model.module.Register662863d9" />
-	<Register name="ir" width="16" initialValue="0" readOnly="false" id="model.module.Register1c6a1399" />
-	<Register name="outr" width="8" initialValue="0" readOnly="false" id="model.module.Register158dc12" />
-	<Register name="pc" width="12" initialValue="0" readOnly="false" id="model.module.Register24cb414b" />
-	<Register name="s" width="1" initialValue="0" readOnly="false" id="model.module.Register68f17890" />
-	<Register name="tr" width="16" initialValue="0" readOnly="false" id="model.module.Register20f1f5bb" />
+	<Register name="e" width="1" initialValue="0" readOnly="false" id="model.module.Register2cf0f204" />
+	<Register name="fgi" width="1" initialValue="0" readOnly="false" id="model.module.Register258a0a80" />
+	<Register name="fgo" width="1" initialValue="0" readOnly="false" id="model.module.Register520ff0e2" />
+	<Register name="i" width="1" initialValue="0" readOnly="false" id="model.module.Register6f86a9b3" />
+	<Register name="s" width="1" initialValue="0" readOnly="false" id="model.module.Register6d3247ff" />
+	<Register name="inpr" width="8" initialValue="0" readOnly="false" id="model.module.Register444d1695" />
+	<Register name="outr" width="8" initialValue="0" readOnly="true" id="model.module.Register46d24da2" />
+	<Register name="ar" width="12" initialValue="0" readOnly="false" id="model.module.Register5054f4df" />
+	<Register name="pc" width="12" initialValue="0" readOnly="false" id="model.module.Register6a871253" />
+	<Register name="ac" width="16" initialValue="0" readOnly="false" id="model.module.Register30072e94" />
+	<Register name="dr" width="16" initialValue="0" readOnly="false" id="model.module.Register674b5ff7" />
+	<Register name="ir" width="16" initialValue="0" readOnly="false" id="model.module.Register31e6da96" />
+	<Register name="tr" width="16" initialValue="0" readOnly="false" id="model.module.Register6cd5d815" />
 
 	<!--............. register arrays ...............-->
 	<!-- none -->
 
 	<!--............. condition bits ................-->
-	<ConditionBit name="halt" bit="0" register="model.module.Register68f17890" halt="true" id="model.module.ConditionBit678e15fb" />
+	<ConditionBit name="halt" bit="0" register="model.module.Register6d3247ff" halt="true" id="model.module.ConditionBit383e3770" />
 
 	<!--............. rams ..........................-->
-	<RAM name="main" length="4096" cellSize="16" id="model.module.RAM19b1c158" />
+	<RAM name="main" length="4096" cellSize="16" id="model.module.RAM6a79afae" />
 
 	<!--............. set ...........................-->
 	<!-- none -->
@@ -184,7 +184,7 @@
 	<!-- none -->
 
 	<!--............. end ...........................-->
-	<End id="model.microinstruction.End7a671f06" />
+	<End id="model.microinstruction.End150b10a1" />
 
 	<!--............. comment ...........................-->
 	<!-- none -->
@@ -299,7 +299,7 @@
 	</HighlightingInfo>
 
 	<!--............. loading info ..................-->
-	<LoadingInfo ram="model.module.RAM19b1c158" startingAddress="0" />
+	<LoadingInfo ram="model.module.RAM6a79afae" startingAddress="0" />
 
 	<!--............. indexing info ............-->
 	<IndexingInfo indexFromRight="true" />
