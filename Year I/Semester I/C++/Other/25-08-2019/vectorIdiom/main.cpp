@@ -27,7 +27,7 @@ int main()
       cout << *i << " ";
 
     ivec.clear();
-  } // Array Idiom
+  } // STL Idiom
 
   else if (choice == 1)
   {
@@ -49,7 +49,7 @@ int main()
       cout << ivec[i] << " ";
 
     ivec.clear();
-  } // STL Idiom
+  } // Array Idiom
 
   cout << endl;
 
