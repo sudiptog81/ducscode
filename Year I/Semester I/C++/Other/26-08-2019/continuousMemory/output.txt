@@ -1,0 +1,6 @@
+Size of integer in this compiler is 4 bytes
+Address arr[0] is 0x7ffbffffad20
+Address arr[1] is 0x7ffbffffad24
+Address arr[2] is 0x7ffbffffad28
+Address arr[3] is 0x7ffbffffad2c
+Address arr[4] is 0x7ffbffffad30
