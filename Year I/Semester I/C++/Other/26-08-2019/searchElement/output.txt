@@ -1,0 +1,16 @@
+Case I
+-------
+Enter size of the array: 10
+Enter values in the array: 1 2 1 2 3 4 5 2 3 10
+Enter value to be searched: 4
+
+Element is at index 5, position 6 :)
+
+
+Case II
+-------
+Enter size of the array: 5
+Enter values in the array: 1 2 4 5 2
+Enter value to be searched: 3
+
+Element not found in the array :(
