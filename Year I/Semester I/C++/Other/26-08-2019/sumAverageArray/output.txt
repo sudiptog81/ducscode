@@ -1,0 +1,20 @@
+Case I
+-------
+Enter size of the array: 5
+Enter values in the array: 1 2 3 4 5
+Sum: 15
+Average: 3
+
+Case II
+-------
+Enter size of the array: 3
+Enter values in the array: 0 1 0
+Sum: 1
+Average: 0.333333
+
+Case III
+--------
+Enter size of the array: 10 
+Enter values in the array: 1 2 3 4 5 0 0 0 0 0
+Sum: 15
+Average: 1.5

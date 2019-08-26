@@ -45,4 +45,6 @@ void search(const int x[], int size, int el)
     else
         cout << "\nElement not found in the array :(\n"
              << endl;
+
+    return;
 }
