@@ -1,0 +1,5 @@
+Enter size of the array: 10
+Enter exponent: 2
+Array of size 10 created at 0x555555769690
+Enter elements of the array: 1 2 3 4 5 6 7 8 9 10
+Elements of the array: 1 4 9 16 25 36 49 64 81 100

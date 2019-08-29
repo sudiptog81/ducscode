@@ -1,0 +1,9 @@
+Enter 5 integers: 1 2 5 6 8
+Heap of Array: 8 6 5 1 2 
+Sorted Array: 1 2 5 6 8 
+Reverse Sorted Array: 8 6 5 2 1 
+Enter an integer to push: 9
+Pushing 9 ...
+Heap of Array: 9 6 8 2 1 5 
+Sorted Array: 1 2 5 6 8 9 
+Reverse Sorted Array: 9 8 6 5 2 1
