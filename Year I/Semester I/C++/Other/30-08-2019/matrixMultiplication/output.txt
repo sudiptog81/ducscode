@@ -1,0 +1,53 @@
+Case I
+--------
+Enter dimensions of Matrix A: 2 2
+Enter dimensions of Matrix B: 2 2
+
+Matrix A
+----------
+1 0
+0 1
+
+Matrix B
+----------
+1 0
+0 1 
+
+Matrix C = A.B
+--------------
+1 0 
+0 1
+
+=================================
+
+Case II
+--------
+Enter dimensions of Matrix A: 1 2
+Enter dimensions of Matrix B: 0 1
+
+Matrices cannot be multiplied!
+
+=================================
+
+Case III
+--------
+Enter dimensions of Matrix A: 3 3
+Enter dimensions of Matrix B: 3 3
+
+Matrix A
+----------
+1 2 3
+4 5 6 
+7 8 9
+
+Matrix B
+----------
+9 8 7
+6 5 4
+3 2 1
+
+Matrix C = A.B
+--------------
+30 24 18 
+84 69 54 
+138 114 90
