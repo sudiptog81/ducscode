@@ -23,11 +23,16 @@
 
 using namespace std;
 
+int stringLength(char *);
+int countVowels(char *);
+char *lowercase(char *);
+char *uppercase(char *);
+void showAddresses(char *);
+char *reverseString(char *);
 void showMenu(char *, char *);
-void showAddresses(char *, char *);
-void concatWithoutStrcat(char *, char *);
-void concatWithStrcat(char *, char *);
 void compareStrings(char *, char *);
+char *concatWithStrcat(char *, char *, char *);
+char *concatWithoutStrcat(char *, char *, char *);
 
 int main()
 {
@@ -44,16 +49,69 @@ int main()
         switch (choice)
         {
         case 'a':
-            showAddresses(string1, string2);
+            cout << endl;
+            cout << "Addresses of elements of String 1:\n";
+            showAddresses(string1);
+            cout << endl;
+            cout << "Addresses of elements of String 2:\n";
+            showAddresses(string2);
+            cout << endl;
             break;
         case 'b':
-            concatWithoutStrcat(string1, string2);
+            cout << endl;
+            {
+                char t[255];
+                cout << "Concatenated String: ";
+                concatWithoutStrcat(string1, string2, t);
+                cout << t << endl;
+            }
+            cout << endl;
             break;
         case 'c':
-            concatWithStrcat(string1, string2);
+            cout << endl;
+            {
+                char t[255];
+                cout << "Concatenated String: ";
+                concatWithStrcat(string1, string2, t);
+                cout << t << endl;
+            }
+            cout << endl;
             break;
         case 'd':
+            cout << endl;
+            cout << "Result of Comparison: ";
             compareStrings(string1, string2);
+            cout << endl;
+            break;
+        case 'e':
+            cout << "\nLength of String 1: " << stringLength(string1);
+            cout << "\nLength of String 2: " << stringLength(string2);
+            cout << endl
+                 << endl;
+            break;
+        case 'f':
+            cout << "\nString 1 in Lowercase: " << lowercase(string1);
+            cout << "\nString 2 in Lowercase: " << lowercase(string2);
+            cout << endl
+                 << endl;
+            break;
+        case 'g':
+            cout << "\nString 1 in Uppercase: " << uppercase(string1);
+            cout << "\nString 2 in Uppercase: " << uppercase(string2);
+            cout << endl
+                 << endl;
+            break;
+        case 'h':
+            cout << "\nVowels in String 1: " << countVowels(string1);
+            cout << "\nVowels in String 2: " << countVowels(string2);
+            cout << endl
+                 << endl;
+            break;
+        case 'i':
+            cout << "\nReverse of String 1: " << reverseString(string1);
+            cout << "\nReverse of String 2: " << reverseString(string2);
+            cout << endl
+                 << endl;
             break;
         default:
             break;
@@ -67,104 +125,124 @@ void showMenu(char a[], char b[])
     cout << endl;
     cout << setw(3) << setfill('=') << "";
     cout << " MENU ";
-    cout << setw(81) << "";
+    cout << setw(60) << "";
     cout << left;
     cout << endl;
     cout << endl;
     cout << " String 1: " << a;
-    cout << "\tString 2: " << b;
+    cout << "\n String 2: " << b;
     cout << endl;
     cout << endl;
-    cout << setw(44) << setfill(' ') << " (a) show addresses";
-    cout << setw(44) << "(b) concat w/o strcat";
+    cout << setw(34) << setfill(' ') << " (a) show addresses";
+    cout << setw(34) << "(b) concat w/o strcat";
     cout << endl;
-    cout << setw(44) << " (c) concat w/ strcat";
-    cout << setw(44) << "(d) compare both strings";
+    cout << setw(34) << " (c) concat w/ strcat";
+    cout << setw(34) << "(d) compare both strings";
     cout << endl;
-    cout << setw(44) << " (e) calculate lengths (ptrs)";
-    cout << setw(44) << "(f) convert to lowercase";
+    cout << setw(34) << " (e) calculate lengths (ptrs)";
+    cout << setw(34) << "(f) convert to lowercase";
     cout << endl;
-    cout << setw(44) << " (g) convert to uppercase";
-    cout << setw(44) << "(h) calculate no. of vowels";
+    cout << setw(34) << " (g) convert to uppercase";
+    cout << setw(34) << "(h) calculate no. of vowels";
     cout << endl;
-    cout << setw(44) << " (i) reverse the strings";
-    cout << setw(44) << "(q) quit";
+    cout << setw(34) << " (i) reverse the strings";
+    cout << setw(34) << "(q) quit";
     cout << endl
          << endl;
     return;
 }
 
-void showAddresses(char a[], char b[])
+void showAddresses(char a[])
 {
-    cout << endl;
-
-    cout << "Addresses of elements of String 1:\n";
-    for (int i = 0; a[i] != '\0'; i++)
+    for (int i = 0; i < stringLength(a); i++)
         cout << '\t' << a[i] << " => " << &a + (sizeof(a[i]) * i) << endl;
-
-    cout << endl;
-
-    cout << "Addresses of elements of String 2:\n";
-    for (int i = 0; b[i] != '\0'; i++)
-        cout << '\t' << b[i] << " => " << &b + (sizeof(b[i]) * i) << endl;
-
-    cout << endl;
-
     return;
 }
 
-void concatWithoutStrcat(char a[], char b[])
+char *concatWithoutStrcat(char a[], char b[], char t[])
 {
-    int i, j;
-
-    cout << endl;
-
-    // increment i upto length of a
-    for (i = 0; a[i] != '\0'; i++)
-        ;
-
-    // concat b to the end of a
-    for (j = 0; b[j] != '\0'; j++, i++)
-        a[i] = b[j];
-
-    cout << "Concatenated String: " << a << endl;
-
-    cout << endl;
-
-    return;
+    int i = stringLength(a), j;
+    strcpy(t, a);
+    for (j = 0; j < stringLength(b); j++, i++)
+        t[i] = b[j];
+    t[i] = '\0';
+    return t;
 }
 
-void concatWithStrcat(char a[], char b[])
+char *concatWithStrcat(char a[], char b[], char t[])
 {
-    cout << endl;
-
-    strcat(a, b);
-
-    cout << "Concatenated String: " << a << endl;
-
-    cout << endl;
-
-    return;
+    strcpy(t, a);
+    strcat(t, b);
+    return t;
 }
 
 void compareStrings(char a[], char b[])
 {
-    int flag = 0, greater = (strlen(a) > strlen(b) ? strlen(a) : strlen(b));
+    if (stringLength(a) == stringLength(b))
+        cout << "length(String 1) == length(String 2)" << endl;
+    else if (stringLength(a) > stringLength(b))
+        cout << "length(String 1) > length(String 2)" << endl;
+    else if (stringLength(a) < stringLength(b))
+        cout << "length(String 1) < length(String 2)" << endl;
 
-    cout << endl;
-
-    for (int i = 0; i < greater; i++)
-        if (a[i] == b[i])
+    int flag = 0;
+    for (int i = 0, j = 0; i < stringLength(a) && j < stringLength(b); i++, j++)
+        if (a[i] == b[j])
             flag = 1;
 
     if (flag)
-        cout << "Strings are equal!" << endl;
-    else if (strlen(a) > strlen(b))
-        cout << "String 1 is longer than String 2!" << endl;
-    else if (strlen(a) < strlen(b))
-        cout << "String 2 is longer than String 1!" << endl;
-
-    cout << endl;
+        cout << "String 1 is the same as String 2!" << endl;
 
     return;
+}
+
+int stringLength(char *a)
+{
+    int i;
+    for (i = 0; *(a + i) != '\0'; i++)
+        ;
+    return i;
+}
+
+char *lowercase(char a[])
+{
+    for (int i = 0; i < stringLength(a); i++)
+        if (a[i] >= 'A' && a[i] <= 'Z')
+            a[i] = a[i] + 32;
+    return a;
+}
+
+char *uppercase(char a[])
+{
+    for (int i = 0; i < stringLength(a); i++)
+        if (a[i] >= 'a' && a[i] <= 'z')
+            a[i] = a[i] - 32;
+    return a;
+}
+
+int countVowels(char a[])
+{
+    int count = 0;
+    for (int i = 0; i < stringLength(a); i++)
+        if (lowercase(a)[i] == 'a' ||
+            lowercase(a)[i] == 'e' ||
+            lowercase(a)[i] == 'i' ||
+            lowercase(a)[i] == 'o' ||
+            lowercase(a)[i] == 'u')
+            count++;
+    return count;
+}
+
+char *reverseString(char a[])
+{
+    int i = 0, j = stringLength(a) - 1, temp;
+    while (i < j)
+    {
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+        i++;
+        j--;
+    }
+    return a;
 }
