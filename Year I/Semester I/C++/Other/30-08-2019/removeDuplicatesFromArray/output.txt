@@ -1,0 +1,13 @@
+Case I
+--------
+Enter size of the array: 10
+Array Elements: 1 2 2 4 4 3 3 5 5 9
+Array Elements after removing duplicates: 1 2 4 3 5 9
+
+=====================================================
+
+Case II
+--------
+Enter size of the array: 5
+Array Elements: 1 2 2 3 4
+Array Elements after removing duplicates: 1 2 3 4

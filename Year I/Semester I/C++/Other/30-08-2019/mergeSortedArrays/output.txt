@@ -1,0 +1,27 @@
+Case I
+--------
+Enter size of Array A: 4
+Enter elements of sorted Array A: 2 3 5 6
+Enter size of Array B: 5
+Enter elements of sorted Array B: 1 3 4 7 8
+Merged Array: 1 2 3 4 5 6 7 8
+
+=====================================================
+
+Case II
+--------
+Enter size of Array A: 10
+Enter elements of sorted Array A: 1 2 3 4 5 6 7 8 9 10 
+Enter size of Array B: 10
+Enter elements of sorted Array B: 0 1 2 3 4 5 6 7 8 9
+Merged Array: 0 1 2 3 4 5 6 7 8 9 10
+
+======================================================
+
+Case III
+--------
+Enter size of Array A: 1
+Enter elements of sorted Array A: 2
+Enter size of Array B: 2
+Enter elements of sorted Array B: 2 3
+Merged Array: 2 3 

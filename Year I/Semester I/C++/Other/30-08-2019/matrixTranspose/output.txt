@@ -29,3 +29,20 @@ Transpose of Matrix
 ---------------------
 1 3 
 2 4 
+
+================================
+
+Case III
+--------
+Enter dimensions of Matrix: 2 3
+
+Matrix
+----------
+1 2 3 
+4 5 6
+
+Transpose of Matrix
+---------------------
+1 4 
+2 5 
+3 6

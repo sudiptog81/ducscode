@@ -41,14 +41,12 @@ void transposeMatrix(const int a[][MAX_COLS], int m, int n)
         for (int j = 0; j < m; j++)
             c[i][j] = 0;
 
-    // calulating dot product of matrices
-    // A and B and storing results in C
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
-            c[j][i] += a[i][j];
+    // transposing each element of matrix
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            c[j][i] = a[i][j];
 
-    // displaying the dot product of the
-    // matrices A and B
+    // displaying the transposed matrix
     cout << "\nTranspose of Matrix\n---------------------\n";
     for (int i = 0; i < n; i++)
     {

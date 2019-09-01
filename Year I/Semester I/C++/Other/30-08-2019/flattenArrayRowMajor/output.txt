@@ -1,0 +1,35 @@
+Case I
+--------
+Enter dimensions of the Multidimensional Array: 3 3
+
+Multidimensional Array Elements:
+1 2 3
+4 5 6
+7 8 9
+
+Flattened Array in Row Major Order: 1 2 3 4 5 6 7 8 9
+
+=====================================================
+
+Case II
+--------
+Enter dimensions of the Multidimensional Array: 2 3
+
+Multidimensional Array Elements:
+4 6 7
+1 0 2
+
+Flattened Array in Row Major Order: 4 6 7 1 0 2
+
+=====================================================
+
+Case III
+--------
+Enter dimensions of the Multidimensional Array: 3 2
+
+Multidimensional Array Elements:
+1 0
+0 1
+1 0
+
+Flattened Array in Row Major Order: 1 0 0 1 1 0
