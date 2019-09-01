@@ -22,14 +22,14 @@
 #include <cctype>
 
 using namespace std;
-
+void clrscr();
 int stringLength(char *);
 int countVowels(char *);
-char *lowercase(char *);
-char *uppercase(char *);
 void showAddresses(char *);
-char *reverseString(char *);
 void showMenu(char *, char *);
+char *lowercase(char *, char *);
+char *uppercase(char *, char *);
+char *reverseString(char *, char *);
 void compareStrings(char *, char *);
 char *concatWithStrcat(char *, char *, char *);
 char *concatWithoutStrcat(char *, char *, char *);
@@ -41,9 +41,10 @@ int main()
     cin >> string1;
     cout << "Enter String 2: ";
     cin >> string2;
-    showMenu(string1, string2);
     while (choice != 'q')
     {
+        clrscr();
+        showMenu(string1, string2);
         cout << "Enter Choice: ";
         cin >> choice;
         switch (choice)
@@ -90,14 +91,20 @@ int main()
                  << endl;
             break;
         case 'f':
-            cout << "\nString 1 in Lowercase: " << lowercase(string1);
-            cout << "\nString 2 in Lowercase: " << lowercase(string2);
+        {
+            char t[255];
+            cout << "\nString 1 in Lowercase: " << lowercase(string1, t);
+            cout << "\nString 2 in Lowercase: " << lowercase(string2, t);
+        }
             cout << endl
                  << endl;
             break;
         case 'g':
-            cout << "\nString 1 in Uppercase: " << uppercase(string1);
-            cout << "\nString 2 in Uppercase: " << uppercase(string2);
+        {
+            char t[255];
+            cout << "\nString 1 in Uppercase: " << uppercase(string1, t);
+            cout << "\nString 2 in Uppercase: " << uppercase(string2, t);
+        }
             cout << endl
                  << endl;
             break;
@@ -108,13 +115,23 @@ int main()
                  << endl;
             break;
         case 'i':
-            cout << "\nReverse of String 1: " << reverseString(string1);
-            cout << "\nReverse of String 2: " << reverseString(string2);
+        {
+            char t[255];
+            cout << "\nReverse of String 1: " << reverseString(string1, t);
+            cout << "\nReverse of String 2: " << reverseString(string2, t);
+        }
             cout << endl
                  << endl;
             break;
         default:
             break;
+        }
+
+        if (choice != 'q')
+        {
+            cin.get();
+            cout << "Press Enter to continue ...";
+            cin.get();
         }
     };
     return 0;
@@ -204,45 +221,58 @@ int stringLength(char *a)
     return i;
 }
 
-char *lowercase(char a[])
+char *lowercase(char a[], char t[])
 {
-    for (int i = 0; i < stringLength(a); i++)
-        if (a[i] >= 'A' && a[i] <= 'Z')
-            a[i] = a[i] + 32;
-    return a;
+    strcpy(t, a);
+    for (int i = 0; i < stringLength(t); i++)
+        if (t[i] >= 'A' && t[i] <= 'Z')
+            t[i] = t[i] + 32;
+    return t;
 }
 
-char *uppercase(char a[])
+char *uppercase(char a[], char t[])
 {
-    for (int i = 0; i < stringLength(a); i++)
-        if (a[i] >= 'a' && a[i] <= 'z')
-            a[i] = a[i] - 32;
-    return a;
+    strcpy(t, a);
+    for (int i = 0; i < stringLength(t); i++)
+        if (t[i] >= 'a' && t[i] <= 'z')
+            t[i] = t[i] - 32;
+    return t;
 }
 
 int countVowels(char a[])
 {
     int count = 0;
+    char t[255];
     for (int i = 0; i < stringLength(a); i++)
-        if (lowercase(a)[i] == 'a' ||
-            lowercase(a)[i] == 'e' ||
-            lowercase(a)[i] == 'i' ||
-            lowercase(a)[i] == 'o' ||
-            lowercase(a)[i] == 'u')
+        if (lowercase(a, t)[i] == 'a' ||
+            lowercase(a, t)[i] == 'e' ||
+            lowercase(a, t)[i] == 'i' ||
+            lowercase(a, t)[i] == 'o' ||
+            lowercase(a, t)[i] == 'u')
             count++;
     return count;
 }
 
-char *reverseString(char a[])
+char *reverseString(char a[], char t[])
 {
-    int i = 0, j = stringLength(a) - 1, temp;
+    strcpy(t, a);
+    int i = 0, j = stringLength(t) - 1, temp;
     while (i < j)
     {
-        temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+        temp = t[i];
+        t[i] = t[j];
+        t[j] = temp;
         i++;
         j--;
     }
-    return a;
+    return t;
+}
+
+void clrscr()
+{
+#ifdef _WIN32
+    system("cls");
+#elif __unix
+    system("clear");
+#endif
 }
