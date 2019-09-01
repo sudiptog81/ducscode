@@ -23,16 +23,16 @@
 
 using namespace std;
 void clrscr();
-int stringLength(char *);
-int countVowels(char *);
-void showAddresses(char *);
-void showMenu(char *, char *);
-char *lowercase(char *, char *);
-char *uppercase(char *, char *);
-char *reverseString(char *, char *);
-void compareStrings(char *, char *);
-char *concatWithStrcat(char *, char *, char *);
-char *concatWithoutStrcat(char *, char *, char *);
+int stringLength(char[]);
+int countVowels(char[]);
+void showAddresses(char[]);
+void showMenu(char[], char[]);
+char *lowercase(char[], char[]);
+char *uppercase(char[], char[]);
+char *reverseString(char[], char[]);
+void compareStrings(char[], char[]);
+char *concatWithStrcat(char[], char[], char[]);
+char *concatWithoutStrcat(char[], char[], char[]);
 
 int main()
 {
@@ -172,7 +172,7 @@ void showMenu(char a[], char b[])
 void showAddresses(char a[])
 {
     for (int i = 0; i < stringLength(a); i++)
-        cout << '\t' << a[i] << " => " << &a + (sizeof(a[i]) * i) << endl;
+        cout << '\t' << a[i] << " => " << (void *)&a[i] << endl;
     return;
 }
 
@@ -272,7 +272,7 @@ void clrscr()
 {
 #ifdef _WIN32
     system("cls");
-#elif __unix
+#elif __unix__
     system("clear");
 #endif
 }
