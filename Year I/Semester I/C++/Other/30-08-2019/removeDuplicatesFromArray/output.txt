@@ -11,3 +11,11 @@ Case II
 Enter size of the array: 5
 Array Elements: 1 2 2 3 4
 Array Elements after removing duplicates: 1 2 3 4
+
+=====================================================
+
+Case III
+--------
+Enter size of the array: 6
+Array Elements: 1 1 1 1 1 1
+Array Elements after removing duplicates: 1

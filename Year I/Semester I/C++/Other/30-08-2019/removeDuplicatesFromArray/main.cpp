@@ -28,13 +28,22 @@ int main()
 
 void removeDuplicates(int a[], int &b)
 {
-    for (int i = 0; i < b; i++)
-        if (a[i] == a[i + 1])
-        {
-            for (int k = i + 1; k < b; k++)
-                a[k] = a[k + 1];
-            b--;
-        }
+    int i, j, k;
+    for (i = 0; i < b; i++)
+        for (j = i + 1; j < b; j++)
+            // check for duplicates
+            if (a[i] == a[j])
+            {
+                // delete the duplicate element
+                for (k = j; k < b; k++)
+                    a[k] = a[k + 1];
+
+                // decrement size after removing duplicate
+                b--;
+
+                // do not increment j if shifting occurs
+                j--;
+            }
 
     return;
 }
