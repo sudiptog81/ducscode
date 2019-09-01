@@ -9,24 +9,19 @@ int main()
     int n;
     cout << "Enter the size of the array: ";
     cin >> n;
-
     int arr[n];
     cout << "Enter the elements of the sorted array: ";
     for (int i = 0; i < n; i++)
         cin >> arr[i];
-
     int s;
     cout << "Enter element to be searched: ";
     cin >> s;
-
     int index = binarySearch(arr, n, s);
-
     if (index >= 0)
         cout << "Element found at index " << index
              << ", position " << index + 1 << "!" << endl;
     else
         cout << "Element not found!" << endl;
-
     return 0;
 }
 
