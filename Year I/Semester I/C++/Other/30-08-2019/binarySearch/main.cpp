@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void binarySearch(const int[], int, int);
+int binarySearch(const int[], int, int);
 
 int main()
 {
@@ -19,12 +19,18 @@ int main()
     cout << "Enter element to be searched: ";
     cin >> s;
 
-    binarySearch(arr, n, s);
+    int index = binarySearch(arr, n, s);
+
+    if (index >= 0)
+        cout << "Element found at index " << index
+             << ", position " << index + 1 << "!" << endl;
+    else
+        cout << "Element not found!" << endl;
 
     return 0;
 }
 
-void binarySearch(const int a[], int n, int el)
+int binarySearch(const int a[], int n, int el)
 {
     int first = 0, last = n, mid = 0;
 
@@ -37,14 +43,8 @@ void binarySearch(const int a[], int n, int el)
         else if (el < a[mid])
             last = mid - 1; // look in the first half
         else
-            first = last + 1; // force exit
+            return mid; // return index of element
     }
 
-    if (el == a[mid])
-        cout << "Element found at index " << mid
-             << ", position " << mid + 1 << "!" << endl;
-    else
-        cout << "Element not found!" << endl;
-
-    return;
+    return -1; // return -1 if element not found
 }
