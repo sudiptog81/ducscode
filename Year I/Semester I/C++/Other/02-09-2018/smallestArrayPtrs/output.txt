@@ -1,0 +1,2 @@
+Enter 10 integers: 5 1 2 4 56 5 0 -87 4 5
+Smallest integer: -87

@@ -1,0 +1,2 @@
+Enter 2 integers: 23123 2312
+Smallest integer: 2312

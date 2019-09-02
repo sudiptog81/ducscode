@@ -1,0 +1,3 @@
+Enter elements: 1 2 3 4 5 6 7 8 9 0
+Enter index of element to delete: 4
+Compacted array: 1 2 3 4 6 7 8 9 0

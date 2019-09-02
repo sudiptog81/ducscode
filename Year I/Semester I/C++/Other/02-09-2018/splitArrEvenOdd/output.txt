@@ -1,0 +1,4 @@
+Enter size of the array: 5
+Enter elements: 1 2 3 4 5
+Even elements: 2 4
+Odd elements: 1 3 5

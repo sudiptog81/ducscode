@@ -1,0 +1,2 @@
+Enter a string: Sudipto
+Replaced string: S*d*pt*

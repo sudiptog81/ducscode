@@ -203,11 +203,11 @@ void compareStrings(char a[], char b[])
         cout << "length(String 1) < length(String 2)" << endl;
 
     int flag = 0;
-    for (int i = 0, j = 0; i < stringLength(a) && j < stringLength(b); i++, j++)
+    for (int i = 0, j = 0; i < stringLength(a); i++, j++)
         if (a[i] == b[j])
-            flag = 1;
+            flag++;
 
-    if (flag)
+    if (flag == stringLength(a))
         cout << "String 1 is the same as String 2!" << endl;
 
     return;
