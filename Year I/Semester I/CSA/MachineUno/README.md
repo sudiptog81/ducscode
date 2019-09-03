@@ -76,3 +76,5 @@
 | `sko`       | `F100` | `operation`      |
 | `ion`       | `F080` | `operation`      |
 | `iof`       | `F040` | `operation`      |
+
+### Fetch Sequence
