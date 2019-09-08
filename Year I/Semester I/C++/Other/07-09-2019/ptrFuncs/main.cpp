@@ -27,16 +27,16 @@ int main()
 	cout << left << setfill(' ');
 
 	cout << setw(10) << "num: ";
-	printf("%X\n", &num);
+	printf("%p\n", &num);
 
 	cout << setw(10) << "square(): ";
-	printf("%X\n", square);
+	printf("%p\n", square);
 
 	cout << setw(10) << "func1(): ";
-	printf("%X\n", func1);
+	printf("%p\n", func1);
 
 	cout << setw(10) << "func2: ";
-	printf("%X\n", &func2);
+	printf("%p\n", &func2);
 
 	cout << endl;
 
@@ -48,11 +48,11 @@ int main()
 
 	cout << setw(6) << "pnum"
 		 << "=>  ";
-	printf("%X\n", pnum);
+	printf("%p\n", pnum);
 
 	cout << setw(6) << "func2"
 		 << "=>  ";
-	printf("%X\n", *func2);
+	printf("%p\n", *func2);
 
 	cout << endl;
 
@@ -70,7 +70,7 @@ int main()
 	cout << "Executing func1(" << *pnum << ") ..."
 		 << endl;
 	cout << setw(10) << "Output: ";
-	printf("%X\n", func1(*pnum));
+	printf("%p\n", func1(*pnum));
 
 	cout << "Executing func2(" << *pnum << ") ..."
 		 << endl;
