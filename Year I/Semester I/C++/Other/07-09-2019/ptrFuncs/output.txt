@@ -1,0 +1,26 @@
+Enter a number: 5
+
+Memory
+--------------------------
+num:      61FE04
+square(): 401BA5
+func1():  401BBA
+func2:    61FDF8
+
+
+Pointers
+--------------------------
+pnum  =>  61FE04
+func2 =>  401BA5
+
+
+Output
+--------------------------
+Executing square(5) ...
+Output:   25
+Executing func1(5) ...
+Output:   61FE04
+Executing func2(5) ...
+Output:   25
+
+Press return to continue ...

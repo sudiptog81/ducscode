@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdio>
 
 using namespace std;
 
@@ -25,10 +26,18 @@ int main()
 	cout << setw(26) << setfill('-') << "" << endl;
 	cout << left << setfill(' ');
 
-	cout << setw(10) << "num: " << pnum << endl;
-	cout << setw(10) << "square(): " << square << endl;
-	cout << setw(10) << "func1(): " << func1 << endl;
-	cout << setw(10) << "func2: " << &func2 << endl;
+	cout << setw(10) << "num: ";
+	printf("%X\n", &num);
+
+	cout << setw(10) << "square(): ";
+	printf("%X\n", square);
+
+	cout << setw(10) << "func1(): ";
+	printf("%X\n", func1);
+
+	cout << setw(10) << "func2: ";
+	printf("%X\n", &func2);
+
 	cout << endl;
 
 	// print pointers
@@ -37,8 +46,14 @@ int main()
 	cout << setw(26) << setfill('-') << "" << endl;
 	cout << left << setfill(' ');
 
-	cout << setw(10) << "pnum =>"  << pnum << endl;
-	cout << setw(10) << "func2 =>" << func2 << endl;
+	cout << setw(6) << "pnum"
+		 << "=>  ";
+	printf("%X\n", pnum);
+
+	cout << setw(6) << "func2"
+		 << "=>  ";
+	printf("%X\n", *func2);
+
 	cout << endl;
 
 	// print outputs
@@ -54,8 +69,8 @@ int main()
 
 	cout << "Executing func1(" << *pnum << ") ..."
 		 << endl;
-	cout << setw(10) << "Output: " << func1(*pnum)
-		 << endl;
+	cout << setw(10) << "Output: ";
+	printf("%X\n", func1(*pnum));
 
 	cout << "Executing func2(" << *pnum << ") ..."
 		 << endl;
