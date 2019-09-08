@@ -1,0 +1,10 @@
+*.vcxproj*
+*.sln
+.vs
+x64
+x86
+*.ilk
+*.pdb
+*.obj
+*.exe
+main
