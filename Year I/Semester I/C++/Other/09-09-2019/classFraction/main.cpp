@@ -78,6 +78,8 @@ void Fraction::display()
 
     if (denominator == 1)
         cout << numerator;
+    else if (denominator == 0)
+        cout << "Division by Zero!";
     else if (numerator < 0 || denominator < 0)
         cout << "-" << abs(numerator)
              << "/" << abs(denominator);
