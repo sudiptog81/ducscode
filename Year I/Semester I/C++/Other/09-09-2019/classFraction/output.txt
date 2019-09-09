@@ -1,0 +1,13 @@
+Enter numerator of first fraction: 2
+Enter denominator of first fraction: 10
+
+Enter numerator of second fraction: 3
+Enter denominator of second fraction: 4
+
+Fraction A: 1/5
+Fraction B: 3/4
+
+Sum: 19/20
+Difference: -11/20
+Product: 3/20
+Quotient: 4/15

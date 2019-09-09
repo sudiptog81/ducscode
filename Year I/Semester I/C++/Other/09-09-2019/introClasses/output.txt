@@ -1,0 +1,23 @@
+Object 1:
+a: 5
+b: 7
+
+Object 2:
+a: 3
+b: 7
+
+Object 3:
+a: 2
+b: 3
+
+Changing Object 3 ...
+a: 9
+b: 11
+
+Object 4:
+a: 3
+b: 7
+
+Adding Objects 3 and 4 ...
+Sum of a's: 12
+Sum of b's: 18
