@@ -17,7 +17,10 @@ public:
 
     ~Fraction() {}
 
+    void change(int, int);
+
     void display();
+    void simplify();
 
     friend Fraction add(Fraction &, Fraction &);
     friend Fraction subtract(Fraction &, Fraction &);
@@ -55,6 +58,18 @@ Fraction::Fraction(Fraction &ob)
     denominator = ob.denominator;
 }
 
+void Fraction::change(int x, int y)
+{
+    if (y == 0)
+    {
+        cerr << "\nDivision by Zero Not Possible!\n";
+        exit(0);
+    }
+
+    numerator = x;
+    denominator = y;
+}
+
 int gcd(int numerator, int denominator)
 {
     int remainder;
@@ -69,12 +84,19 @@ int gcd(int numerator, int denominator)
     return numerator;
 }
 
-void Fraction::display()
+void Fraction::simplify()
 {
     int g = gcd(numerator, denominator);
 
     numerator /= g;
     denominator /= g;
+
+    return;
+}
+
+void Fraction::display()
+{
+    simplify();
 
     if (denominator == 1)
         cout << numerator;
@@ -85,6 +107,8 @@ void Fraction::display()
              << "/" << abs(denominator);
     else
         cout << numerator << "/" << denominator;
+
+    return;
 }
 
 Fraction add(Fraction &ob1, Fraction &ob2)
@@ -132,13 +156,14 @@ Fraction divide(Fraction &ob1, Fraction &ob2)
 int main()
 {
     int a, b;
+    Fraction frac1, frac2;
     Fraction sum, difference, product, quotient;
 
     cout << "Enter numerator of first fraction: ";
     cin >> a;
     cout << "Enter denominator of first fraction: ";
     cin >> b;
-    Fraction frac1(a, b);
+    frac1.change(a, b);
 
     cout << endl;
 
@@ -146,7 +171,7 @@ int main()
     cin >> a;
     cout << "Enter denominator of second fraction: ";
     cin >> b;
-    Fraction frac2(a, b);
+    frac2.change(a, b);
 
     cout << endl;
 
