@@ -215,8 +215,8 @@ void compareStrings(char a[], char b[])
 
 int stringLength(char *a)
 {
-    int i;
-    for (i = 0; *(a + i) != '\0'; i++)
+    int i = 0;
+    for (char *c = a; *c != '\0'; c++, i++)
         ;
     return i;
 }
