@@ -163,7 +163,7 @@ int main()
     cin >> a;
     cout << "Enter denominator of first fraction: ";
     cin >> b;
-    frac1.change(a, b);
+    frac1 = Fraction(a, b);
 
     cout << endl;
 
@@ -171,7 +171,7 @@ int main()
     cin >> a;
     cout << "Enter denominator of second fraction: ";
     cin >> b;
-    frac2.change(a, b);
+    frac2 = Fraction(a, b);
 
     cout << endl;
 
