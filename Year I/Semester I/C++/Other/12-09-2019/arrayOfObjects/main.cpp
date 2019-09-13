@@ -6,51 +6,28 @@ using namespace std;
 class Person
 {
 private:
-    // data members
-
-    // age of member
     int age;
-    // gender of member
     char gender;
-    // name of member
     char name[255];
 
 public:
-    // constructors
-
-    // default constructor
     Person();
-    // parameterized constructor
     Person(char *, int, char);
-    // copy construcor
     Person(Person &);
 
-    // destructor
     ~Person() {}
 
-    // getters
-
-    // get the age of member
     int getAge();
-    // get the name of member
     char *getName();
-    // get the gender of member
     char getGender();
 
-    // setters
-
-    // set the age of a member
     void setAge(int);
-    // set the name of a member
     void setName(char *);
     void setGender(char);
 };
 
-// get number of guests
 int getNumbers();
-// construct array of guests
 void makeArray(Person *, int);
-// display list of the guests
 void getDetails(Person *, int);
 
 int main()
@@ -77,6 +54,13 @@ Person::Person(char *a, int b, char c)
     strcpy(name, a);
     age = b;
     gender = c;
+}
+
+Person::Person(Person &a)
+{
+    strcpy(name, a.name);
+    age = a.age;
+    gender = a.gender;
 }
 
 int Person::getAge()
@@ -116,6 +100,7 @@ void makeArray(Person *a, int b)
 {
     int age;
     char gender, name[255];
+
     for (int i = 0; i < b; i++)
     {
         cout << "Person " << i + 1 << ":\n";
@@ -127,9 +112,7 @@ void makeArray(Person *a, int b)
         cout << "\tGender: ";
         cin >> gender;
 
-        a[i].setAge(age);
-        a[i].setName(name);
-        a[i].setGender(gender);
+        a[i] = Person(name, age, gender);
 
         cout << endl;
     }
