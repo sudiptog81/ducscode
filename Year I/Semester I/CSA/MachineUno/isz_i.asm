@@ -1,3 +1,2 @@
-isz_i 0x01C
-add 0x020
-cme
+isz_i 0x082
+

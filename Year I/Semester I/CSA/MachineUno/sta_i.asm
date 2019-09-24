@@ -1,1 +1,2 @@
-sta_i 0x01C
+sta_i 0x082
+

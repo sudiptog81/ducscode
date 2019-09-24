@@ -1,1 +1,2 @@
-lda_i 0x01C
+lda_i 0x082
+

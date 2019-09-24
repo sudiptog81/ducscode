@@ -1,1 +1,2 @@
-and_i 0x01C
+and_i 0x082
+
