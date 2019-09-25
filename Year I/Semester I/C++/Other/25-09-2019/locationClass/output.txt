@@ -1,0 +1,11 @@
+Location 1   
+-------------
+Latitude: 1     Longitude: 2
+
+Location 2
+-------------
+Latitude: 3     Longitude: 4
+
+Sum
+-------------
+Latitude: 4     Longitude: 6

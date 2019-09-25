@@ -1,0 +1,7 @@
+
+Enter values for a, b and c: 1 2 3
+a: 1 b: 2 c: 3
+Enter values for a, b and c: 4 5 6
+Enter values for d, e and f: 7 8 9
+a: 4 b: 5 c: 6
+d: 7 e: 8 f: 9
