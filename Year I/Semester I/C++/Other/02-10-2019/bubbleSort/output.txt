@@ -1,0 +1,5 @@
+Enter array size: 5
+Enter array elements: 3 1 2 5 4
+Sorted Array: 1 2 3 4 5
+Enter number to search: 5
+Element found at index 4

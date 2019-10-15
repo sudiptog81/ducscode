@@ -22,9 +22,7 @@ int main()
 
     // calculate sum of the series
     for (int i = 1; i <= n; i++)
-    {
         sum += ((float)1 / (float)i);
-    }
 
     // print the sum of the series upto n terms to stdout
     cout << "Sum of the series upto n terms: " << sum << endl;

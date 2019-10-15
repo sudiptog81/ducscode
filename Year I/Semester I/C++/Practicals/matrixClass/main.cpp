@@ -14,6 +14,15 @@
 
 using namespace std;
 
+void clrscr()
+{
+#ifdef _WIN32
+    system("cls");
+#elif __unix__
+    system("clear");
+#endif
+}
+
 class Matrix
 {
 private:
@@ -185,6 +194,7 @@ void handleMenu(Matrix &A, Matrix &B)
 
     do
     {
+        clrscr();
         cout << "\nMenu\n-------\n(1) Add\n(2) Subtract";
         cout << "\n(3) Multiply\n(4) Transpose A\n(5) Transpose B";
         cout << "\n(6) View Matrices\n(7) Exit\n\nEnter Choice: ";
@@ -217,6 +227,13 @@ void handleMenu(Matrix &A, Matrix &B)
         case 7:
         default:
             break;
+        }
+
+        if (ch != 7)
+        {
+            cout << "\nPress Enter to continue ...\n";
+            cin.ignore();
+            cin.get();
         }
     } while (ch != 7);
 

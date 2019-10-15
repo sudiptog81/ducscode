@@ -12,6 +12,15 @@
 
 using namespace std;
 
+void clrscr()
+{
+#ifdef _WIN32
+    system("cls");
+#elif __unix__
+    system("clear");
+#endif
+}
+
 class Triangle
 {
 private:
@@ -81,7 +90,7 @@ int main()
     cout << "Enter length of Triangle 1: ";
     cin >> h;
     Triangle A(b, h);
-
+    cout << endl;
     cout << "Enter breadth of Triangle 2: ";
     cin >> b;
     cout << "Enter length of Triangle 2: ";
@@ -90,6 +99,9 @@ int main()
 
     do
     {
+        clrscr();
+
+        cout << "Menu\n-------";
         cout << "\n(1) Calculate Area of Triangle 1"
              << "\n(2) Calculate Area of Triangle 2"
              << "\n(3) Overload Area Calculation"
@@ -127,6 +139,13 @@ int main()
         case 7:
         default:
             break;
+        }
+
+        if (ch != 7)
+        {
+            cout << "Press Enter to continue...\n";
+            cin.ignore();
+            cin.get();
         }
     } while (ch != 7);
 

@@ -23,10 +23,8 @@ int main()
     //   integral values in the range that divide
     //   num completely are printed to stdout
     for (int i = 1; i <= num; i++)
-    {
         if (num % i == 0)
             cout << i << " ";
-    }
 
     cout << endl;
 
