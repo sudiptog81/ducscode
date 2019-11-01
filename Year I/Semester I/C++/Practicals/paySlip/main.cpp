@@ -19,7 +19,7 @@ int main()
     cin >> basic;
     cout << setw(25) << "Enter HRA (%):";
     cin >> hra;
-    cout << setw(25) << "Enter DA {%}:";
+    cout << setw(25) << "Enter DA (%):";
     cin >> da;
     cout << setw(25) << "Enter TA (%):";
     cin >> ta;

@@ -24,7 +24,7 @@ void clrscr()
 class Triangle
 {
 private:
-    int breadth;
+    int base;
     int height;
 
 public:
@@ -39,14 +39,14 @@ public:
 
 Triangle::Triangle(int x = 0, int y = 0)
 {
-    breadth = x;
+    base = x;
     height = y;
 }
 
 void Triangle::calculateArea()
 {
     cout << "Area of Triangle: "
-         << 0.5 * breadth * height
+         << 0.5 * base * height
          << endl;
 
     return;
@@ -63,7 +63,7 @@ void Triangle::calculateArea(float x, float y)
 
 void Triangle::operator=(Triangle &o)
 {
-    breadth = o.breadth;
+    base = o.base;
     height = o.height;
 
     return;
@@ -71,7 +71,7 @@ void Triangle::operator=(Triangle &o)
 
 void Triangle::operator==(Triangle &o)
 {
-    if (breadth == o.breadth &&
+    if (base == o.base &&
         height == o.height)
         cout << "Triangles are Equal." << endl;
     else
@@ -85,15 +85,15 @@ int main()
     int b, h, ch;
     Triangle C;
 
-    cout << "Enter breadth of Triangle 1: ";
+    cout << "Enter base of Triangle 1: ";
     cin >> b;
-    cout << "Enter length of Triangle 1: ";
+    cout << "Enter height of Triangle 1: ";
     cin >> h;
     Triangle A(b, h);
     cout << endl;
-    cout << "Enter breadth of Triangle 2: ";
+    cout << "Enter base of Triangle 2: ";
     cin >> b;
-    cout << "Enter length of Triangle 2: ";
+    cout << "Enter height of Triangle 2: ";
     cin >> h;
     Triangle B(b, h);
 
@@ -121,7 +121,7 @@ int main()
             B.calculateArea();
             break;
         case 3:
-            cout << "\nEnter breadth (for overload): ";
+            cout << "\nEnter base (for overload): ";
             cin >> b;
             cout << "Enter height (for overload): ";
             cin >> h;
