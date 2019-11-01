@@ -3,7 +3,7 @@
 
 section .bss
 
-    buffer: resb 2
+    buffer: resb 8
 
 section .data
 
@@ -23,7 +23,7 @@ _start:
 scan:
     mov eax, 0           ; eax <- read()
     mov edi, 0           ; edi <- 0 (stdin)
-    mov rsi, buffer     ; rsi <- rsp-8 (buffer)
+    mov rsi, buffer      ; rsi <- rsp-8 (buffer)
     mov edx, 2           ; edx <- 2 characters (1+newline)
     syscall  
     ret
@@ -45,11 +45,10 @@ print:
     ret
 
 printoutput:
-    sub rax, 10
-    mov rdx, rax
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, buffer
+    mov eax, 1           ; eax <- write()
+    mov edi, 1           ; edi <- 1 (stdout)
+    mov rsi, buffer      ; rsi <- buffer
+    mov edx, 2           ; edx <- 2 characters
     syscall
     ret
 
