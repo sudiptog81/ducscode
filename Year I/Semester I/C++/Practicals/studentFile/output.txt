@@ -1,0 +1,65 @@
+Data Entry
+--------------
+
+Student 1
+------------
+Enter Roll No.: 78002
+Enter Name: AMARTYA
+Enter Year: 1
+Enter Class: 570
+Enter Total Marks: 13
+
+Student 2
+------------
+Enter Roll No.: 78003
+Enter Name: SUDIPTO
+Enter Year: 1
+Enter Class: 570
+Enter Total Marks: 25
+
+Student 3
+------------
+Enter Roll No.: 78009
+Enter Name: ANMOL
+Enter Year: 1
+Enter Class: 570
+Enter Total Marks: 22
+
+Student 4
+------------
+Enter Roll No.: 78051
+Enter Name: JATIN
+Enter Year: 1
+Enter Class: 570
+Enter Total Marks: 23
+
+Student 5
+------------
+Enter Roll No.: 78116
+Enter Name: KUSHAN
+Enter Year: 1
+Enter Class: 570
+Enter Total Marks: 16
+
+---------------------------------------------------------
+
+Writing 5 Students to STUDENTS.DAT...
+Write successful...
+
+---------------------------------------------------------
+
+Reading 5 Students from STUDENTS.DAT...
+Read successful...
+
+---------------------------------------------------------
+
+Data Viewer
+----------------
+
+|   78002       |   AMARTYA     |     1 |   570 |    13 |
+|   78003       |   SUDIPTO     |     1 |   570 |    25 |
+|   78009       |     ANMOL     |     1 |   570 |    22 |
+|   78051       |     JATIN     |     1 |   570 |    23 |
+|   78116       |    KUSHAN     |     1 |   570 |    16 |
+
+---------------------------------------------------------
