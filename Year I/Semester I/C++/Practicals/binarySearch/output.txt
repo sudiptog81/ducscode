@@ -1,0 +1,15 @@
+Case I
+--------
+Enter the size of the array: 5
+Enter the elements of the sorted array: 1 2 3 4 5
+Enter element to be searched: 2
+Element found at index 1, position 2!
+
+=================================================
+
+Case II
+--------
+Enter the size of the array: 4
+Enter the elements of the sorted array: 1 2 3 4
+Enter element to be searched: 5
+Element not found!

@@ -1,0 +1,10 @@
+cla
+inp
+sta 0x1C
+inp
+sta 0x1D
+cla
+add 0x1C
+add 0x1D
+out
+hlt
