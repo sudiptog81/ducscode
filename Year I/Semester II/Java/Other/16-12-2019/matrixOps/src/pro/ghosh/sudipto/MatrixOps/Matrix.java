@@ -21,9 +21,10 @@ public class Matrix {
 
     /**
      * Getter for Matrix Class
+     *
+     * @param scanner Scanner
      */
-    public void get() {
-        Scanner scanner = new Scanner(System.in);
+    public void get(Scanner scanner) {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 matrix[i][j] = scanner.nextInt();
@@ -124,5 +125,4 @@ public class Matrix {
         }
         return t;
     }
-
 }
