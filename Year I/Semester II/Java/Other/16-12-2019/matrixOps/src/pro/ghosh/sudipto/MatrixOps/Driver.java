@@ -34,10 +34,33 @@ public class Driver {
         System.out.println("SUM");
         System.out.println("---");
         try {
-            Matrix sum = m.add(n);
-            sum.put();
+            m.add(n).put();
         } catch (MatrixException e) {
             e.getMessage();
         }
+
+        System.out.println("DIFFERENCE");
+        System.out.println("----------");
+        try {
+            m.subtract(n).put();
+        } catch (MatrixException e) {
+            e.getMessage();
+        }
+
+        System.out.println("DOT PRODUCT");
+        System.out.println("-----------");
+        try {
+            m.dot(n).put();
+        } catch (MatrixException e) {
+            e.getMessage();
+        }
+
+        System.out.println("TRANSPOSE OF M");
+        System.out.println("--------------");
+        m.transpose().put();
+
+        System.out.println("TRANSPOSE OF N");
+        System.out.println("--------------");
+        n.transpose().put();
     }
 }

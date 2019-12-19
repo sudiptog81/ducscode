@@ -3,9 +3,9 @@ package pro.ghosh.sudipto.MatrixOps;
 import java.util.Scanner;
 
 public class Matrix {
-    int row;
-    int col;
-    int[][] matrix;
+    final int row;
+    final int col;
+    final int[][] matrix;
 
     /**
      * Constructor for Matrix Class
@@ -65,4 +65,64 @@ public class Matrix {
             throw new MatrixException();
         }
     }
+
+    /**
+     * Subtract Matrices from one another
+     *
+     * @param b Matrix
+     * @return Matrix
+     * @throws MatrixException Dimension Mismatch
+     */
+    public Matrix subtract(Matrix b) throws MatrixException {
+        if (row == b.row && col == b.col) {
+            Matrix t = new Matrix(row, b.col);
+            for (int i = 0; i < t.row; i++) {
+                for (int j = 0; j < t.col; j++) {
+                    t.matrix[i][j] = matrix[i][j] - b.matrix[i][j];
+                }
+            }
+            return t;
+        } else {
+            throw new MatrixException();
+        }
+    }
+
+    /**
+     * Multiply Matrices together
+     *
+     * @param b Matrix
+     * @return Matrix
+     * @throws MatrixException Dimension Mismatch
+     */
+    public Matrix dot(Matrix b) throws MatrixException {
+        if (col == b.row) {
+            Matrix t = new Matrix(row, b.col);
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    for (int k = 0; k < col; k++) {
+                        t.matrix[i][j] += matrix[i][k] * b.matrix[k][j];
+                    }
+                }
+            }
+            return t;
+        } else {
+            throw new MatrixException();
+        }
+    }
+
+    /**
+     * Transpose a Matrix
+     *
+     * @return Matrix
+     */
+    public Matrix transpose() {
+        Matrix t = new Matrix(col, row);
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                t.matrix[j][i] = matrix[i][j];
+            }
+        }
+        return t;
+    }
+
 }
