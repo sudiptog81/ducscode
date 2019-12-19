@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApp.jnlp">
+  <information>
+    <title>JavaFX Example</title>
+    <vendor>Sudipto Ghosh</vendor>
+    <description>Test Executable</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApp.jar" size="2629" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="300" height="275" main-class="pro.ghosh.sudipto.javaFXExample.Main"  name="JavaFXApp" />
+  <update check="background"/>
+</jnlp>

@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="JavaFXApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFXApp</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="pro.ghosh.sudipto.javaFXExample.Main" />
+        <option name="description" value="Test Executable" />
+        <option name="height" value="275" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="JavaFX Example" />
+        <option name="vendor" value="Sudipto Ghosh" />
+        <option name="version" value="0.0.1" />
+        <option name="width" value="300" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="JavaFXApp.jar">
+        <element id="module-output" name="javaFXExample" />
+      </element>
+    </root>
+  </artifact>
+</component>
