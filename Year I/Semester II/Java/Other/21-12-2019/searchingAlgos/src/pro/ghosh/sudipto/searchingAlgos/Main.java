@@ -13,7 +13,7 @@ public class Main {
     static int linearSearch(int[] array, int ele) {
         for (int i = 0; i < array.length; i++) {
             if (ele == array[i]) {
-                System.out.println("Element found at index " + i + ".");
+                System.out.println("Element found in array.");
                 return i;
             }
         }
@@ -37,7 +37,7 @@ public class Main {
             } else if (ele < array[mid]) {
                 last = mid - 1;
             } else {
-                System.out.println("Element found at index " + mid + ".");
+                System.out.println("Element found in array.");
                 return mid;
             }
         }
@@ -103,5 +103,7 @@ public class Main {
                         (end - start) / 10e6
                 )
         );
+
+        System.out.println();
     }
 }
