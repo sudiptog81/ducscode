@@ -7,7 +7,7 @@
     <padding>
         <Insets top="25" right="25" bottom="10" left="25"/>
     </padding>
-    <Text text="Welcome"
+    <Text text="Welcome" textAlignment="CENTER"
           GridPane.columnIndex="0" GridPane.rowIndex="0"
           GridPane.columnSpan="2"/>
     <Label text="User Name:"
@@ -23,6 +23,7 @@
         <Button text="Sign In"
                 onAction="#handleSubmitButtonAction"/>
     </HBox>
-    <Text fx:id="actionTarget"
-          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    <Text fx:id="actionTarget" textAlignment="CENTER"
+          GridPane.columnIndex="0" GridPane.rowIndex="6"
+          GridPane.columnSpan="2"/>
 </GridPane>
