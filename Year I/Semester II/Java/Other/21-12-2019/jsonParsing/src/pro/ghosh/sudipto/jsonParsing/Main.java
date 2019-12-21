@@ -50,6 +50,7 @@ public class Main {
         BufferedReader br = new BufferedReader(reader);
         String json = br.readLine();
         br.close();
+        reader.close();
         return json;
     }
 
