@@ -3,6 +3,13 @@ package pro.ghosh.sudipto.searchingAlgos;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Implementation of Linear Search
+     *
+     * @param array Array of Integers
+     * @param ele   Search Element
+     * @return Array Index or -1
+     */
     static int linearSearch(int[] array, int ele) {
         for (int i = 0; i < array.length; i++) {
             if (ele == array[i]) {
@@ -14,6 +21,13 @@ public class Main {
         return -1;
     }
 
+    /**
+     * Implementation of Binary Search
+     *
+     * @param array Array of Integers
+     * @param ele   Search Element
+     * @return Array Index or -1
+     */
     static int binarySearch(int[] array, int ele) {
         int mid = 0, first = 0, last = array.length;
         while (first <= last) {
@@ -69,8 +83,12 @@ public class Main {
         start = System.nanoTime();
         linearSearch(array, element);
         end = System.nanoTime();
-        System.out.print(String.format("Search completed in %.5f ms.\n",
-                (end - start) / 10e6));
+        System.out.print(
+                String.format(
+                        "Search completed in %.5f ms.\n",
+                        (end - start) / 10e6
+                )
+        );
 
         System.out.println();
 
@@ -79,7 +97,11 @@ public class Main {
         start = System.nanoTime();
         binarySearch(array, element);
         end = System.nanoTime();
-        System.out.print(String.format("Search completed in %.5f ms.\n",
-                (end - start) / 10e6));
+        System.out.print(
+                String.format(
+                        "Search completed in %.5f ms.\n",
+                        (end - start) / 10e6
+                )
+        );
     }
 }
