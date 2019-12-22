@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="factorial:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/factorial_jar</output-path>
+    <root id="archive" name="factorial.jar">
+      <element id="module-output" name="factorial" />
+    </root>
+  </artifact>
+</component>
