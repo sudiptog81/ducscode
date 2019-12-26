@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="awtExample:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/awtExample_jar</output-path>
+    <root id="archive" name="awtExample.jar">
+      <element id="module-output" name="awtExample" />
+    </root>
+  </artifact>
+</component>
