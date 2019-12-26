@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="sortingAlgos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/sortingAlgos_jar</output-path>
+    <root id="archive" name="sortingAlgos.jar">
+      <element id="module-output" name="sortingAlgos" />
+    </root>
+  </artifact>
+</component>
