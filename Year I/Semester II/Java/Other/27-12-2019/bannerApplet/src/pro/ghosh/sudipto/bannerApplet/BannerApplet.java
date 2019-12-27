@@ -11,7 +11,7 @@ import java.applet.Applet;
  */
 public class BannerApplet extends Applet implements Runnable {
     char character;
-    Thread t = null;
+    Thread thread = null;
     boolean stopFlag = true;
     String message = " THIS IS A BANNER MESSAGE ";
 
@@ -24,17 +24,17 @@ public class BannerApplet extends Applet implements Runnable {
 
     @Override
     public void start() {
-        t = new Thread(this);
-        stopFlag = false;
-        t.start();
+        this.thread = new Thread(this);
+        this.stopFlag = false;
+        this.thread.start();
     }
 
     @Override
     public void run() {
-        while (!stopFlag) {
+        while (!this.stopFlag) {
             try {
-                repaint();
-                Thread.sleep(500);
+                this.repaint();
+                this.thread.sleep(500);
             } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
             }
@@ -44,16 +44,16 @@ public class BannerApplet extends Applet implements Runnable {
     @Override
     public void stop() {
         super.stop();
-        stopFlag = true;
-        t = null;
+        this.stopFlag = true;
+        this.thread = null;
     }
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        character = message.charAt(0);
-        message = message.substring(1, message.length());
-        message = message + character;
-        g.drawString(message, 20, 30);
+        this.character = this.message.charAt(0);
+        this.message = this.message.substring(1);
+        this.message += this.character;
+        g.drawString(this.message, 20, 30);
     }
 }
