@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Name: Notepad Clone Java Edition
+Main-Class: pro.ghosh.sudipto.notepadClone.Main
+
