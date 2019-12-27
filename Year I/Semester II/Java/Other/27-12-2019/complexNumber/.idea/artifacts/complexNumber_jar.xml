@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="complexNumber:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/complexNumber_jar</output-path>
+    <root id="archive" name="complexNumber.jar">
+      <element id="module-output" name="complexNumber" />
+    </root>
+  </artifact>
+</component>
