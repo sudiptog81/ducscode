@@ -46,7 +46,7 @@ public class Main extends JFrame {
                     null, "Enter Phone Number",
                     "Find Customer", JOptionPane.QUESTION_MESSAGE
             );
-            if (phone == null)
+            if (phone == null || phone.isEmpty())
                 JOptionPane.showMessageDialog(
                         null, "Enter a valid phone number",
                         "Error", JOptionPane.ERROR_MESSAGE
