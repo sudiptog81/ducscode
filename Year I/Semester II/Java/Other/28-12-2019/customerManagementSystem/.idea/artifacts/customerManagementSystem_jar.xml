@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="customerManagementSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/customerManagementSystem_jar</output-path>
+    <root id="archive" name="customerManagementSystem.jar">
+      <element id="module-output" name="customerManagementSystem" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/sqlite-jdbc-3.30.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
