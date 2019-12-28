@@ -4,11 +4,11 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
 public class CustomerTableModel implements TableModel {
-    private String[] columnNames = {
+    private final String[] columnNames = {
             "ID", "Name", "Phone", "Address"
     };
 
-    private Object[][] data;
+    private final Object[][] data;
 
     CustomerTableModel(Object[][] data) {
         this.data = data;

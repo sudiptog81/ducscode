@@ -3,11 +3,11 @@ package pro.ghosh.sudipto.customerManagementSystem;
 import java.sql.*;
 
 public class Database {
+    Connection c;
     Statement st;
-    Connection c = null;
 
-    Database(String dbUri) throws SQLException {
-        c = DriverManager.getConnection(dbUri);
+    Database() throws SQLException {
+        c = DriverManager.getConnection("jdbc:sqlite::memory:");
         st = c.createStatement();
         st.executeUpdate(
                 "create table if not exists customers (customerId integer primary key autoincrement, "
@@ -25,10 +25,7 @@ public class Database {
 
     int checkCustomer(String phone) throws SQLException {
         ResultSet r = st.executeQuery("select * from customers where customerPhone  = " + phone);
-        while (r.next()) {
-            return r.getInt("customerId");
-        }
-        return -1;
+        return r.getInt("customerId");
     }
 
     Customer getCustomer(String phone) throws SQLException {
@@ -88,9 +85,6 @@ public class Database {
 
     int countCustomers() throws SQLException {
         ResultSet r = st.executeQuery("select count(*) as count from customers");
-        while (r.next()) {
-            return r.getInt("count");
-        }
-        return -1;
+        return r.getInt("count");
     }
 }

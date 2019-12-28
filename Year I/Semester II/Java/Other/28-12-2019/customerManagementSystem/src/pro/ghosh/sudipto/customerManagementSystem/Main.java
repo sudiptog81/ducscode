@@ -27,7 +27,7 @@ public class Main extends JFrame {
         super("Customer Management System");
 
         try {
-            db = new Database("jdbc:sqlite::memory:");
+            db = new Database();
             refreshCounter();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(
@@ -51,20 +51,17 @@ public class Main extends JFrame {
                         null, "Enter a valid phone number",
                         "Error", JOptionPane.ERROR_MESSAGE
                 );
-            else if (!phone.isEmpty())
-                try {
-                    if (db.checkCustomer(phone) != -1) new CustomerDetails(phone, db);
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(
-                            null, ex.getMessage(),
-                            "Error", JOptionPane.ERROR_MESSAGE
-                    );
-                }
+            else try {
+                if (db.checkCustomer(phone) != -1) new CustomerDetails(phone, db);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(
+                        null, ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE
+                );
+            }
         });
 
-        addCustomerButton.addActionListener(e -> {
-            new CustomerRegistration(db);
-        });
+        addCustomerButton.addActionListener(e -> new CustomerRegistration(db));
 
         viewCustomersButton.addActionListener(e -> {
             try {
@@ -81,9 +78,7 @@ public class Main extends JFrame {
             }
         });
 
-        aboutHRSButton.addActionListener(e -> {
-            new About();
-        });
+        aboutHRSButton.addActionListener(e -> new About());
 
         this.pack();
         this.setContentPane(mainPanel);

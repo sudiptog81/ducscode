@@ -34,7 +34,7 @@ public class CustomerTable extends JFrame {
             }
         });
         this.setContentPane(mainPanel);
-        this.setSize(350, 300);
+        this.setSize(400, 300);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
