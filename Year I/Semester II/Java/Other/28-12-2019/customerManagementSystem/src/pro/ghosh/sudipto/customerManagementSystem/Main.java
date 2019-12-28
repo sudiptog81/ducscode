@@ -37,7 +37,9 @@ public class Main extends JFrame {
             System.err.println(e.getMessage());
         }
 
-        logoLabel.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage("resources/logo.png")));
+        logoLabel.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(
+                getClass().getClassLoader().getResource("img/logo.png")
+        )));
 
         findCustomerButton.addActionListener(e -> {
             String phone = JOptionPane.showInputDialog(
