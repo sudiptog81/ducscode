@@ -92,7 +92,7 @@
             </constraints>
             <properties>
               <editable value="false"/>
-              <enabled value="false"/>
+              <enabled value="true"/>
               <text value=""/>
             </properties>
           </component>
@@ -112,7 +112,7 @@
             </constraints>
             <properties>
               <editable value="false"/>
-              <enabled value="false"/>
+              <enabled value="true"/>
             </properties>
           </component>
           <component id="984fb" class="javax.swing.JTextField" binding="addressField">
