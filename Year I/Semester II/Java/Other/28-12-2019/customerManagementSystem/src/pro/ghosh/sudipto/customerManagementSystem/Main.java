@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 import javax.swing.*;
@@ -22,13 +26,17 @@ public class Main extends JFrame {
     private JButton viewOrdersButton;
     private JButton findOrderButton;
     private JButton flushDatabaseButton;
+    private JLabel openOrdersLabel;
+    private JLabel ordersLabel;
     private JPanel logoPanel;
 
     Database db;
 
     void refreshCounter() throws SQLException {
-        customersLabel.setText("Registered Customers: " + db.countCustomers());
+        ordersLabel.setText("Orders Received: " + db.countOrders());
+        openOrdersLabel.setText("Open Orders: " + db.countOpenOrders());
         itemsLabel.setText("Items in Inventory: " + db.countItems());
+        customersLabel.setText("Registered Customers: " + db.countCustomers());
     }
 
     Main() {
@@ -48,6 +56,43 @@ public class Main extends JFrame {
         logoLabel.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(
                 getClass().getClassLoader().getResource("img/logo.png")
         )));
+
+        findOrderButton.addActionListener(e -> {
+            String idBuffer = JOptionPane.showInputDialog(
+                    null, "Enter Order Number",
+                    "Find Order", JOptionPane.QUESTION_MESSAGE
+            );
+
+            if (idBuffer.isEmpty())
+                JOptionPane.showMessageDialog(
+                        null, "Enter a valid Order ID",
+                        "Error", JOptionPane.ERROR_MESSAGE
+                );
+            else try {
+                int id = Integer.parseInt(idBuffer);
+                if (db.checkOrder(id) != -1) new OrderDetails(id, db);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(
+                        null, ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE
+                );
+            }
+        });
+
+        viewOrdersButton.addActionListener(e -> {
+            try {
+                if (db.countOrders() > 0) new OrderTable(db);
+                else JOptionPane.showMessageDialog(
+                        null, "No orders received!",
+                        "Empty Database", JOptionPane.ERROR_MESSAGE
+                );
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(
+                        null, ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE
+                );
+            }
+        });
 
         findCustomerButton.addActionListener(e -> {
             String phone = JOptionPane.showInputDialog(
@@ -130,7 +175,7 @@ public class Main extends JFrame {
         flushDatabaseButton.addActionListener(e -> {
             try {
                 db.flush();
-                db.initTables();
+                db.init();
                 JOptionPane.showMessageDialog(
                         null, "Database cleared successfully!",
                         "Database Flushed", JOptionPane.INFORMATION_MESSAGE
@@ -145,7 +190,7 @@ public class Main extends JFrame {
 
         this.pack();
         this.setContentPane(mainPanel);
-        this.setSize(400, 400);
+        this.setSize(400, 420);
         this.addWindowFocusListener(new WindowAdapter() {
             @Override
             public void windowGainedFocus(WindowEvent e) {
@@ -165,8 +210,17 @@ public class Main extends JFrame {
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
                 dispose();
+                try {
+                    db.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(
+                            null, ex.getMessage(),
+                            "Error", JOptionPane.ERROR_MESSAGE
+                    );
+                }
             }
         });
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -174,4 +228,5 @@ public class Main extends JFrame {
     public static void main(String[] args) {
         new Main();
     }
+
 }

@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 import javax.swing.*;
@@ -8,7 +12,7 @@ import java.sql.SQLException;
 public class ItemRegistration extends JFrame {
     private JPanel mainPanel;
     private JTextField nameField;
-    private JTextField qtyField;
+    private JSpinner qtyField;
     private JTextField priceField;
     private JButton addButton;
     private JButton resetButton;
@@ -17,21 +21,23 @@ public class ItemRegistration extends JFrame {
     ItemRegistration(Database db) {
         super("Add New Item");
 
+        qtyField.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
+
         nameField.setText(null);
         priceField.setText("0.00");
-        qtyField.setText("0");
+        qtyField.setValue(0);
 
         addButton.addActionListener(e -> {
             try {
                 db.addItem(
                         nameField.getText(),
                         Double.parseDouble(
-                                priceField.getText().isEmpty() || priceField.getText().equals("") ?
+                                priceField.getText().isEmpty() ?
                                         "0.00" : priceField.getText()
                         ),
                         Integer.parseInt(
-                                qtyField.getText().isEmpty() || qtyField.getText().equals("") ?
-                                        "-1" : qtyField.getText()
+                                qtyField.getValue().toString().isEmpty() ?
+                                        "-1" : qtyField.getValue().toString()
                         )
                 );
                 JOptionPane.showMessageDialog(
@@ -49,7 +55,7 @@ public class ItemRegistration extends JFrame {
         resetButton.addActionListener(e -> {
             nameField.setText(null);
             priceField.setText("0.00");
-            qtyField.setText("0");
+            qtyField.setValue(0);
         });
         cancelButton.addActionListener(e -> dispose());
 
@@ -66,4 +72,5 @@ public class ItemRegistration extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
 }

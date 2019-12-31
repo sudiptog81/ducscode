@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 public class Customer {

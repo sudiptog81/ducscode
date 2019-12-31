@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 import javax.swing.*;
@@ -34,6 +38,18 @@ public class CustomerDetails extends JFrame {
         super("Customer Details - " + phone);
 
         refreshDetails(db, phone);
+
+        addOrderButton.addActionListener(e -> {
+            try {
+                if (db.countItems() > 0) new CustomerOrderCreation(db, db.getCustomer(phone).id);
+                else throw new SQLException("No Items in Inventory");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(
+                        null, ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE
+                );
+            }
+        });
 
         updateDetailsButton.addActionListener(e -> {
             try {
@@ -80,4 +96,5 @@ public class CustomerDetails extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
 }

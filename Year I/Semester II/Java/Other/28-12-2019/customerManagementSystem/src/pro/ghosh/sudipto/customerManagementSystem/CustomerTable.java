@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 import javax.swing.*;
@@ -38,4 +42,5 @@ public class CustomerTable extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
 }

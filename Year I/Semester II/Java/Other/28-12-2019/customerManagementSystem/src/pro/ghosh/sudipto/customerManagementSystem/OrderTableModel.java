@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 import javax.swing.event.TableModelListener;
@@ -5,7 +9,7 @@ import javax.swing.table.TableModel;
 
 public class OrderTableModel implements TableModel {
     private final String[] columnNames = {
-            "ID", "Customer Name", "Customer Phone", "Item", "Qty", "Bill Amount"
+            "ID", "Customer Name", "Customer Phone", "Item", "Qty", "Bill Amount", "Timestamp", "State"
     };
 
     private final Object[][] data;

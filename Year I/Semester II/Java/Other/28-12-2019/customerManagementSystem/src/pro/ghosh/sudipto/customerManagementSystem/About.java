@@ -1,3 +1,7 @@
+/*
+ * @author Sudipto Ghosh, University of Delhi
+ */
+
 package pro.ghosh.sudipto.customerManagementSystem;
 
 import javax.swing.*;
@@ -19,4 +23,5 @@ public class About extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
 }
