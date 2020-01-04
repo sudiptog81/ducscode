@@ -10,47 +10,50 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String DEBUG_TAG = "noobTag";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("debugTag", "activity created");
+        Log.d(DEBUG_TAG, "activity created");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("debugTag", "activity started");
+        Log.d(DEBUG_TAG, "activity started");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("debugTag", "activity resumed");
+        Log.d(DEBUG_TAG, "activity resumed");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("debugTag", "activity paused");
+        Log.d(DEBUG_TAG, "activity paused");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("debugTag", "activity stopped");
+        Log.d(DEBUG_TAG, "activity stopped");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("debugTag", "activity destroyed");
+        Log.d(DEBUG_TAG, "activity destroyed");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("debugTag", "activity restarted");
+        Log.d(DEBUG_TAG, "activity restarted");
     }
 
     public void clickTap(View view) {
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         o.setVisibility(View.VISIBLE);
         t.setTextColor(getColor(R.color.colorPrimary));
         t.setText(e.getText().toString());
-        Log.d("debugTag", "text set to " + e.getText().toString());
+        Log.d(DEBUG_TAG, "text set to " + e.getText().toString());
     }
 
     public void clickReset(View view) {
@@ -70,20 +73,30 @@ public class MainActivity extends AppCompatActivity {
         o.setVisibility(View.INVISIBLE);
         e.setText("");
         t.setText("");
-        Log.d("debugTag", "text cleared");
+        Log.d(DEBUG_TAG, "text cleared");
     }
 
     public void clickOpenSite(View view) {
-        Log.d("debugTag", "site opened");
+        Log.d(DEBUG_TAG, "site opened");
         this.startActivity(
                 new Intent(Intent.ACTION_VIEW, Uri.parse("https://sudipto.ghosh.pro"))
         );
     }
 
     public void clickCallMe(View view) {
-        Log.d("debugTag", "caller opened");
+        Log.d(DEBUG_TAG, "caller opened");
         this.startActivity(
                 new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918826358310"))
         );
+    }
+
+    public void clickOpenOtherActivity(View view) {
+        Log.d(DEBUG_TAG, "secondary activity started via this");
+        startActivity(new Intent(this, SecondaryActivity.class));
+    }
+
+    public void clickActionViewActivity(View view) {
+        Log.d(DEBUG_TAG, "secondary activity started via ACTION_VIEW");
+        startActivity(new Intent(Intent.ACTION_VIEW));
     }
 }

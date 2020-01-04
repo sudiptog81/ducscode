@@ -62,14 +62,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Open Site"
+                    android:text="@string/open_site"
                     android:onClick="clickOpenSite"/>
 
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Call Me"
+                    android:text="@string/call_me"
                     android:onClick="clickCallMe"/>
 
         </LinearLayout>
@@ -77,8 +77,29 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/go_to_other_activity"
+                    android:onClick="clickOpenOtherActivity"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/action_override"
+                    android:onClick="clickActionViewActivity"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="100dp">
+                android:layout_marginTop="80dp">
 
             <TextView
                     android:id="@+id/youEnteredTextView"

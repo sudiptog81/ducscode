@@ -5,4 +5,10 @@
     <string name="pushText">Submit</string>
     <string name="you_entered">You Entered</string>
     <string name="resetText">Reset</string>
+    <string name="title_activity_secondary">Another Part</string>
+    <string name="go_to_other_activity">Other Activity</string>
+    <string name="call_me">Call Me</string>
+    <string name="open_site">Open Site</string>
+    <string name="go_back_rn">GO BACK RN</string>
+    <string name="action_override">Action Override</string>
 </resources>
