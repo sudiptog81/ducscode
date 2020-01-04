@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NoobStuff</string>
+    <string name="welcome">Welcome to the Crazy World of Android</string>
+    <string name="author">Coded by Sudipto</string>
+    <string name="pushText">Submit</string>
+    <string name="you_entered">You Entered</string>
+    <string name="resetText">Reset</string>
+</resources>
