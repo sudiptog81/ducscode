@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+    <TextView
+            android:text="@string/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/headText"
+            tools:layout_editor_absoluteY="20dp"
+            tools:layout_editor_absoluteX="20dp"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="20dp"
+            tools:layout_editor_absoluteX="20dp"
+            android:layout_weight="3">
+
+        <Button
+                android:text="A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lowAButton"
+                android:onClick="playLowA"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cButton"
+                android:onClick="playC"
+                android:layout_marginHorizontal="10dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dButton"
+                android:onClick="playD"
+                android:layout_marginHorizontal="20dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="E"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eButton"
+                android:onClick="playE"
+                android:layout_marginHorizontal="30dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="F"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fButton"
+                android:onClick="playF"
+                android:layout_marginHorizontal="40dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="G"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gButton"
+                android:onClick="playG"
+                android:layout_marginHorizontal="50dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/aButton"
+                android:onClick="playA"
+                android:layout_marginHorizontal="60dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bButton"
+                android:onClick="playB"
+                android:layout_marginHorizontal="70dp"
+                style="@style/KeyStyle"/>
+
+        <Button
+                android:text="C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/highCButton"
+                android:onClick="playHighC"
+                android:layout_marginHorizontal="80dp"
+                style="@style/KeyStyle"/>
+    </LinearLayout>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+    <TextView
+            android:text="@string/attribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/authorText"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+</LinearLayout>

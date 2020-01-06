@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="genericClasses:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/genericClasses_jar</output-path>
+    <root id="archive" name="genericClasses.jar">
+      <element id="module-output" name="genericClasses" />
+      <element id="module-test-output" name="genericClasses" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

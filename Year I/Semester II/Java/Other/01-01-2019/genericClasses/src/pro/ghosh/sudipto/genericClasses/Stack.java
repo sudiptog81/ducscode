@@ -1,36 +1,88 @@
 package pro.ghosh.sudipto.genericClasses;
 
-import java.util.ArrayList;
-
+/**
+ * Implementation of the Stack Data Structure using Arrays in Java
+ *
+ * @param <T> Class of Generic Elements
+ * @author sudipto@ghosh.pro University of Delhi
+ * @see java.util.LinkedList
+ */
 public class Stack<T> {
-    String className;
-    ArrayList<T> array;
+    /**
+     * Top of the Stack
+     */
+    private int tos;
 
-    Stack() {
-        this.array = new ArrayList<T>(100);
+    /**
+     * Array of Generic Elements
+     */
+    private Object[] array;
+
+    /**
+     * Size of the Stack
+     */
+    final private int size;
+
+    /**
+     * Class of Generic Elements
+     */
+    final private String className;
+
+    /**
+     * Public Constructor for Stack Objects
+     *
+     * @param tClass Class of Generic Elements
+     * @param size   Size of the Stack
+     */
+    public Stack(Class<T> tClass, int size) {
+        this.tos = -1;
+        this.size = size;
+        this.array = new Object[this.size];
+        this.className = tClass.getSimpleName();
     }
 
-    void push(T e) {
-        this.array.add(e);
-        this.className = e.getClass().getName();
+    /**
+     * Push an element to the top of the stack
+     *
+     * @param e Element to be pushed
+     * @throws StackException Stack Overflow
+     */
+    public void push(T e) throws StackException {
+        if (tos == size - 1)
+            throw new StackException("Stack Overflow: could not push " + e);
+        else
+            this.array[++this.tos] = e;
     }
 
-    T get(int i) {
-        return this.array.get(i);
+    /**
+     * Pop an element from the stack
+     *
+     * @return Object on top of the stack
+     * @throws StackException Stack Underflow
+     */
+    public Object pop() throws StackException {
+        if (this.tos < 0) {
+            throw new StackException("Stack Underflow: could not pop anymore");
+        } else
+            return this.array[this.tos--];
     }
 
-    void pop(int i) {
-        this.array.remove(i);
+    /**
+     * Index of the element at the top of the stack
+     *
+     * @return Index of Generic Element
+     */
+    public int getTOS() {
+        return this.tos;
     }
 
-    int length() {
-        return this.array.size();
-    }
-
-    void print() {
-        System.out.print("Stack<" + this.className + "> (" + this.length() + "): [ ");
-        for (T e : this.array)
-            System.out.print(e + " ");
-        System.out.print("]\n");
+    /**
+     * Representation of Stack Object
+     *
+     * @return String Representation
+     */
+    @Override
+    public String toString() {
+        return "Stack<" + this.className + ", " + this.size + ">";
     }
 }

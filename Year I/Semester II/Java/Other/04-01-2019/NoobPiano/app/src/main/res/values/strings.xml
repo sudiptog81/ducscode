@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NoobPiano</string>
+    <string name="title_activity_about">About</string>
+    <string name="license">Source Code available on GitHub under the open-source MIT License. This was an application created to demonstrate some APIs and Layouts by Sudipto Ghosh, University of Delhi. You can mail the developer by clicking on the button.</string>
+    <string name="licensing">Licensing</string>
+    <string name="heading">Tap on Notes</string>
+    <string name="attribution">Coded by Sudipto</string>
+</resources>
