@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="genericclasses" default="all">
+
+
+    <property file="build.properties"/>
+    <!-- Uncomment the following property if no tests compilation is needed -->
+    <!--
+    <property name="skip.tests" value="true"/>
+     -->
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="700m"/>
+    <patternset id="ignored.files">
+        <exclude name="**/*.hprof/**"/>
+        <exclude name="**/*.pyc/**"/>
+        <exclude name="**/*.pyo/**"/>
+        <exclude name="**/*.rbc/**"/>
+        <exclude name="**/*.yarb/**"/>
+        <exclude name="**/*~/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name="**/.hg/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/__pycache__/**"/>
+        <exclude name="**/_svn/**"/>
+        <exclude name="**/vssver.scc/**"/>
+        <exclude name="**/vssver2.scc/**"/>
+    </patternset>
+    <patternset id="library.patterns">
+        <include name="*.war"/>
+        <include name="*.swc"/>
+        <include name="*.zip"/>
+        <include name="*.egg"/>
+        <include name="*.ane"/>
+        <include name="*.jar"/>
+        <include name="*.ear"/>
+        <include name="*.klib"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <exclude name="**/?*.java"/>
+        <exclude name="**/?*.form"/>
+        <exclude name="**/?*.class"/>
+        <exclude name="**/?*.groovy"/>
+        <exclude name="**/?*.scala"/>
+        <exclude name="**/?*.flex"/>
+        <exclude name="**/?*.kt"/>
+        <exclude name="**/?*.clj"/>
+        <exclude name="**/?*.aj"/>
+    </patternset>
+
+    <!-- JDK definitions -->
+
+    <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+    <path id="jdk.classpath.1.8">
+        <fileset dir="${jdk.home.1.8}">
+            <include name="jre/lib/charsets.jar"/>
+            <include name="jre/lib/deploy.jar"/>
+            <include name="jre/lib/ext/access-bridge-64.jar"/>
+            <include name="jre/lib/ext/cldrdata.jar"/>
+            <include name="jre/lib/ext/dnsns.jar"/>
+            <include name="jre/lib/ext/jaccess.jar"/>
+            <include name="jre/lib/ext/jfxrt.jar"/>
+            <include name="jre/lib/ext/localedata.jar"/>
+            <include name="jre/lib/ext/nashorn.jar"/>
+            <include name="jre/lib/ext/sunec.jar"/>
+            <include name="jre/lib/ext/sunjce_provider.jar"/>
+            <include name="jre/lib/ext/sunmscapi.jar"/>
+            <include name="jre/lib/ext/sunpkcs11.jar"/>
+            <include name="jre/lib/ext/zipfs.jar"/>
+            <include name="jre/lib/javaws.jar"/>
+            <include name="jre/lib/jce.jar"/>
+            <include name="jre/lib/jfr.jar"/>
+            <include name="jre/lib/jfxswt.jar"/>
+            <include name="jre/lib/jsse.jar"/>
+            <include name="jre/lib/management-agent.jar"/>
+            <include name="jre/lib/plugin.jar"/>
+            <include name="jre/lib/resources.jar"/>
+            <include name="jre/lib/rt.jar"/>
+        </fileset>
+    </path>
+
+    <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+
+    <!-- Modules -->
+
+
+    <!-- Module genericClasses -->
+
+    <dirname property="module.genericclasses.basedir" file="${ant.file}"/>
+
+
+    <property name="module.jdk.home.genericclasses" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.genericclasses" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.genericclasses" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.genericclasses" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+
+    <property name="genericclasses.output.dir" value="${module.genericclasses.basedir}/out/production/genericClasses"/>
+    <property name="genericclasses.testoutput.dir" value="${module.genericclasses.basedir}/out/test/genericClasses"/>
+
+    <path id="genericclasses.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="genericclasses.module.production.classpath">
+        <path refid="${module.jdk.classpath.genericclasses}"/>
+    </path>
+
+    <path id="genericclasses.runtime.production.module.classpath">
+        <pathelement location="${genericclasses.output.dir}"/>
+    </path>
+
+    <path id="genericclasses.module.classpath">
+        <path refid="${module.jdk.classpath.genericclasses}"/>
+        <pathelement location="${genericclasses.output.dir}"/>
+        <pathelement location="${basedir}/lib/apiguardian-api-1.0.0.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-api-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-engine-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-params-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-platform-commons-1.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-platform-engine-1.4.2.jar"/>
+        <pathelement location="${basedir}/lib/opentest4j-1.1.1.jar"/>
+    </path>
+
+    <path id="genericclasses.runtime.module.classpath">
+        <pathelement location="${genericclasses.testoutput.dir}"/>
+        <pathelement location="${genericclasses.output.dir}"/>
+        <pathelement location="${basedir}/lib/apiguardian-api-1.0.0.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-api-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-engine-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-jupiter-params-5.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-platform-commons-1.4.2.jar"/>
+        <pathelement location="${basedir}/lib/junit-platform-engine-1.4.2.jar"/>
+        <pathelement location="${basedir}/lib/opentest4j-1.1.1.jar"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.genericclasses">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.genericclasses">
+        <patternset refid="excluded.from.module.genericclasses"/>
+    </patternset>
+
+    <path id="genericclasses.module.sourcepath">
+        <dirset dir="${module.genericclasses.basedir}">
+            <include name="src"/>
+        </dirset>
+    </path>
+
+    <path id="genericclasses.module.test.sourcepath">
+        <dirset dir="${module.genericclasses.basedir}">
+            <include name="tests"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.genericclasses"
+            depends="compile.module.genericclasses.production,compile.module.genericclasses.tests"
+            description="Compile module genericClasses"/>
+
+    <target name="compile.module.genericclasses.production"
+            description="Compile module genericClasses; production classes">
+        <mkdir dir="${genericclasses.output.dir}"/>
+        <javac destdir="${genericclasses.output.dir}" debug="${compiler.debug}"
+               nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+               executable="${module.jdk.bin.genericclasses}/javac">
+            <compilerarg line="${compiler.args.genericclasses}"/>
+            <bootclasspath refid="genericclasses.module.bootclasspath"/>
+            <classpath refid="genericclasses.module.production.classpath"/>
+            <src refid="genericclasses.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.genericclasses"/>
+        </javac>
+
+        <copy todir="${genericclasses.output.dir}">
+            <fileset dir="${module.genericclasses.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.genericclasses.tests" depends="compile.module.genericclasses.production"
+            description="compile module genericClasses; test classes" unless="skip.tests">
+        <mkdir dir="${genericclasses.testoutput.dir}"/>
+        <javac destdir="${genericclasses.testoutput.dir}" debug="${compiler.debug}"
+               nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+               executable="${module.jdk.bin.genericclasses}/javac">
+            <compilerarg line="${compiler.args.genericclasses}"/>
+            <bootclasspath refid="genericclasses.module.bootclasspath"/>
+            <classpath refid="genericclasses.module.classpath"/>
+            <src refid="genericclasses.module.test.sourcepath"/>
+            <patternset refid="excluded.from.compilation.genericclasses"/>
+        </javac>
+
+        <copy todir="${genericclasses.testoutput.dir}">
+            <fileset dir="${module.genericclasses.basedir}/tests">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean.module.genericclasses" description="cleanup module">
+        <delete dir="${genericclasses.output.dir}"/>
+        <delete dir="${genericclasses.testoutput.dir}"/>
+    </target>
+
+    <target name="init" description="Build initialization">
+        <!-- Perform any build initialization in this target -->
+    </target>
+
+    <target name="clean" depends="clean.module.genericclasses" description="cleanup all"/>
+
+    <target name="build.modules" depends="init, clean, compile.module.genericclasses" description="build all modules"/>
+
+    <target name="init.artifacts">
+        <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+        <property name="artifact.output.genericclasses:jar" value="${basedir}/out/artifacts/genericClasses_jar"/>
+        <mkdir dir="${artifacts.temp.dir}"/>
+        <property name="temp.jar.path.genericClasses.jar" value="${artifacts.temp.dir}/genericClasses.jar"/>
+    </target>
+
+    <target name="artifact.genericclasses:jar"
+            depends="init.artifacts, compile.module.genericclasses, compile.module.genericclasses"
+            description="Build &#39;genericClasses:jar&#39; artifact">
+        <property name="artifact.temp.output.genericclasses:jar" value="${artifacts.temp.dir}/genericClasses_jar"/>
+        <mkdir dir="${artifact.temp.output.genericclasses:jar}"/>
+        <jar destfile="${temp.jar.path.genericClasses.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+            <zipfileset dir="${genericclasses.output.dir}"/>
+            <zipfileset dir="${genericclasses.testoutput.dir}"/>
+            <zipfileset src="${basedir}/lib/junit-jupiter-5.4.2.jar"/>
+            <zipfileset src="${basedir}/lib/junit-jupiter-api-5.4.2.jar"/>
+            <zipfileset src="${basedir}/lib/apiguardian-api-1.0.0.jar"/>
+            <zipfileset src="${basedir}/lib/opentest4j-1.1.1.jar"/>
+            <zipfileset src="${basedir}/lib/junit-platform-commons-1.4.2.jar"/>
+            <zipfileset src="${basedir}/lib/junit-jupiter-params-5.4.2.jar"/>
+            <zipfileset src="${basedir}/lib/junit-jupiter-engine-5.4.2.jar"/>
+            <zipfileset src="${basedir}/lib/junit-platform-engine-1.4.2.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="pro.ghosh.sudipto.genericClasses.Main"/>
+            </manifest>
+        </jar>
+        <copy file="${temp.jar.path.genericClasses.jar}"
+              tofile="${artifact.temp.output.genericclasses:jar}/genericClasses.jar"/>
+    </target>
+
+    <target name="build.all.artifacts" depends="artifact.genericclasses:jar" description="Build all artifacts">
+        <mkdir dir="${artifact.output.genericclasses:jar}"/>
+        <copy todir="${artifact.output.genericclasses:jar}">
+            <fileset dir="${artifact.temp.output.genericclasses:jar}"/>
+        </copy>
+
+        <!-- Delete temporary files -->
+        <delete dir="${artifacts.temp.dir}"/>
+    </target>
+
+    <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

@@ -16,7 +16,7 @@ class StackTest {
             this.stack.push("A");
             this.stack.push("B");
             this.stack.push("C");
-        });
+        }, "filled stack should throw Stack Overflow exception on pushing");
     }
 
     @Test
@@ -25,11 +25,11 @@ class StackTest {
             this.stack.pop();
             this.stack.pop();
             this.stack.pop();
-        });
+        }, "empty stack should throw Stack Underflow exception on popping");
     }
 
     @Test
     void getTOS() {
-        Assertions.assertEquals(-1, this.stack.getTOS());
+        Assertions.assertEquals(-1, this.stack.getTOS(), "empty stack should have tos of -1");
     }
 }
