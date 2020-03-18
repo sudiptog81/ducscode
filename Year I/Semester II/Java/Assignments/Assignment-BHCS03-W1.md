@@ -97,6 +97,10 @@ non-abstract method.
 
 Analyse the result.
 
+## Part Five
+
+Write Java code to find whether a number is prime or not where number is accepted from the command line.
+
 ---
 
 Updated on March 18, 2020
