@@ -44,7 +44,9 @@ public class Main {
         // initialize an array of prime numbers
         prime_sieve_init();
 
+	// check for presence of command line arguments
         if (args.length != 0) {
+	    // get input from the first command line argument
             n = Integer.parseInt(args[0]);
         } else {
             // prompt the user for input if no cli arg found
