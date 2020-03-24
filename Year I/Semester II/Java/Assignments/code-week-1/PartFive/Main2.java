@@ -15,6 +15,7 @@ public class Main2 {
 
     // Driver Code
     public static void main(String[] args) throws IOException {
+        // check for presence of command line arguments
         if (args.length != 0) {
 	    // get input from the first command line argument
             n = Integer.parseInt(args[0]);

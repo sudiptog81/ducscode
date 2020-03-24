@@ -1,0 +1,7 @@
+Enter Radius of Circle: 3
+Area: 28.274333882308138 sq units
+Enter Length of Rectangle: 3
+Enter Breadth of Rectangle: 4
+Area: 12.0 sq units
+Enter Edge Length of Square: 5
+Area: 25.0 sq units
