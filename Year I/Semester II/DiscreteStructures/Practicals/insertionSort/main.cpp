@@ -1,20 +1,23 @@
+/**
+ * Write a Program to implement Insertion Sort. Find the number of
+ * comparisons during each pass and display the intermediate result. 
+ * Use the observed values to plot a graph to analyse the complexity 
+ * of algorithm.
+ * 
+ * Written by Sudipto Ghosh for the University of Delhi
+ */
+
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
-
 using namespace std;
-
-int insertionSort(int[], int);
-
+int insertionSort(int *, int);
 int main()
 {
-    srand(100);
-
     int size, comparisons;
     cout << "Enter array size: ";
     cin >> size;
     int array[size];
-
     // Worst Case
     cout << "Worst Case:\n------------\n";
     for (int i = 0; i < size; i++)
@@ -23,7 +26,6 @@ int main()
     cout << "Total Comparisons Made: "
          << comparisons << endl
          << endl;
-
     // Best Case
     cout << "Best Case:\n------------\n";
     for (int i = 0; i < size; i++)
@@ -32,7 +34,6 @@ int main()
     cout << "Total Comparisons Made: "
          << comparisons << endl
          << endl;
-
     // Average Case
     cout << "Average Case:\n------------\n";
     ifstream fin("./random.txt");
@@ -43,19 +44,15 @@ int main()
     cout << "Total Comparisons Made: "
          << comparisons << endl
          << endl;
-
     return 0;
 }
-
-int insertionSort(int array[], int size)
+int insertionSort(int *array, int size)
 {
     int i, j, k, key, iterCompCount, count = 0;
-
     cout << "Array: ";
     for (k = 0; k < size; k++)
         cout << array[k] << " ";
     cout << endl;
-
     for (i = 1; i < size; i++)
     {
         key = array[i];
@@ -64,7 +61,6 @@ int insertionSort(int array[], int size)
         {
             count++;
             iterCompCount++;
-
             if (array[j] > key)
             {
                 array[j + 1] = array[j];
@@ -75,13 +71,11 @@ int insertionSort(int array[], int size)
             }
         }
         array[j + 1] = key;
-
         cout << "Comparisons Made in Pass " << i << ": " << iterCompCount << endl;
         cout << "After Pass " << i << ": ";
         for (k = 0; k < size; k++)
             cout << array[k] << " ";
         cout << endl;
     }
-
     return count;
 }

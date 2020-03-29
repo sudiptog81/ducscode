@@ -1,13 +1,12 @@
-#include <iostream>
-
-using namespace std;
-
 /**
  * Given a full m-ary tree with i internal vertices, WAP 
  * to find the number of leaf nodes in the tree
  * 
  * Written by Sudipto Ghosh for the University of Delhi
  */
+
+#include <iostream>
+using namespace std;
 int calculateLeafNodes(int m, int i)
 {
   /**
