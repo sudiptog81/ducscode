@@ -22,9 +22,8 @@ public class LexAnalyzer {
         if (args.length != 1) {
             System.err.println("Usage: java LexAnalyzer <file>");
         } else {
-            try {
+            try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
                 String str;
-                BufferedReader br = new BufferedReader(new FileReader(args[0]));
                 while ((str = br.readLine()) != null) {
                     str = str.trim();
                     if (analyze(str)) {

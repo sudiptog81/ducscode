@@ -1,0 +1,4 @@
+Ran using "java LexAnalyzer .\LexAnalyzer.java"
+
+// Sudipto Ghosh
+// This is a line of comment
