@@ -1,8 +1,10 @@
 
 /**
  * Write a program to create a frame using AWT. Implement mouseClicked(), 
- * mouseEntered() and mouseExited() events. Frame should become visible 
- * when mouse enters it. 
+ * mouseEntered() and mouseExited() events such that:
+ *  - Size of the frame should be tripled when mouse enters it
+ *  - Frame should reduce to its original size when mouse is clicked in it
+ *  - Close the frame when mouse exits it
  *
  * @author sudipto@ghosh.pro University of Delhi
  */
@@ -12,23 +14,15 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Main extends Frame implements MouseListener {
-    Label l;
+    final int length = 100;
+    final int breadth = 100;
 
     Main() {
         super("AWT Frame");
-
-        l = new Label();
-
-        l.setBounds(25, 60, 250, 30);
-        l.setAlignment(Label.CENTER);
-        this.add(l);
-
-        this.setSize(300, 300);
+        this.setSize(this.length, this.breadth);
         this.setLayout(null);
         this.setVisible(true);
-
         this.addMouseListener(this);
-
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 dispose();
@@ -42,7 +36,7 @@ public class Main extends Frame implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        l.setText("Mouse Clicked");
+        this.setSize(this.length, this.breadth);
     }
 
     @Override
@@ -57,11 +51,11 @@ public class Main extends Frame implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        l.setText("Mouse Entered");
+        this.setSize(3 * this.length, 3 * this.breadth);
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        l.setText("Mouse Exited");
+        this.dispose();
     }
 }
