@@ -20,7 +20,7 @@ What will be the output of the following programs?
   class C extends B implements A {
 
   }
-
+ 
   class MainClass {
       public static void main(String[] args) {
           A a = new C();
@@ -52,7 +52,7 @@ What will be the output of the following programs?
       }
   }
 
-  public class MainClass {
+  public class MainClass { 
       public static void main(String[] args) {
           R r = new R();
 
