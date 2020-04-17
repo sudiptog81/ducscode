@@ -1,8 +1,9 @@
 
 /**
- * Using AWT, write a program which responds to KEY_TYPED event and 
- * updates the status window with message (“Typed character is: X”). 
- * Use adapter class for other two events.
+ * Using AWT, write a program appropriate adapter class to display the
+ * message ("Typed character is: X") in the frame window when user types 
+ * any key.
+ *
  *
  * @author sudipto@ghosh.pro University of Delhi
  */
@@ -21,16 +22,6 @@ class KbdAdapter extends KeyAdapter {
     @Override
     public void keyTyped(KeyEvent e) {
         l.setText("Typed character is: " + e.getKeyChar());
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        System.out.println("Pressed character is: " + e.getKeyChar());
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        System.out.println("Released character is: " + e.getKeyChar());
     }
 }
 

@@ -1,8 +1,8 @@
 
 /**
- * Using Swing, write a program which responds to KEY_TYPED event and 
- * updates the status window with message ("Typed character is: X"). 
- * Use adapter class for other two events.
+ ** Using Swing, write a program appropriate adapter class to display the
+ * message ("Typed character is: X") in the frame window when user types 
+ * any key.
  *
  * @author sudipto@ghosh.pro University of Delhi
  */
@@ -23,23 +23,13 @@ class KbdAdapter extends KeyAdapter {
     public void keyTyped(KeyEvent e) {
         l.setText("Typed character is: " + e.getKeyChar());
     }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        System.out.println("Pressed character is: " + e.getKeyChar());
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        System.out.println("Released character is: " + e.getKeyChar());
-    }
 }
 
 public class Main {
     JLabel l;
 
     Main() {
-        JFrame f = new JFrame("AWT Keyboard");
+        JFrame f = new JFrame("Swing Keyboard");
         l = new JLabel("", SwingConstants.CENTER);
         l.setBounds(15, 20, 250, 30);
         f.addKeyListener(new KbdAdapter(l));
