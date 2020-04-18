@@ -1,0 +1,21 @@
+# Constants in `KeyEvent` Class
+
+  - `KEY_PRESSED`
+  - `KEY_RELEASED`
+  - `KEY_TYPED`
+  - `VK_0` to `VK_9`
+  - `VK_A` to `VK_Z`
+  - `VK_ALT` 
+  - `VK_DOWN` 
+  - `VK_LEFT` 
+  - `VK_RIGHT`
+  - `VK_CANCEL` 
+  - `VK_ENTER` 
+  - `VK_PAGE_DOWN` 
+  - `VK_SHIFT`
+  - `VK_CONTROL` 
+  - `VK_ESCAPE` 
+  - `VK_PAGE_UP` 
+  - `VK_UP`
+  - `CHAR_UNDEFINED`
+  - `VK_UNDEFINED`
