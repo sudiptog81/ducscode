@@ -26,4 +26,4 @@ List all the constants and their meaning present in `WindowEvent` class.
 
 ---
 
-Updated on April 18, 2020
+Updated on April 19, 2020
