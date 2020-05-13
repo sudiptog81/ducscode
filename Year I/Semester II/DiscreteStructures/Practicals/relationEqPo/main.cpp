@@ -20,13 +20,16 @@ class Relation
 private:
     int size;
     int set[MAX_DIM];
+    int imageCount[MAX_DIM];
     int matrix[MAX_DIM][MAX_DIM];
+    int relationInput[MAX_DIM][MAX_DIM];
 
 protected:
     void getSet();
     void putSet();
     void getRelation();
     void putRelation();
+    int indexOf(int);
 
 public:
     Relation();
@@ -79,14 +82,41 @@ void Relation::putSet()
 }
 
 /**
+ * Finds the index of an element in an array
+ */
+int Relation::indexOf(int el)
+{
+    int i = 0;
+    while (i < size)
+    {
+        if (set[i] == el)
+            return i;
+        i++;
+    }
+    return -1;
+}
+
+/**
  * Accept the Relation Matrix
  */
 void Relation::getRelation()
 {
-    printf("Enter Relation Matrix for R:\n");
     for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
-            scanf("%i", &matrix[i][j]);
+    {
+        printf("Enter number of images for Set Element %i: ", set[i]);
+        scanf("%i", &imageCount[i]);
+        printf("Enter images of Set Element %i: ", set[i]);
+        for (int j = 0; j < imageCount[i]; j++)
+        {
+            scanf("%i", &relationInput[i][j]);
+            if (indexOf(relationInput[i][j]) == -1)
+            {
+                printf("Error: Image not in Set");
+                exit(-1);
+            }
+            matrix[i][indexOf(relationInput[i][j])] = 1;
+        }
+    }
     printf("\n");
 }
 
@@ -98,18 +128,25 @@ void Relation::putRelation()
     printf("Relation R:\n{\n");
     for (int i = 0; i < size; i++)
     {
-        printf("  ");
-        for (int j = 0; j < size; j++)
-            if (matrix[i][j])
-            {
-                if (j < size - 1)
-                    printf("(%i,%i), ", set[i], set[j]);
-                else
-                    printf("(%i,%i)", set[i], set[j]);
-            }
+        printf(" ");
+        for (int j = 0; j < imageCount[i]; j++)
+        {
+            if (i < size - 1)
+                printf("(%i, %i), ", set[i], relationInput[i][j]);
+            else
+                printf("(%i, %i)", set[i], relationInput[i][j]);
+        }
         printf("\n");
     }
-    printf("}\n\n");
+    printf("}\n");
+    printf("Relation Matrix for Relation R:\n");
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+            printf("%i ", matrix[i][j]);
+        printf("\n");
+    }
+    printf("\n");
 }
 
 /**
