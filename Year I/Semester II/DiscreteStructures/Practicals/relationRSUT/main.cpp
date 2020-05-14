@@ -23,7 +23,7 @@ private:
     int set[MAX_DIM];
     int imageCount[MAX_DIM];
     int matrix[MAX_DIM][MAX_DIM];
-    int relationInput[MAX_DIM][MAX_DIM];
+    int images[MAX_DIM][MAX_DIM];
 
 protected:
     void getSet();
@@ -98,7 +98,7 @@ int Relation::indexOf(int el)
 }
 
 /**
- * Accept the Relation Matrix
+ * Accept images for each preimage in the Set
  */
 void Relation::getRelation()
 {
@@ -109,20 +109,24 @@ void Relation::getRelation()
         printf("Enter images of Set Element %i: ", set[i]);
         for (int j = 0; j < imageCount[i]; j++)
         {
-            scanf("%i", &relationInput[i][j]);
-            if (indexOf(relationInput[i][j]) == -1)
+            scanf("%i", &images[i][j]);
+            if (indexOf(images[i][j]) == -1)
             {
-                printf("Error: Image not in Set");
-                exit(-1);
+                printf("Error: Image not in Set\n");
+                i--;
+                break;
             }
-            matrix[i][indexOf(relationInput[i][j])] = 1;
+            else
+            {
+                matrix[i][indexOf(images[i][j])] = 1;
+            }
         }
     }
     printf("\n");
 }
 
 /**
- * Print the Relation as a set of ordered pairs
+ * Print the Relation as a set of ordered pairs and relation matrix
  */
 void Relation::putRelation()
 {
@@ -133,9 +137,9 @@ void Relation::putRelation()
         for (int j = 0; j < imageCount[i]; j++)
         {
             if (i < size - 1)
-                printf("(%i, %i), ", set[i], relationInput[i][j]);
+                printf("(%i, %i), ", set[i], images[i][j]);
             else
-                printf("(%i, %i)", set[i], relationInput[i][j]);
+                printf("(%i, %i)", set[i], images[i][j]);
         }
         printf("\n");
     }
