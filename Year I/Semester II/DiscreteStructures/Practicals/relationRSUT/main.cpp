@@ -66,9 +66,12 @@ void Relation::getSet()
 {
     printf("Enter Size of Set: ");
     scanf("%i", &size);
-    printf("Enter Elements of Set: ");
-    for (int i = 0; i < size; i++)
-        scanf("%i", &set[i]);
+    if (size != 0)
+    {
+        printf("Enter Elements of Set: ");
+        for (int i = 0; i < size; i++)
+            scanf("%i", &set[i]);
+    }
 }
 
 /**
@@ -77,9 +80,16 @@ void Relation::getSet()
 void Relation::putSet()
 {
     printf("Set: { ");
-    for (int i = 0; i < size; i++)
-        printf("%i, ", set[i]);
-    printf("\b\b }\n");
+    if (size != 0)
+    {
+        for (int i = 0; i < size; i++)
+            printf("%i, ", set[i]);
+        printf("\b\b }\n");
+    }
+    else
+    {
+        printf("}\n");
+    }
 }
 
 /**
@@ -106,19 +116,22 @@ void Relation::getRelation()
     {
         printf("Enter number of images for Set Element %i: ", set[i]);
         scanf("%i", &imageCount[i]);
-        printf("Enter images of Set Element %i: ", set[i]);
-        for (int j = 0; j < imageCount[i]; j++)
+        if (imageCount[i] != 0)
         {
-            scanf("%i", &images[i][j]);
-            if (indexOf(images[i][j]) == -1)
+            printf("Enter images of Set Element %i: ", set[i]);
+            for (int j = 0; j < imageCount[i]; j++)
             {
-                printf("Error: Image not in Set\n");
-                i--;
-                break;
-            }
-            else
-            {
-                matrix[i][indexOf(images[i][j])] = 1;
+                scanf("%i", &images[i][j]);
+                if (indexOf(images[i][j]) == -1)
+                {
+                    printf("Error: Image not in Set\n");
+                    i--;
+                    break;
+                }
+                else
+                {
+                    matrix[i][indexOf(images[i][j])] = 1;
+                }
             }
         }
     }
@@ -130,28 +143,37 @@ void Relation::getRelation()
  */
 void Relation::putRelation()
 {
-    printf("Relation R:\n{\n");
-    for (int i = 0; i < size; i++)
+    printf("Relation R:\n{ ");
+    if (size != 0)
     {
-        printf(" ");
-        for (int j = 0; j < imageCount[i]; j++)
+        for (int i = 0; i < size; i++)
         {
-            if (i < size - 1)
-                printf("(%i, %i), ", set[i], images[i][j]);
-            else
-                printf("(%i, %i)", set[i], images[i][j]);
+            if (imageCount[i] != 0)
+                printf("\n ");
+            {
+                for (int j = 0; j < imageCount[i]; j++)
+                {
+                    if (i == size - 1 && j == imageCount[i] - 1)
+                        printf("(%i, %i)\n", set[i], images[i][j]);
+                    else
+                        printf("(%i, %i), ", set[i], images[i][j]);
+                }
+            }
+        }
+        printf("}\n");
+        printf("Relation Matrix for Relation R:\n");
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+                printf("%i ", matrix[i][j]);
+            printf("\n");
         }
         printf("\n");
     }
-    printf("}\n");
-    printf("Relation Matrix for Relation R:\n");
-    for (int i = 0; i < size; i++)
+    else
     {
-        for (int j = 0; j < size; j++)
-            printf("%i ", matrix[i][j]);
-        printf("\n");
+        printf("}\n\n");
     }
-    printf("\n");
 }
 
 /**
@@ -160,6 +182,8 @@ void Relation::putRelation()
  */
 bool Relation::isReflexive()
 {
+    if (size == 0)
+        return false;
     for (int i = 0; i < size; i++)
         if (!matrix[i][i])
             return false;
