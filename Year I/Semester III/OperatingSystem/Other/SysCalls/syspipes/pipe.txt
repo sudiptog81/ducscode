@@ -1,0 +1,2 @@
+PARENT: HELLO WORLD (wrote 11 bytes to the pipe)
+CHILD: HELLO WORLD (read 11 bytes from the pipe)

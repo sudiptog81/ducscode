@@ -1,0 +1,2 @@
+[23164.657369] Loading Module kernelmod
+[23204.775905] Removing Module kernelmod
