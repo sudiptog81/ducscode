@@ -1,0 +1,6 @@
+(TTY1) $ ./interrupt
+
+(TTY2) $ kill -2 $(pidof interrupt)
+
+(TTY1) $ ./interrupt
+Interrupt Signal Received

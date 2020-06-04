@@ -1,0 +1,17 @@
+Singly Linked List:
+B -> W -> A -> D -> X -> Y
+head: B
+tail: Y
+list contains X: yes
+list contains C: no
+index of X: 4
+value at index 1: W
+
+Doubly Linked List:
+B -> W -> A -> D -> X -> Y
+head: 0x5573e8785f20
+tail: 0x5573e8785fa0
+list contains X: yes
+list contains C: no
+index of X: 4
+value at index 1: W
