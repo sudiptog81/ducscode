@@ -26,12 +26,13 @@ public:
         return head == NULL || tail == NULL;
     }
 
-    T getFront()
+    struct Node<T> *getFront()
     {
-        return head->key;
+        return head;
     }
 
-    void pushFront(T key)
+    void
+    pushFront(T key)
     {
         struct Node<T> *newNode = new Node<T>;
         newNode->key = key;
@@ -50,12 +51,13 @@ public:
             tail = NULL;
     }
 
-    T getBack()
+    struct Node<T> *getBack()
     {
-        return tail->key;
+        return tail;
     }
 
-    void pushBack(T key)
+    void
+    pushBack(T key)
     {
         struct Node<T> *newNode = new Node<T>;
         newNode->key = key;
@@ -162,7 +164,7 @@ public:
             node = node->next;
         }
         cout << node->key << endl;
-        cout << "head: " << getFront() << endl;
-        cout << "tail: " << getBack() << endl;
+        cout << "head: " << getFront()->key << endl;
+        cout << "tail: " << getBack()->key << endl;
     }
 };

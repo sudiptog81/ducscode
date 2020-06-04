@@ -89,6 +89,7 @@ public:
         newNode->key = key;
         newNode->next = node->next;
         newNode->prev = node;
+        node->next->prev = newNode;
         node->next = newNode;
         if (tail == node)
             tail = newNode;
@@ -156,7 +157,7 @@ public:
             node = node->next;
         }
         cout << node->key << endl;
-        cout << "head: " << getFront() << endl;
-        cout << "tail: " << getBack() << endl;
+        cout << "head: " << getFront()->key << endl;
+        cout << "tail: " << getBack()->key << endl;
     }
 };
