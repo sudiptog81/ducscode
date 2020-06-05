@@ -3,19 +3,27 @@
 using namespace std;
 
 template <typename T>
+struct DLLNode
+{
+    T key;
+    struct DLLNode *next;
+    struct DLLNode *prev;
+};
+
+template <typename T>
 class DoublyLinkedList
 {
 protected:
-    struct Node<T> *head = NULL;
-    struct Node<T> *tail = NULL;
+    struct DLLNode<T> *head = NULL;
+    struct DLLNode<T> *tail = NULL;
 
 public:
     ~DoublyLinkedList()
     {
-        Node<T> *node = head;
+        DLLNode<T> *node = head;
         while (node != NULL)
         {
-            Node<T> *nodeCurrent = node;
+            DLLNode<T> *nodeCurrent = node;
             node = node->next;
             delete nodeCurrent;
         }
@@ -26,7 +34,7 @@ public:
         return head == NULL || tail == NULL;
     }
 
-    struct Node<T> *getFront()
+    struct DLLNode<T> *getFront()
     {
         return head;
     }
@@ -34,7 +42,7 @@ public:
     void
     pushFront(T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct DLLNode<T> *newNode = new DLLNode<T>;
         newNode->key = key;
         newNode->next = head;
         newNode->prev = NULL;
@@ -54,7 +62,7 @@ public:
             tail = NULL;
     }
 
-    struct Node<T> *getBack()
+    struct DLLNode<T> *getBack()
     {
         return tail;
     }
@@ -62,7 +70,7 @@ public:
     void
     pushBack(T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct DLLNode<T> *newNode = new DLLNode<T>;
         newNode->key = key;
         newNode->next = NULL;
         newNode->prev = tail;
@@ -83,9 +91,9 @@ public:
             tail = NULL;
     }
 
-    void insertAfter(struct Node<T> *node, T key)
+    void insertAfter(struct DLLNode<T> *node, T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct DLLNode<T> *newNode = new DLLNode<T>;
         newNode->key = key;
         newNode->next = node->next;
         newNode->prev = node;
@@ -95,9 +103,9 @@ public:
             tail = newNode;
     }
 
-    void insertBefore(struct Node<T> *node, T key)
+    void insertBefore(struct DLLNode<T> *node, T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct DLLNode<T> *newNode = new DLLNode<T>;
         newNode->key = key;
         newNode->next = node;
         newNode->prev = node->prev;
@@ -107,10 +115,10 @@ public:
             head = newNode;
     }
 
-    struct Node<T> *at(int index)
+    struct DLLNode<T> *at(int index)
     {
         int indexCount = 0;
-        Node<T> *node = head;
+        DLLNode<T> *node = head;
         while (node != NULL)
         {
             if (indexCount == index)
@@ -125,7 +133,7 @@ public:
     indexOf(T key)
     {
         int index = 0;
-        Node<T> *node = head;
+        DLLNode<T> *node = head;
         while (node != NULL)
         {
             if (node->key == key)
@@ -138,7 +146,7 @@ public:
 
     bool contains(T key)
     {
-        Node<T> *node = head;
+        DLLNode<T> *node = head;
         while (node != NULL)
         {
             if (node->key == key)
@@ -150,7 +158,7 @@ public:
 
     void display()
     {
-        Node<T> *node = head;
+        DLLNode<T> *node = head;
         while (node->next != NULL)
         {
             cout << node->key << " -> ";

@@ -3,19 +3,26 @@
 using namespace std;
 
 template <typename T>
+struct SLLNode
+{
+    T key;
+    struct SLLNode *next;
+};
+
+template <typename T>
 class SinglyLinkedList
 {
 protected:
-    struct Node<T> *head = NULL;
-    struct Node<T> *tail = NULL;
+    struct SLLNode<T> *head = NULL;
+    struct SLLNode<T> *tail = NULL;
 
 public:
     ~SinglyLinkedList()
     {
-        Node<T> *node = head;
+        SLLNode<T> *node = head;
         while (node != NULL)
         {
-            Node<T> *nodeCurrent = node;
+            SLLNode<T> *nodeCurrent = node;
             node = node->next;
             delete nodeCurrent;
         }
@@ -26,7 +33,7 @@ public:
         return head == NULL || tail == NULL;
     }
 
-    struct Node<T> *getFront()
+    struct SLLNode<T> *getFront()
     {
         return head;
     }
@@ -34,7 +41,7 @@ public:
     void
     pushFront(T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct SLLNode<T> *newNode = new SLLNode<T>;
         newNode->key = key;
         newNode->next = head;
         head = newNode;
@@ -51,7 +58,7 @@ public:
             tail = NULL;
     }
 
-    struct Node<T> *getBack()
+    struct SLLNode<T> *getBack()
     {
         return tail;
     }
@@ -59,7 +66,7 @@ public:
     void
     pushBack(T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct SLLNode<T> *newNode = new SLLNode<T>;
         newNode->key = key;
         newNode->next = NULL;
         if (empty())
@@ -77,7 +84,7 @@ public:
             head = tail = NULL;
         else
         {
-            struct Node<T> *node = head;
+            struct SLLNode<T> *node = head;
             while (node->next->next != NULL)
                 node = node->next;
             node->next = NULL;
@@ -85,9 +92,9 @@ public:
         }
     }
 
-    void insertAfter(struct Node<T> *node, T key)
+    void insertAfter(struct SLLNode<T> *node, T key)
     {
-        struct Node<T> *newNode = new Node<T>;
+        struct SLLNode<T> *newNode = new SLLNode<T>;
         newNode->key = key;
         newNode->next = node->next;
         node->next = newNode;
@@ -95,14 +102,14 @@ public:
             tail = newNode;
     }
 
-    void insertBefore(struct Node<T> *node, T key)
+    void insertBefore(struct SLLNode<T> *node, T key)
     {
-        Node<T> *temp = head;
+        SLLNode<T> *temp = head;
         while (temp != NULL)
         {
             if (temp->next == node)
             {
-                struct Node<T> *newNode = new Node<T>;
+                struct SLLNode<T> *newNode = new SLLNode<T>;
                 newNode->key = key;
                 newNode->next = node;
                 temp->next = newNode;
@@ -114,10 +121,10 @@ public:
         }
     }
 
-    struct Node<T> *at(int index)
+    struct SLLNode<T> *at(int index)
     {
         int indexCount = 0;
-        Node<T> *node = head;
+        SLLNode<T> *node = head;
         while (node != NULL)
         {
             if (indexCount == index)
@@ -132,7 +139,7 @@ public:
     indexOf(T key)
     {
         int index = 0;
-        Node<T> *node = head;
+        SLLNode<T> *node = head;
         while (node != NULL)
         {
             if (node->key == key)
@@ -145,7 +152,7 @@ public:
 
     bool contains(T key)
     {
-        Node<T> *node = head;
+        SLLNode<T> *node = head;
         while (node != NULL)
         {
             if (node->key == key)
@@ -157,7 +164,7 @@ public:
 
     void display()
     {
-        Node<T> *node = head;
+        SLLNode<T> *node = head;
         while (node->next != NULL)
         {
             cout << node->key << " -> ";

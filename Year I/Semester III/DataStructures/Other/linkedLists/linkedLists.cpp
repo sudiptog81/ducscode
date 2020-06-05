@@ -1,4 +1,3 @@
-#include "./node.h"
 #include "./singlyLinkedList.hpp"
 #include "./doublyLinkedList.hpp"
 
@@ -86,4 +85,3 @@ int main(void)
 
      return 0;
 }
-

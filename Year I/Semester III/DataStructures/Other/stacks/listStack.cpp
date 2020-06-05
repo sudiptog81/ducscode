@@ -1,4 +1,3 @@
-#include "../linkedLists/node.h"
 #include "../linkedLists/doublyLinkedList.hpp"
 
 template <typename T>
@@ -44,4 +43,3 @@ int main(void)
 
   return 0;
 }
-
