@@ -1,0 +1,16 @@
+initial state:
+[ 42 29 18 14 7 18 12 11 13 ]
+size: 9 root: 42
+
+max extracted: 42
+after extracting max:
+[ 29 14 18 13 7 18 12 11 ]
+size: 8 root: 29
+
+after removing 18:
+[ 29 14 18 13 7 11 12 ]
+size: 7 root: 29
+
+after changing priority:
+[ 29 14 18 13 7 1 12 ]
+size: 7 root: 29
