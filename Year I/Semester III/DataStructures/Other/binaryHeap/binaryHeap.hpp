@@ -8,21 +8,21 @@ class BinaryHeap
 protected:
   int size = 0;
   static const int maxSize = 1e3;
-  int arr[maxSize] = {0};
+  int *arr;
 
   int parent(int index)
   {
-    return index / 2;
+    return (index - 1) / 2;
   }
 
   int leftChild(int index)
   {
-    return 2 * index;
+    return 2 * index + 1;
   }
 
   int rightChild(int index)
   {
-    return 2 * index + 1;
+    return 2 * index + 2;
   }
 
   void swap(int &a, int &b)
@@ -34,7 +34,7 @@ protected:
 
   void siftUp(int index)
   {
-    while (index > 1 && arr[parent(index)] < arr[index])
+    while (index > 0 && arr[parent(index)] < arr[index])
     {
       swap(arr[parent(index)], arr[index]);
       index = parent(index);
@@ -45,10 +45,10 @@ protected:
   {
     int maxIndex = index;
     int l = leftChild(index);
-    if (l <= size && arr[l] > arr[maxIndex])
+    if (l < size && arr[l] > arr[maxIndex])
       maxIndex = l;
     int r = rightChild(index);
-    if (r <= size && arr[r] > arr[maxIndex])
+    if (r < size && arr[r] > arr[maxIndex])
       maxIndex = r;
     if (index != maxIndex)
     {
@@ -58,19 +58,49 @@ protected:
   }
 
 public:
+  BinaryHeap()
+  {
+    arr = new int[maxSize];
+  }
+
+  ~BinaryHeap()
+  {
+    delete arr;
+  }
+
+  static BinaryHeap *buildHeap(int *arr, int size)
+  {
+    BinaryHeap *heap = new BinaryHeap;
+    heap->arr = arr;
+    heap->size = size;
+    for (int i = size / 2 - 1; i >= 0; i--)
+      heap->siftDown(i);
+    return heap;
+  }
+
+  static void heapSort(int *arr, int size)
+  {
+    BinaryHeap *heap = buildHeap(arr, size);
+    for (int i = 0; i < size - 1; i++)
+    {
+      heap->swap(arr[0], arr[--heap->size]);
+      heap->siftDown(0);
+    }
+  }
+
   void insert(int priority)
   {
     if (size == maxSize)
       throw;
-    arr[++size] = priority;
+    arr[size++] = priority;
     siftUp(size);
   }
 
   int extractMax()
   {
-    int result = arr[1];
-    arr[1] = arr[size--];
-    siftDown(1);
+    int result = arr[0];
+    arr[0] = arr[size-- - 1];
+    siftDown(0);
     return result;
   }
 
@@ -94,10 +124,10 @@ public:
   void display()
   {
     cout << "[ ";
-    for (int i = 1; i <= size; i++)
+    for (int i = 0; i < size; i++)
       cout << arr[i] << " ";
     cout << "]\nsize: " << size
-         << " root: " << arr[1]
+         << " root: " << arr[0]
          << endl;
   }
 };
