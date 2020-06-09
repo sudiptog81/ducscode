@@ -8,24 +8,15 @@ Textbooks are available at [url.ghosh.pro/ducsbooks](https://url.ghosh.pro/ducsb
 
 The code is organized mainly under the following heads:
 
-- Year I
-  - Subject
-    - Semester I
+- Year<n>
+  - Semester<n>
+    - Subject
       - Tutorials
       - Practicals
       - Projects
       - Others
-    - Semester II
-- Year II
-  - Subject
-    - Semester I
-    - Semester II
-- Year III
-  - Subject
-    - Semester I
-    - Semester II
 
-**NOTE**: The code written in most of the files was compiled on the compiler available on the latest release of the GNU Compiler Collection to Linux or Windows executable binaries. The code has to be adapted for Borland/Turbo C++ compilers by the user of the code in case they use the aforementioned compilers.
+**NOTE**: The C++ code written in most of the files was compiled on the compiler available on the latest release of the GNU Compiler Collection to Linux or Windows in the form of executable binaries. The code has to be adapted for Borland/Turbo C++ compilers by the user of the code in case they use the aforementioned compilers. The Java code is suitable for JDK 8.
 
 ## License
 
