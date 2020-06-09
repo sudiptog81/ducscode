@@ -1,0 +1,7 @@
+1 and 4 are in same set? no
+1 and 3 are in same set? no
+union of 1 and 4...
+1 and 4 are in same set? yes
+1 and 3 are in same set? no
+union of 3 and 4...
+1 and 3 are in same set? yes
