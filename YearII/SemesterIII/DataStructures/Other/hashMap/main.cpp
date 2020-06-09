@@ -1,10 +1,10 @@
-#include <map>
 #include <string>
 #include <iostream>
+#include <unordered_map>
 
 using namespace std;
 
-void printHashMap(map<string, int> hashMap)
+void printHashMap(unordered_map<string, int> hashMap)
 {
   cout << "{\n";
   for (auto p : hashMap)
@@ -17,7 +17,7 @@ void printHashMap(map<string, int> hashMap)
 
 int main(void)
 {
-  map<string, int> hashMap;
+  unordered_map<string, int> hashMap;
 
   hashMap["age"] = 21;
   hashMap["gpa"] = 9;

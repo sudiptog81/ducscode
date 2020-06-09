@@ -1,10 +1,10 @@
-#include <set>
 #include <string>
 #include <iostream>
+#include <unordered_set>
 
 using namespace std;
 
-void printhashTable(set<string> hashTable)
+void printhashTable(unordered_set<string> hashTable)
 {
   cout << "{\n";
   for (auto p : hashTable)
@@ -16,7 +16,7 @@ void printhashTable(set<string> hashTable)
 
 int main(void)
 {
-  set<string> hashTable;
+  unordered_set<string> hashTable;
 
   hashTable.insert("age");
   hashTable.insert("gpa");
