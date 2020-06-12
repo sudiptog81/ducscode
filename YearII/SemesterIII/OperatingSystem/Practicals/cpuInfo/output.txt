@@ -1,0 +1,4 @@
+Linux Kernel Version: 5.4.0-1011-gcp
+CPU Model: Intel(R) Xeon(R) CPU @ 2.00GHz
+CPU Frequency: 2000.134 MHz
+CPU Core Count: 16

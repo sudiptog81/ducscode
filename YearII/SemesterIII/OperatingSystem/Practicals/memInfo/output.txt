@@ -1,0 +1,3 @@
+Configured Memory: 65866136 kB
+Free Memory: 62852448 kB
+Used Memory: 3013688 kB
