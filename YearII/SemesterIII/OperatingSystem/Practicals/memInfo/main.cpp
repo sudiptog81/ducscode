@@ -21,7 +21,7 @@ int main(void)
 
   printf("Used Memory: ");
   fflush(stdout);
-  system("awk '/MemTotal/ {total=$2; unit=$3}/MemFree/ {free = $2} END {printf \"%i %s\\n\", (total-free), unit}' /proc/meminfo");
+  system("awk '/MemTotal/ {total=$2; unit=$3} /MemFree/ {free=$2} END {printf \"%i %s\\n\", (total-free), unit}' /proc/meminfo");
 
   return 0;
 }
