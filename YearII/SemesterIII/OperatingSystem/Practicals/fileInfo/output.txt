@@ -1,0 +1,129 @@
+$ ./main main.c
+File Information
+------------------
+Name: main.c
+UID: 1000
+GID: 1000
+Regular File: Y
+Symbolic Link: N
+Directory: N
+Block Device: N
+Character Device: N
+File Mode Bits: 0100777
+Last Access Time: 1592033505
+Owner Permissions:
+  Read: Y
+  Write: Y
+  Execute: Y
+Group Permissions:
+  Read: Y
+  Write: Y
+  Execute: Y
+Others Permissions:
+  Read: Y
+  Write: Y
+  Execute: Y
+
+$ ./main /
+File Information
+------------------
+Name: /
+UID: 0000
+GID: 0000
+Regular File: N
+Symbolic Link: N
+Directory: Y
+Block Device: N
+Character Device: N
+File Mode Bits: 0040755
+Last Access Time: 1591967485
+Owner Permissions:
+  Read: Y
+  Write: Y
+  Execute: Y
+Group Permissions:
+  Read: Y
+  Write: N
+  Execute: Y
+Others Permissions:
+  Read: Y
+  Write: N
+  Execute: Y
+
+$ ./main /etc/fstab
+File Information
+------------------
+Name: /etc/fstab
+UID: 0000
+GID: 0000
+Regular File: Y
+Symbolic Link: N
+Directory: N
+Block Device: N
+Character Device: N
+File Mode Bits: 0100644
+Last Access Time: 1591502392
+Owner Permissions:
+  Read: Y
+  Write: Y
+  Execute: N
+Group Permissions:
+  Read: Y
+  Write: N
+  Execute: N
+Others Permissions:
+  Read: Y
+  Write: N
+  Execute: N
+
+$ ./main /etc/tty0
+File Information
+------------------
+Name: /dev/tty0
+UID: 0000
+GID: 0005
+Regular File: N
+Symbolic Link: N
+Directory: N
+Block Device: N
+Character Device: Y
+File Mode Bits: 0020620
+Last Access Time: 1591407659
+Owner Permissions:
+  Read: Y
+  Write: Y
+  Execute: N
+Group Permissions:
+  Read: N
+  Write: Y
+  Execute: N
+Others Permissions:
+  Read: N
+  Write: N
+  Execute: N
+
+$ ./main /etc/dev/sda1
+File Information
+------------------
+Name: /dev/sda1
+UID: 0000
+GID: 0994
+Regular File: N
+Symbolic Link: N
+Directory: N
+Block Device: Y
+Character Device: N
+File Mode Bits: 0060660
+Last Access Time: 1591407659
+Owner Permissions:
+  Read: Y
+  Write: Y
+  Execute: N
+Group Permissions:
+  Read: Y
+  Write: Y
+  Execute: N
+Others Permissions:
+  Read: N
+  Write: N
+  Execute: N

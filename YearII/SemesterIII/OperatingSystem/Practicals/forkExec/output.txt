@@ -1,0 +1,42 @@
+=== MENU ================
+  (1) same program, same code
+  (2) same program, different code
+  (3) the parent waits for the child
+  (0) exit
+
+Enter Choice: 1
+Shell PID: 1978841
+Process ID: 2021433
+Process ID: 2021869
+
+=== MENU ================
+  (1) same program, same code
+  (2) same program, different code
+  (3) the parent waits for the child
+  (0) exit
+
+Enter Choice: 2
+Shell PID: 1978841
+PARENT: Forked Child
+CHILD: Parent Process ID: 2021433
+CHILD: Process ID: 2025633
+
+=== MENU ================
+  (1) same program, same code
+  (2) same program, different code
+  (3) the parent waits for the child
+  (0) exit
+
+Enter Choice: 3
+Shell PID: 1978841
+PARENT: Child Exited
+CHILD: Parent Process ID: 2021433
+CHILD: Process ID: 2027178
+
+=== MENU ================
+  (1) same program, same code
+  (2) same program, different code
+  (3) the parent waits for the child
+  (0) exit
+
+Enter Choice: 0

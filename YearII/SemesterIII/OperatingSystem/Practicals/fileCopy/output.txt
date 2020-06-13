@@ -1,0 +1,5 @@
+$ ./main src.txt dest.text
+Copied contents of src.txt to dest.txt
+
+$ ./main src.txt
+Usage: ./main <src> <dest>
