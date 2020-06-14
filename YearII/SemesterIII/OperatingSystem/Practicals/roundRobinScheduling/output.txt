@@ -1,0 +1,17 @@
+Enter Time Quantum: 1
+Enter Number of Processes: 3
+Burst Time for Process 1: 3
+Arrival Time for Process 1: 0
+Burst Time for Process 2: 4
+Arrival Time for Process 2: 0
+Burst Time for Process 3: 3
+Arrival Time for Process 3: 0
+
+Process ID      Burst Time      Arrival Time    Waiting Time    Turn-Around Time
+---------------------------------------------------------------------------------
+1               3               0               4               7
+2               4               0               6               10
+3               3               0               6               9
+
+Average Waiting Time = 5.33
+Average Turn-Around time = 8.67

@@ -1,0 +1,16 @@
+Enter Number of Processes: 3
+Burst Time for Process 1: 10
+Arrival Time for Process 1: 0
+Burst Time for Process 2: 5
+Arrival Time for Process 2: 0
+Burst Time for Process 3: 8
+Arrival Time for Process 3: 0
+
+Process ID      Burst Time      Arrival Time    Waiting Time    Turn-Around Time
+---------------------------------------------------------------------------------
+1               10              0               0               10
+2               5               0               10              15
+3               8               0               15              23
+
+Average Waiting Time = 8.33
+Average Turn-Around time = 16.00
