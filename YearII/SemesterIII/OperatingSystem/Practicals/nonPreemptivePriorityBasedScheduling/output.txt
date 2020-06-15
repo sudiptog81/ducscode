@@ -1,0 +1,27 @@
+Enter Number of Processes: 5
+Burst Time for Process 1: 3
+Arrival Time for Process 1: 0
+Priority for Process 1: 3
+Burst Time for Process 2: 5
+Arrival Time for Process 2: 0
+Priority for Process 2: 4
+Burst Time for Process 3: 1
+Arrival Time for Process 3: 0
+Priority for Process 3: 1
+Burst Time for Process 4: 7
+Arrival Time for Process 4: 0
+Priority for Process 4: 7
+Burst Time for Process 5: 4
+Arrival Time for Process 5: 0
+Priority for Process 5: 8
+
+Process ID      Priority        Burst Time      Arrival Time    Waiting Time    Turn-Around Time
+-------------------------------------------------------------------------------------------------
+1               3               3               0               16              19
+2               4               5               0               11              16
+3               1               1               0               19              20
+4               7               7               0               4               11
+5               8               4               0               0               4
+
+Average Waiting Time = 10.00
+Average Turn-Around time = 14.00
