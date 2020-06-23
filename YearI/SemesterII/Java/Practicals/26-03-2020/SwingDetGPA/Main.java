@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 
 public class Main implements ActionListener {
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(() -> new Main());
+		SwingUtilities.invokeLater(Main::new);
 	}
 
 	JButton btnInfo, btnCGPA;
