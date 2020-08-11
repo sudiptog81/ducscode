@@ -1,0 +1,3 @@
+[submodule "ds-lab"]
+	path = .\\YearII\\SemesterIII\\DataStructures\\Practicals
+	url = https://github.com/sudiptog81/data-structures-lab
