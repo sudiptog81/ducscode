@@ -1,4 +1,0 @@
-[submodule "practicals"]
-	path = .\\YearII\\SemesterIII\\DataStructures\\Practicals
-	url = git@github.com:sudiptog81/data-structures-lab.git
-	branch = master
