@@ -1,5 +1,6 @@
 /**
- * Write a program to copy files using system calls.
+ * Write a program to copy a source file into the target file and 
+ * display the target file using system calls.
  * 
  * Written by Sudipto Ghosh for the University of Delhi
  */
@@ -49,6 +50,17 @@ int main(int argc, char **argv)
   printf("Copied contents of %s to %s\n", argv[1], argv[2]);
 
   close(fdSrc);
+  close(fdDest);
+
+  if ((fdDest = open(argv[2], O_RDONLY)) < 0)
+  {
+    fprintf(stderr, "Could not read %s\n", argv[2]);
+    return 2;
+  }
+
+  while ((bytes = read(fdSrc, &buf, 1)) > 0)
+    printf("%c", buf);
+
   close(fdDest);
 
   return 0;
