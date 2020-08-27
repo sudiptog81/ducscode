@@ -1,0 +1,408 @@
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 1
+Enter x: 3.14
+Ceiling of x: 4
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 2
+Enter x: 2.7
+Floor of x: 2
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 3
+Enter x: -5
+Absolute Value of x: 5.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 4
+Enter x: -1
+Value of e^x: 0.36787944117144233
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 5
+Enter x: 2
+Value of ln(x): 0.6931471805599453
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 6
+Enter x: 10
+Value of log_10(x): 1.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 7
+Enter x: 2
+Enter y: 3
+Value of x^y: 8.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 8
+Enter x: 16
+Square Root of x: 4.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 9
+Enter x (rad): 3.14
+Value of x (deg): 179.9087476710785
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 10
+Enter x (deg): 180
+Value of x (rad): 3.141592653589793
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 11
+Enter x (deg): 90
+Value of sin(x): 1.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 13
+Enter x (deg): -180
+Value of cos(x): -1.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 15
+Enter x (deg): 90
+Value of tan(x): 1.633123935319537e+16
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 12
+Enter x: 1
+Value of sin^-1(x): 90.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 14
+Enter x: -1
+Value of cos^-1(x): 180.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 16
+Enter x: 0
+Value of tan^-1(x): 0.0
+
+            Main Menu
+==================================
+ (01) Calculate Ceiling
+ (02) Calculate Floor
+ (03) Calculate Absolute Value
+ (04) Calculate e^x
+ (05) Calculate Natural Log
+ (06) Calulate Log (Base 10)
+ (07) Calculate x ^ y
+ (08) Calculate Square Root
+ (09) Convert Radians to Degrees
+ (10) Convert Degrees to Radians
+ (11) Calculate sin(x)
+ (12) Calculate sin^-1(x)
+ (13) Calculate cos(x)
+ (14) Calculate cos^-1(x)
+ (15) Calculate tan(x)
+ (16) Calculate tan^-1(x)
+ (00) Exit
+
+Enter Choice: 0
+

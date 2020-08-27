@@ -1,0 +1,20 @@
+Enter Number: 10
+Factorial of 10 is 3628800
+
+Enter Number: 0
+Factorial of 0 is 1
+
+Enter Number: 5
+Factorial of 5 is 120
+
+Enter Number: -1
+Traceback (most recent call last):
+  File ".\factorial\main.py", line 38, in <module>
+    main()
+  File ".\factorial\main.py", line 34, in main
+    computeFactorial()
+  File ".\factorial\main.py", line 29, in computeFactorial
+    nFactorial = factorial(n)
+  File ".\factorial\main.py", line 16, in factorial
+    assert n >= 0, 'invalid number'
+AssertionError: invalid number

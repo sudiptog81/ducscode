@@ -1,0 +1,23 @@
+Enter Sales in Week 1: 1000.32
+Enter Sales in Week 2: 2132
+Enter Sales in Week 3: 678.2
+Enter Sales in Week 4: 9000
+
+        Employee Summary
+================================
+  Total Sales:        12810.52
+  Total Commission:       0.00
+  Remarks:           Work Hard
+
+Enter Sales in Week 1: 20000
+Enter Sales in Week 2: 50500
+Enter Sales in Week 3: 50905
+Enter Sales in Week 4: 230
+
+        Employee Summary
+================================
+  Total Sales:       121635.00
+  Total Commission:    6081.75
+  Remarks:           Excellent
+
+

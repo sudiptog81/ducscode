@@ -1,0 +1,5 @@
+Enter Term: 23
+23 is a prime number
+
+Enter Term: 5
+5 is not a prime number

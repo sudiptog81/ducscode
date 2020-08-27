@@ -1,0 +1,14 @@
+Enter Term 1: 5
+Enter Term 2: 4
+LCM of 5 and 4: 20
+HCF of 5 and 4: 1
+
+Enter Term 1: 10
+Enter Term 2: 20
+LCM of 10 and 20: 20
+HCF of 10 and 20: 10
+
+Enter Term 1: 30
+Enter Term 2: 9
+LCM of 30 and 9: 90
+HCF of 30 and 9: 3

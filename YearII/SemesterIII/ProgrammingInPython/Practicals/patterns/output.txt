@@ -1,0 +1,42 @@
+
+            Main Menu
+==================================
+  (1) Print a Diamond of *'s
+  (2) Print a Pyramid of Numbers
+  (0) Exit
+
+Enter Choice: 1
+Enter Height of Diamond: 10
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+  *********
+   *******
+    *****
+     ***
+      *
+
+            Main Menu
+==================================
+  (1) Print a Diamond of *'s
+  (2) Print a Pyramid of Numbers
+  (0) Exit
+
+Enter Choice: 2
+Enter Height of Pyramid: 5
+    1
+   232
+  34543
+ 4567654
+567898765
+
+            Main Menu
+==================================
+  (1) Print a Diamond of *'s
+  (2) Print a Pyramid of Numbers
+  (0) Exit
+
+Enter Choice: 0

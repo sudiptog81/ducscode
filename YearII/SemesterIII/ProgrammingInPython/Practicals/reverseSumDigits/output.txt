@@ -1,0 +1,7 @@
+Enter Number: 1999
+Reverse: 9991
+Sum of Digits: 28
+
+Enter Number: 10501
+Reverse: 10501
+Sum of Digits: 7
