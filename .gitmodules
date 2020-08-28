@@ -1,3 +1,6 @@
 [submodule "os-lab"]
 	path = YearII/SemesterIII/OperatingSystem/Practicals
 	url = git@github.com:sudiptog81/os-lab.git
+[submodule "ds-lab"]
+	path = YearII/SemesterIII/DataStructures/Practicals
+	url = git@github.com:sudiptog81/data-structures-lab.git
