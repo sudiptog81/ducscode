@@ -26,9 +26,9 @@ def calculateRenumeration():
         totalCommission = 0.05 * totalSales
     if totalSales >= 80000:
         remark = "Excellent"
-    elif totalSales >= 60000 and totalSales < 80000:
+    elif totalSales >= 60000:
         remark = "Good"
-    elif totalSales >= 40000 and totalSales < 60000:
+    elif totalSales >= 40000:
         remark = "Average"
     elif totalSales < 40000:
         remark = "Work Hard"

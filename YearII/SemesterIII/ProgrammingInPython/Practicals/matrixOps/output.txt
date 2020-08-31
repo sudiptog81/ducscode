@@ -1,0 +1,37 @@
+Matrix A
+=============
+Enter Rows: 2
+Enter Columns: 2
+Enter Element (0,0): 1
+Enter Element (0,1): 0
+Enter Element (1,0): 0
+Enter Element (1,1): 1
+
+Matrix B
+=============
+Enter Rows: 2
+Enter Columns: 2
+Enter Element (0,0): 1
+Enter Element (0,1): 2
+Enter Element (1,0): 3
+Enter Element (1,1): 4
+
+Matrix A
+=============
+1 0
+0 1
+
+Matrix B
+=============
+1 2
+3 4
+
+Matrix A + B
+=============
+2 2
+3 5
+
+Matrix A x B
+=============
+1 2
+3 4

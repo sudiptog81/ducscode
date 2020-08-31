@@ -1,0 +1,8 @@
+Enter String: abcba
+abcba is a Palindrome
+
+Enter String: malayalam
+malayalam is a Palindrome
+
+Enter String: sud
+sud is not a Palindrome

@@ -1,0 +1,11 @@
+Enter String 1: VIDP
+Enter String 2: VACC
+Number of Matching Characters: 1
+
+Enter String 1: ABCD
+Enter String 2: XYAB
+Number of Matching Characters: 2
+
+Enter String 1: SUDIPTO
+Enter String 2: SUDIPTO
+Number of Matching Characters: 7

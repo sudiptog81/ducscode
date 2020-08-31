@@ -1,0 +1,5 @@
+Enter String: sudipto
+Reversed String: otpidus
+
+Enter String: malayalam
+Reversed String: malayalam

@@ -1,5 +1,5 @@
 """
-Write a Python function to return nth terms of Fibonacci sequence.
+Write a Python function to return nth term of Fibonacci sequence.
 
 Written by Sudipto Ghosh for the University of Delhi
 """

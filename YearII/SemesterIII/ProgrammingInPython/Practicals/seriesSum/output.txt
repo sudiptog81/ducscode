@@ -1,0 +1,22 @@
+
+             Main Menu - Sum of Series
+====================================================
+ (1) 1 – x^2 /2! + x^4 /4! – x^6 /6! + … + x^n /n!
+ (2) 1 + x^2 /2! + x^4 /4! + x^6 /6! + … + x^n /n!
+ (0) Exit
+
+Enter Choice: 1
+Enter x: 2
+Enter n: 5
+Sum of 5 Terms of Series A: -0.41587301587301595
+
+             Main Menu - Sum of Series
+====================================================
+ (1) 1 – x^2 /2! + x^4 /4! – x^6 /6! + … + x^n /n!
+ (2) 1 + x^2 /2! + x^4 /4! + x^6 /6! + … + x^n /n!
+ (0) Exit
+
+Enter Choice: 2
+Enter x: 2
+Enter n: 5
+Sum of 5 Terms of Series B : 3.761904761904762
