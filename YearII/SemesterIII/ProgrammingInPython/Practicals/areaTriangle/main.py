@@ -1,4 +1,4 @@
-"""
+'''
 Write a function that takes the lengths of three sides: side1, side2 
 and side3 of the triangle as the input from the user using input 
 function and return the area of the triangle as the output. Also, 
@@ -6,15 +6,15 @@ assert that sum of the length of any two sides is greater than the
 third side.
 
 Written by Sudipto Ghosh for the University of Delhi
-"""
+'''
 
 import math
 
 
 def areaTriangle():
-    """
+    '''
     Calculates the Area of a Triangle using Heron's Formula
-    """
+    '''
     side1 = int(input('Enter Side 1: '))
     side2 = int(input('Enter Side 2: '))
     side3 = int(input('Enter Side 3: '))
@@ -30,8 +30,8 @@ def areaTriangle():
 def main():
     area = areaTriangle()
     if area:
-        print("Area of Triangle:", area, "sq units")
+        print('Area of Triangle:', area, 'sq units')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
