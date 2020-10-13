@@ -1,17 +1,16 @@
-"""
-Write a Python program to perform the following using list:
-
-    (a)	Check if all elements in list are numbers or not.
-    (b)	If it is a numeric list, then count number of odd values in it.
-    (c)	If list contains all strings, then display largest string in the list.
-    (d)	Display list in reverse form.
-    (e)	Find a specified element in list.
-    (f)	Remove the specified element from the list.
-    (g)	Sort the list in descending order.
-    (h)	Accept 2 lists and find the common members in them.
+'''
+Write a Python program to perform the following using lists:
+    (a) Check if all elements in list are numbers or not.
+    (b) If it is a numeric list, then count number of odd values in it.
+    (c) If list contains all strings, then display largest string in the list.
+    (d) Display list in reverse form.
+    (e) Find a specified element in list.
+    (f) Remove the specified element from the list.
+    (g) Sort the list in descending order.
+    (h) Accept 2 lists and find the common members in them.
 
 Written by Sudipto Ghosh for the University of Delhi
-"""
+'''
 
 
 def isNumericList(l):
@@ -69,12 +68,15 @@ def main():
     r = 0
     e = 0
     c = 0
+    
     r = int(input('Enter a Range: '))
     for i in range(0, r, 1):
         e = input('Enter Element: ')
         l.append(e)
+        
     print('List:', end=' ')
     print(l)
+    
     if (isNumericList(l)):
         print('Numeric List')
         for i in l:
@@ -84,13 +86,16 @@ def main():
     elif (isStringList(l)):
         print('String List')
         print('Largest String in List:', max(l))
+
     print('Displaying List in Reverse:', end=' ')
     revDisplay(l)
+    
     e = input('Enter Search Element: ')
     if (linearSearch(e, l)):
         print('Element Found in List')
     else:
         print('Element Not Found in List')
+
     e = input('Enter Element to Remove: ')
     r = removeElement(e, l)
     if (r):
@@ -105,6 +110,8 @@ def main():
     for i in range(0, r, 1):
         e = input('Enter Element: ')
         l2.append(e)
+
+
     print('Common Elements:', end=' ')
     displayCommon(l, l2)
 

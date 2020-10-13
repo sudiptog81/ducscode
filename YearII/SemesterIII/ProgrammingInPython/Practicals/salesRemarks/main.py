@@ -1,11 +1,13 @@
-"""
+'''
 Consider a showroom of electronic products, where there are various salesmen.
 Each salesman is given a commission of 5%, depending on the sales made per 
 month. In case the sale done is less than 50000, then the salesman is not 
 given any commission. Write a function to calculate total sales of a salesman 
-in a month, commission and remarks for the salesman. Sales done by each sales
-man per week is to be provided as input. Use tuples/list to store data of sal
-esmen. Assign remarks according to the following criteria:
+in a month, commission and remarks for the salesman. Sales done by each 
+salesman per week is to be provided as input. Use tuples/list to store data
+of salesmen.
+
+Assign remarks according to the following criteria:
 
     Excellent: Sales >=80000
     Good: Sales>=60000 and <80000
@@ -13,7 +15,7 @@ esmen. Assign remarks according to the following criteria:
     Work Hard: Sales < 40000
 
 Written by Sudipto Ghosh for the University of Delhi
-"""
+'''
 
 
 def calculateRenumeration(n):
@@ -48,7 +50,7 @@ def calculateRenumeration(n):
     print()
     for i in range(1, n + 1, 1):
         print('''
-    Salesman %d Summary
+      Salesman %d Summary
 ================================
 Total Sales:      %10.2f
 Total Commission: %10.2f

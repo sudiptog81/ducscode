@@ -1,8 +1,10 @@
-"""
+'''
 Write a function that takes a number (>=10) 
 as an input and return the digits of the number 
 as a set.
-"""
+
+Written by Sudipto Ghosh for the University of Delhi
+'''
 
 
 def setOfDigits(n):

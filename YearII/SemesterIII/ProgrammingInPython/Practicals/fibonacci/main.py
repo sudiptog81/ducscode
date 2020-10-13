@@ -1,9 +1,9 @@
-"""
-Write a Python function to find the nth term of Fibonacci sequence
+'''
+Write a Python function to return nth term of Fibonacci sequence
 and its factorial. Return the result as a list.
 
 Written by Sudipto Ghosh for the University of Delhi
-"""
+'''
 
 
 def fibonacci(n):
