@@ -8,6 +8,7 @@ salesman per week is to be provided as input. Use tuples/list to store data
 of salesmen.
 
 Assign remarks according to the following criteria:
+
     Excellent: Sales >=80000
     Good: Sales>=60000 and <80000
     Average: Sales>=40000 and <60000
@@ -23,7 +24,7 @@ def calculateRenumeration(n):
     the remarks for n salesmen
 
     Accepts:
-        n {int} - number of salesmen
+        n {int} -- number of salesmen
     '''
     s = 0
     salesmen = []
@@ -48,7 +49,8 @@ def calculateRenumeration(n):
         salesmen.append(salesman)
     print()
     for i in range(1, n + 1, 1):
-        print('''    Salesman %d Summary
+        print('''
+      Salesman %d Summary
 ================================
 Total Sales:      %10.2f
 Total Commission: %10.2f

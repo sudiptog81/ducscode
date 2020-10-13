@@ -1,11 +1,16 @@
 '''
 Write a function that finds the sum of the n terms of the
-following series, import the factorial function created in Q4:
-    1 – x^2 /2! + x^4 /4! – x^6 /6! + … x^n /n!
+following series, import the factorial function created in Q3:
+   
+   1 – x^2 /2! + x^4 /4! – x^6 /6! + … x^n /n!
 
 Written by Sudipto Ghosh for the University of Delhi
 '''
+
+
 # main.py
+
+
 from factorial import factorial
 
 

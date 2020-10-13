@@ -20,8 +20,7 @@ def isNumericList(l):
     return True
 
 
-def isStringList(l):3
-
+def isStringList(l):
     for i in range(0, len(l), 1):
         if not type(l[i]) == str:
             return False
@@ -69,15 +68,15 @@ def main():
     r = 0
     e = 0
     c = 0
-
+    
     r = int(input('Enter a Range: '))
     for i in range(0, r, 1):
         e = input('Enter Element: ')
         l.append(e)
-
+        
     print('List:', end=' ')
     print(l)
-
+    
     if (isNumericList(l)):
         print('Numeric List')
         for i in l:
@@ -90,7 +89,7 @@ def main():
 
     print('Displaying List in Reverse:', end=' ')
     revDisplay(l)
-
+    
     e = input('Enter Search Element: ')
     if (linearSearch(e, l)):
         print('Element Found in List')
@@ -111,6 +110,7 @@ def main():
     for i in range(0, r, 1):
         e = input('Enter Element: ')
         l2.append(e)
+
 
     print('Common Elements:', end=' ')
     displayCommon(l, l2)

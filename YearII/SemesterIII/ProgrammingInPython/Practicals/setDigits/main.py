@@ -30,5 +30,5 @@ def main():
     print('Set of Digits:', setOfDigits(n))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

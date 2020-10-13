@@ -60,17 +60,15 @@ def isPalindrome():
     if f == True:
         print('String is a Palindrome')
 
-
+        
 def main():
     s = ''
     s1 = ''
     s2 = ''
     s3 = ''
     flag = 0
-
     while True:
         print('''
-
                       MENU
 ===================================================
 (1) Find the length of string.
