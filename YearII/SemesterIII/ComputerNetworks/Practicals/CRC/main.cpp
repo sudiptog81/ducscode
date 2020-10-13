@@ -29,6 +29,13 @@ int main()
   for (int i = 0; i < gSize; i++)
     cin >> generator[i];
 
+  if (!(generator[0] == 1 &&
+        generator[gSize - 1] == 1))
+  {
+    cerr << "\nERROR: MSB and LSB of the Generator must be 1\n";
+    return -1;
+  }
+
   cout << "\nSENDER\n======\n";
   cout << "Message: ";
   for (int i = 0; i < mSize; i++)
