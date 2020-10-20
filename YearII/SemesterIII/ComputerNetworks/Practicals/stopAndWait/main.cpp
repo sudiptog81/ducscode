@@ -33,7 +33,7 @@ void stopAndWait::sender()
     lim = buf.length() % MAX_PKT == 0
               ? buf.length() / MAX_PKT
               : buf.length() / MAX_PKT + 1;
-    printf("\nDividing Data into Groups of %d-bits Each ...", MAX_PKT);
+    printf("\nDividing Data into Groups of %d-bytes Each ...", MAX_PKT);
     start = !start;
   }
 
