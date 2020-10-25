@@ -1,0 +1,62 @@
+Enter No. of Nodes: 5
+Enter No. of Edges: 7
+
+EDGE 1        
+======        
+Enter Source: 1
+Enter Destination: 2
+Enter Weight: 10
+
+EDGE 2        
+======        
+Enter Source: 1
+Enter Destination: 3
+Enter Weight: 2
+
+EDGE 3        
+======        
+Enter Source: 1
+Enter Destination: 5
+Enter Weight: 100
+
+EDGE 4        
+======        
+Enter Source: 2
+Enter Destination: 4
+Enter Weight: 3
+
+EDGE 5        
+======        
+Enter Source: 3
+Enter Destination: 2
+Enter Weight: 5
+
+EDGE 6        
+======        
+Enter Source: 4
+Enter Destination: 3
+Enter Weight: 15
+
+EDGE 7
+======
+Enter Source: 4
+Enter Destination: 5
+Enter Weight: 5
+
+GRAPH
+=====
+    0    10     2     0   100 
+   10     0     5     3     0 
+    2     5     0    15     0
+    0     3    15     0     5
+  100     0     0     5     0 
+
+Enter Source Node: 1
+
+Dest Node        Distance        Shortest Path
+=========        ========        =============
+1                0               1
+2                7               1 -> 3 -> 2
+3                2               1 -> 3
+4                10              1 -> 3 -> 2 -> 4
+5                15              1 -> 3 -> 2 -> 4 -> 5
