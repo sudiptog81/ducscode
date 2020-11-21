@@ -1,0 +1,162 @@
+Enter No. of Nodes: 5
+Enter No. of Edges: 6
+
+EDGE 1
+======
+Enter Source: 1
+Enter Destination: 2
+Enter Weight: 7
+
+EDGE 2
+======
+Enter Source: 1
+Enter Destination: 5
+Enter Weight: 1
+
+EDGE 3
+======
+Enter Source: 2
+Enter Destination: 5
+Enter Weight: 8
+
+EDGE 4
+======
+Enter Source: 2
+Enter Destination: 3
+Enter Weight: 1
+
+EDGE 5
+======
+Enter Source: 5
+Enter Destination: 4
+Enter Weight: 2
+
+EDGE 6
+======
+Enter Source: 3
+Enter Destination: 4
+Enter Weight: 2
+
+GRAPH
+=====
+    0     7     0     0     1 
+    7     0     1     0     8 
+    0     1     0     2     0
+    0     0     2     0     2 
+    1     8     0     2     0
+
+Initial Distance Matrix
+======================
+    0     7   INF   INF     1
+    7     0     1   INF     8
+  INF     1     0     2   INF 
+  INF   INF     2     0     2
+    1     8   INF     2     0 
+
+Final Distance Matrix
+======================
+    0     6     5     3     1 
+    6     0     1     3     5
+    5     1     0     2     4 
+    3     3     2     0     2
+    1     5     4     2     0
+
+Routing Table for Router 1:
+Dest Router      Via             Distance
+===========      ========        ========
+2                3               6
+3                4               5
+4                5               3
+5                -               1
+
+Routing Table for Router 2:
+Dest Router      Via             Distance
+===========      ========        ========
+1                3               6
+3                -               1
+4                3               3
+5                4               5
+
+Routing Table for Router 3:
+Dest Router      Via             Distance
+===========      ========        ========
+1                4               5
+2                -               1
+4                -               2
+5                4               4
+
+Routing Table for Router 4:
+Dest Router      Via             Distance
+===========      ========        ========
+1                5               3
+2                3               3
+3                -               2
+5                -               2
+
+Routing Table for Router 5:
+Dest Router      Via             Distance
+===========      ========        ========
+1                -               1
+2                4               5
+3                4               4
+4                -               2
+
+Simulating Link Failure
+=======================
+Enter Routers to Break Link Between: 1 5
+
+Initial Distance Matrix
+======================
+    0     7   INF   INF   INF 
+    7     0     1   INF     8
+  INF     1     0     2   INF 
+  INF   INF     2     0     2
+  INF     8   INF     2     0
+
+Final Distance Matrix
+======================
+    0     7     8    10    12
+    7     0     1     3     5
+    8     1     0     2     4
+   10     3     2     0     2
+   12     5     4     2     0
+
+Routing Table for Router 1:
+Dest Router      Via             Distance
+===========      ========        ========
+2                -               7
+3                2               8
+4                3               10
+5                4               12
+
+Routing Table for Router 2:
+Dest Router      Via             Distance
+===========      ========        ========
+1                -               7
+3                -               1
+4                3               3
+5                4               5
+
+Routing Table for Router 3:
+Dest Router      Via             Distance
+===========      ========        ========
+1                2               8
+2                -               1
+4                -               2
+5                4               4
+
+Routing Table for Router 4:
+Dest Router      Via             Distance
+===========      ========        ========
+1                3               10
+2                3               3
+3                -               2
+5                -               2
+
+Routing Table for Router 5:
+Dest Router      Via             Distance
+===========      ========        ========
+1                4               12
+2                4               5
+3                4               4
+4                -               2

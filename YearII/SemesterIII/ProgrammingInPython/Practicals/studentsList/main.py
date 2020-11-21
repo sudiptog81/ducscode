@@ -23,7 +23,7 @@ def binarySearch(list, left, right, e):
         if list[mid] == e:
             return mid
         elif list[mid] > e:
-            return binarySearch(list, left, mid-1, e)
+            return binarySearch(list, left, mid - 1, e)
         else:
             return binarySearch(list, mid + 1, right, e)
     else:
@@ -33,7 +33,7 @@ def binarySearch(list, left, right, e):
 def bubbleSort(list):
     list = list.copy()
     for i in range(len(list)-1):
-        for j in range(0, len(list)-i-1):
+        for j in range(0, len(list) - i - 1):
             if list[j] > list[j + 1]:
                 list[j], list[j + 1] = list[j + 1], list[j]
     return list
