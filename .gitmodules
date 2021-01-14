@@ -4,3 +4,7 @@
 [submodule "ds-lab"]
 	path = YearII/SemesterIII/DataStructures/Practicals
 	url = git@github.com:sudiptog81/data-structures-lab.git
+[submodule "algo-lab"]
+	path = YearII/SemesterIV/DesignAnalysisAlgorithms/Practicals
+	url = git@github.com:sudiptog81/algorithms-lab
+	branch = main
