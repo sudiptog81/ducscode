@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvCounter"
             android:layout_centerHorizontal="true"
-            android:text="Increment" />
+            android:text="@string/increment" />
 
         <Button
             android:id="@+id/btnDecrement"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnIncrement"
             android:layout_centerHorizontal="true"
-            android:text="Decrement" />
+            android:text="@string/decrement" />
 
         <Button
             android:id="@+id/btnReset"
@@ -45,6 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnDecrement"
             android:layout_centerHorizontal="true"
-            android:text="Reset" />
+            android:text="@string/reset" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

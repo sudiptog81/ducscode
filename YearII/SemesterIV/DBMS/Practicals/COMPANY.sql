@@ -26,10 +26,10 @@ CREATE TABLE DEPARTMENT
 );
 
 ALTER TABLE EMPLOYEE
-    ADD CONSTRAINT
+    ADD CONSTRAINT SupervisorConstraint
         FOREIGN KEY (SupervisorENo) REFERENCES EMPLOYEE (Eno);
 ALTER TABLE EMPLOYEE
-    ADD CONSTRAINT
+    ADD CONSTRAINT DepartmentConstraint
         FOREIGN KEY (Dno) REFERENCES DEPARTMENT (Dno);
 
 INSERT INTO DEPARTMENT
@@ -43,7 +43,7 @@ VALUES (90, 'Sales'),
        (50, 'Research');
 
 INSERT INTO EMPLOYEE
-VALUES ('778', 'John Smith', 'Managing Director', NULL, DATE('1980-06-12'), 10, NULL, 12800.23),
+VALUES ('778', 'John Smith', 'Managing Director', NULL, DATE('1980-06-12'), 10, NULL, 5800.23),
        ('23', 'Sudipto Ghosh', 'SDE Manager', '778', DATE('1981-11-21'), 30, NULL, 2465.92),
        ('25', 'Anmol Gupta', 'Accounts Manager', '778', DATE('1981-09-11'), 40, NULL, 2865.92),
        ('79', 'Rahul Sahay', 'SDE Intern', '23', DATE('2004-08-14'), 30, NULL, 2921.37),
