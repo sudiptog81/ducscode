@@ -70,12 +70,24 @@ FROM EMPLOYEE
 WHERE Hire_date
           LIKE '1981______';
 
+-- Q10
+SELECT Ename,
+       Job_type
+FROM EMPLOYEE
+WHERE SupervisorENo IS NULL;
+
 -- Q11
 SELECT Ename,
        Salary,
        Commission
 FROM EMPLOYEE
 WHERE Commission IS NOT NULL;
+
+-- Q12
+SELECT *
+FROM EMPLOYEE
+ORDER BY Salary DESC,
+         Commission DESC;
 
 -- Q13
 SELECT Ename
@@ -89,6 +101,67 @@ WHERE Ename LIKE '%R%R%'
    OR Ename LIKE '%A%A%'
    OR Dno = 30
    OR SupervisorENo = '778';
+
+-- Q15
+SELECT Ename,
+       Salary,
+       Commission
+FROM EMPLOYEE
+WHERE Commission > 1.05 * Salary;
+
+-- Q16
+SELECT DATE(NOW()),
+       DAYNAME(NOW());
+
+-- Q17
+WITH RECORDS(Ename, Hire_date, Six_after) AS (
+    SELECT Ename,
+           Hire_date,
+           DATE_ADD(Hire_date, INTERVAL 6 MONTH)
+               AS Six_after
+    FROM EMPLOYEE
+)
+SELECT RECORDS.Ename,
+       RECORDS.Hire_date,
+       DATE_ADD(
+               RECORDS.Six_after,
+               INTERVAL
+               IF(
+                       0 = WEEKDAY(RECORDS.Six_after),
+                       0 - WEEKDAY(RECORDS.Six_after),
+                       7 - WEEKDAY(RECORDS.Six_after) + 0
+                   )
+               DAY
+           ) AS Salary_review_date
+FROM RECORDS;
+
+-- Q18
+SELECT Ename,
+       TIMESTAMPDIFF(MONTH, Hire_date, NOW())
+FROM (EMPLOYEE
+         NATURAL JOIN DEPARTMENT)
+WHERE Dname = 'Purchase';
+
+-- Q19
+SELECT CONCAT(
+               Ename, ' earns $',
+               Salary, ' monthly ',
+               'but wants $', 3 * Salary
+           )
+           AS "Dream Salary"
+FROM EMPLOYEE;
+
+-- Q20
+SELECT CONCAT(
+               UPPER(SUBSTR(Ename, 1, 1)),
+               LOWER(SUBSTR(Ename, 2))
+           )
+           AS "Name",
+       LENGTH(Ename)
+FROM EMPLOYEE
+WHERE Ename LIKE 'J%'
+   OR Ename LIKE 'A%'
+   OR Ename LIKE 'M%';
 
 -- Q22
 SELECT Ename,
@@ -127,12 +200,20 @@ FROM EMPLOYEE AS E,
      EMPLOYEE AS S
 WHERE E.SupervisorENo = S.Eno;
 
+-- Q28
+SELECT Ename,
+       RPAD('*', Salary / 100, '*') AS Salary_Star
+FROM EMPLOYEE;
 
 -- Q29
 SELECT MAX(Salary),
        MIN(Salary),
        SUM(Salary),
        AVG(Salary)
+FROM EMPLOYEE;
+
+-- Q31
+SELECT COUNT(DISTINCT SupervisorENo)
 FROM EMPLOYEE;
 
 -- Q34
@@ -157,6 +238,13 @@ SELECT Location,
        COUNT(*)
 FROM DEPARTMENT
 GROUP BY Location;
+
+-- Q40
+SELECT Dname
+FROM (EMPLOYEE
+         NATURAL JOIN DEPARTMENT)
+GROUP BY Dno
+HAVING COUNT(*) > 20;
 
 -- Extra
 SELECT Dno,

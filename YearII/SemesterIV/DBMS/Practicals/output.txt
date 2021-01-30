@@ -1,0 +1,464 @@
+
+mysql> DESC EMPLOYEE;
++---------------+---------------+------+-----+---------+-------+
+| Field         | Type          | Null | Key | Default | Extra |
++---------------+---------------+------+-----+---------+-------+
+| Eno           | char(3)       | NO   | PRI | NULL    |       |
+| Ename         | varchar(50)   | NO   |     | NULL    |       |
+| Job_type      | varchar(50)   | NO   |     | NULL    |       |
+| SupervisorENo | char(3)       | YES  | MUL | NULL    |       |
+| Hire_date     | date          | NO   |     | NULL    |       |
+| Dno           | int           | YES  | MUL | NULL    |       |
+| Commission    | decimal(10,2) | YES  |     | NULL    |       |
+| Salary        | decimal(7,2)  | NO   |     | NULL    |       |
++---------------+---------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+mysql> DESC DEPARTMENT;
++----------+-------------+------+-----+-----------+-------+
+| Field    | Type        | Null | Key | Default   | Extra |
++----------+-------------+------+-----+-----------+-------+
+| Dno      | int         | NO   | PRI | NULL      |       |
+| Dname    | varchar(50) | YES  |     | NULL      |       |
+| Location | varchar(50) | YES  |     | New Delhi |       |
++----------+-------------+------+-----+-----------+-------+
+3 rows in set (0.00 sec)
+
+====
+ Q1
+====
+mysql> SELECT Eno,
+    ->        Ename,
+    ->        Job_type,
+    ->        Hire_date
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++-----+--------------------+----------------------+------------+
+| Eno | Ename              | Job_type             | Hire_date  |
++-----+--------------------+----------------------+------------+
+| 125 | Gurpreet Singh     | Intern               | 2008-05-15 |
+| 146 | Donielle Tuite     | Sales Representative | 2016-06-12 |
+| 153 | Andy Beaford       | VP Accounting        | 2000-09-08 |
+| 188 | Sherline Harbord   | Audit Manager        | 1995-08-05 |
+| 23  | Sudipto Ghosh      | SDE Manager          | 1981-11-21 |
+| 232 | Isa Jaques         | Legal Manager        | 1996-07-23 |
+| 243 | Marie Brahms       | Systems Engineer     | 1983-06-22 |
+| 25  | Anmol Gupta        | Accounts Manager     | 1981-09-11 |
+| 299 | Mahala Burtwhistle | Compensation Analyst | 1990-07-20 |
+| 354 | Bryna McKenny      | Financial Advisor    | 2001-10-11 |
++-----+--------------------+----------------------+------------+
+10 rows in set (0.00 sec)
+
+====
+ Q2
+====
+mysql> SELECT DISTINCT Job_type
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++----------------------+
+| Job_type             |
++----------------------+
+| Intern               |
+| Sales Representative |
+| VP Accounting        |
+| Audit Manager        |
+| SDE Manager          |
+| Legal Manager        |
+| Systems Engineer     |
+| Accounts Manager     |
+| Compensation Analyst |
+| Financial Advisor    |
++----------------------+
+10 rows in set (0.00 sec)
+
+====
+ Q3
+====
+mysql> SELECT CONCAT(
+    ->                Ename, ',',
+    ->                Job_type
+    ->            ) AS Employee_Job
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++-----------------------------------------+
+| Employee_Job                            |
++-----------------------------------------+
+| Gurpreet Singh,Intern                   |
+| Donielle Tuite,Sales Representative     |
+| Andy Beaford,VP Accounting              |
+| Sherline Harbord,Audit Manager          |
+| Sudipto Ghosh,SDE Manager               |
+| Isa Jaques,Legal Manager                |
+| Marie Brahms,Systems Engineer           |
+| Anmol Gupta,Accounts Manager            |
+| Mahala Burtwhistle,Compensation Analyst |
+| Bryna McKenny,Financial Advisor         |
++-----------------------------------------+
+10 rows in set (0.00 sec)
+
+====
+ Q4
+====
+mysql> SELECT CONCAT(
+    ->                Eno, ',',
+    ->                Ename, ',',
+    ->                Job_type, ',',
+    ->                IFNULL(SupervisorENo, ''), ',',
+    ->                Hire_date, ',',
+    ->                IFNULL(Dno, ''), ',',
+    ->                IFNULL(Commission, ''), ',',
+    ->                Salary
+    ->            ) AS THE_OUTPUT
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++----------------------------------------------------------------------+
+| THE_OUTPUT                                                           |
++----------------------------------------------------------------------+
+| 125,Gurpreet Singh,Intern,,2008-05-15,,,521.37                       |
+| 146,Donielle Tuite,Sales Representative,520,2016-06-12,90,,171.60    |
+| 153,Andy Beaford,VP Accounting,778,2000-09-08,40,,502.30             |
+| 188,Sherline Harbord,Audit Manager,778,1995-08-05,40,,926.42         |
+| 23,Sudipto Ghosh,SDE Manager,778,1981-11-21,30,,2465.92              |
+| 232,Isa Jaques,Legal Manager,778,1996-07-23,45,,651.05               |
+| 243,Marie Brahms,Systems Engineer,23,1983-06-22,40,,876.78           |
+| 25,Anmol Gupta,Accounts Manager,778,1981-09-11,40,,2865.92           |
+| 299,Mahala Burtwhistle,Compensation Analyst,89,1990-07-20,95,,602.86 |
+| 354,Bryna McKenny,Financial Advisor,153,2001-10-11,90,,693.63        |
++----------------------------------------------------------------------+
+10 rows in set (0.00 sec)
+
+====
+ Q5
+====
+mysql> SELECT Ename,
+    ->        Salary
+    -> FROM EMPLOYEE
+    -> WHERE Salary > 2850;
++---------------+---------+
+| Ename         | Salary  |
++---------------+---------+
+| Anmol Gupta   | 2865.92 |
+| John Smith    | 5800.23 |
+| Rahul Sahay   | 2921.37 |
+| Tania Chauhan | 2921.37 |
++---------------+---------+
+4 rows in set (0.00 sec)
+
+====
+ Q6
+====
+mysql> SELECT Ename,
+    ->        Dno
+    -> FROM EMPLOYEE
+    -> WHERE Eno = '79';
++-------------+------+
+| Ename       | Dno  |
++-------------+------+
+| Rahul Sahay |   30 |
++-------------+------+
+1 row in set (0.00 sec)
+
+====
+ Q7
+====
+mysql> SELECT Ename,
+    ->        Salary
+    -> FROM EMPLOYEE
+    -> WHERE Salary NOT BETWEEN 1500 AND 2850
+    -> LIMIT 10;
++--------------------+---------+
+| Ename              | Salary  |
++--------------------+---------+
+| Gurpreet Singh     |  521.37 |
+| Donielle Tuite     |  171.60 |
+| Andy Beaford       |  502.30 |
+| Sherline Harbord   |  926.42 |
+| Isa Jaques         |  651.05 |
+| Marie Brahms       |  876.78 |
+| Anmol Gupta        | 2865.92 |
+| Mahala Burtwhistle |  602.86 |
+| Bryna McKenny      |  693.63 |
+| Ulberto Gosz       |  381.64 |
++--------------------+---------+
+10 rows in set (0.00 sec)
+
+====
+ Q8
+====
+mysql> SELECT Ename,
+    ->        Dname
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> WHERE Dno IN (10, 30)
+    -> ORDER BY Ename
+    -> LIMIT 10;
++------------------+--------------+
+| Ename            | Dname        |
++------------------+--------------+
+| Ashil Burney     | IT           |
+| Brandtr Wildbore | IT           |
+| Chandal McBrier  | IT           |
+| Cornie Munby     | IT           |
+| Druci Sixsmith   | Headquarters |
+| Fran Lening      | IT           |
+| Gannie Quantrell | IT           |
+| Gustav Waring    | IT           |
+| John Smith       | Headquarters |
+| Layton Murrie    | IT           |
++------------------+--------------+
+10 rows in set (0.00 sec)
+
+====
+ Q9
+====
+mysql> SELECT Ename,
+    ->        Hire_date
+    -> FROM EMPLOYEE
+    -> WHERE Hire_date
+    ->           LIKE '1981______';
++---------------+------------+
+| Ename         | Hire_date  |
++---------------+------------+
+| Sudipto Ghosh | 1981-11-21 |
+| Anmol Gupta   | 1981-09-11 |
+| Fran Lening   | 1981-05-27 |
++---------------+------------+
+3 rows in set (0.00 sec)
+
+=====
+ Q10
+=====
+mysql> SELECT Ename,
+    ->        Job_type
+    -> FROM EMPLOYEE
+    -> WHERE SupervisorENo IS NULL;
++----------------+----------------------+
+| Ename          | Job_type             |
++----------------+----------------------+
+| Gurpreet Singh | Intern               |
+| Ulberto Gosz   | Office Assistant     |
+| Druci Sixsmith | Help Desk Technician |
+| John Smith     | Managing Director    |
+| Rivy Buzek     | Help Desk Technician |
++----------------+----------------------+
+5 rows in set (0.00 sec)
+
+=====
+ Q11
+=====
+mysql> SELECT Ename,
+    ->        Salary,
+    ->        Commission
+    -> FROM EMPLOYEE
+    -> WHERE Commission IS NOT NULL;
++--------------------+---------+------------+
+| Ename              | Salary  | Commission |
++--------------------+---------+------------+
+| Salmon Gough       |  998.32 |     148.80 |
+| Lowell Paule       |  969.66 |     324.39 |
+| Nicholas Comelini  |  882.53 |     546.04 |
+| Laurence Grosvener |  244.37 |     950.33 |
+| Druci Sixsmith     |  387.43 |     530.53 |
+| Shay Restieaux     |  500.22 |     574.68 |
+| Marcille Occleshaw |  507.10 |     453.52 |
+| Desiri Allott      |  683.09 |     239.84 |
+| Tania Chauhan      | 2921.37 |     235.90 |
+| Blake Lewis        |  921.37 |     125.45 |
+| Nina Fisby         |  920.84 |     324.39 |
++--------------------+---------+------------+
+11 rows in set (0.00 sec)
+
+=====
+ Q12
+=====
+mysql> SELECT *
+    -> FROM EMPLOYEE
+    -> ORDER BY Salary DESC,
+    ->          Commission DESC
+    -> LIMIT 10;
++-----+------------------+-----------------------+---------------+------------+------+------------+---------+
+| Eno | Ename            | Job_type              | SupervisorENo | Hire_date  | Dno  | Commission | Salary  |
++-----+------------------+-----------------------+---------------+------------+------+------------+---------+
+| 778 | John Smith       | Managing Director     | NULL          | 1980-06-12 |   10 |       NULL | 5800.23 |
+| 86  | Tania Chauhan    | Sales Manager         | 778           | 1983-08-14 |   90 |     235.90 | 2921.37 |
+| 79  | Rahul Sahay      | SDE Intern            | 23            | 2004-08-14 |   30 |       NULL | 2921.37 |
+| 25  | Anmol Gupta      | Accounts Manager      | 778           | 1981-09-11 |   40 |       NULL | 2865.92 |
+| 23  | Sudipto Ghosh    | SDE Manager           | 778           | 1981-11-21 |   30 |       NULL | 2465.92 |
+| 492 | Salmon Gough     | Marketing Assistant   | 86            | 2008-12-13 |   90 |     148.80 |  998.32 |
+| 89  | Alicia Jones     | Purchase Manager      | 778           | 1982-10-26 |   95 |       NULL |  980.35 |
+| 516 | Lowell Paule     | Systems Administrator | 23            | 2008-03-31 |   30 |     324.39 |  969.66 |
+| 188 | Sherline Harbord | Audit Manager         | 778           | 1995-08-05 |   40 |       NULL |  926.42 |
+| 87  | Blake Lewis      | Sales Intern          | 86            | 2008-05-02 |   90 |     125.45 |  921.37 |
++-----+------------------+-----------------------+---------------+------------+------+------------+---------+
+10 rows in set (0.00 sec)
+
+=====
+ Q13
+=====
+mysql> SELECT Ename
+    -> FROM EMPLOYEE
+    -> WHERE Ename LIKE '__A%';
++------------------+
+| Ename            |
++------------------+
+| Isa Jaques       |
+| Brandtr Wildbore |
+| Fran Lening      |
+| Chandal McBrier  |
+| Shay Restieaux   |
+| Blake Lewis      |
++------------------+
+6 rows in set (0.00 sec)
+
+=====
+ Q14
+=====
+mysql> SELECT Ename
+    -> FROM EMPLOYEE
+    -> WHERE Ename LIKE '%R%R%'
+    ->    OR Ename LIKE '%A%A%'
+    ->    OR Dno = 30
+    ->    OR SupervisorENo = '778'
+    -> LIMIT 10;
++--------------------+
+| Ename              |
++--------------------+
+| Gurpreet Singh     |
+| Andy Beaford       |
+| Sherline Harbord   |
+| Sudipto Ghosh      |
+| Isa Jaques         |
+| Marie Brahms       |
+| Anmol Gupta        |
+| Mahala Burtwhistle |
+| Netti Dellenbrok   |
+| Skell Woolerton    |
++--------------------+
+10 rows in set (0.00 sec)
+
+=====
+ Q16
+=====
+mysql> SELECT DATE(NOW()),
+    ->        DAYNAME(NOW());
++-------------+----------------+
+| DATE(NOW()) | DAYNAME(NOW()) |
++-------------+----------------+
+| 2021-01-26  | Tuesday        |
++-------------+----------------+
+1 row in set (0.00 sec)
+
+=====
+ Q17
+=====
+mysql> WITH RECORDS(Ename, Hire_date, Six_after) AS (
+    ->     SELECT Ename,
+    ->            Hire_date,
+    ->            DATE_ADD(Hire_date, INTERVAL 6 MONTH)
+    ->                AS Six_after
+    ->     FROM EMPLOYEE
+    -> )
+    -> SELECT RECORDS.Ename,
+    ->        RECORDS.Hire_date,
+    ->        DATE_ADD(
+    ->                RECORDS.Six_after,
+    ->                INTERVAL
+    ->                IF(
+    ->                        0 = WEEKDAY(RECORDS.Six_after),
+    ->                        0 - WEEKDAY(RECORDS.Six_after),
+    ->                        7 - WEEKDAY(RECORDS.Six_after) + 0
+    ->                    )
+    ->                DAY
+    ->            ) AS Salary_review_date
+    -> FROM RECORDS
+    -> LIMIT 10;
++--------------------+------------+--------------------+
+| Ename              | Hire_date  | Salary_review_date |
++--------------------+------------+--------------------+
+| Gurpreet Singh     | 2008-05-15 | 2008-11-17         |
+| Donielle Tuite     | 2016-06-12 | 2016-12-12         |
+| Andy Beaford       | 2000-09-08 | 2001-03-12         |
+| Sherline Harbord   | 1995-08-05 | 1996-02-05         |
+| Sudipto Ghosh      | 1981-11-21 | 1982-05-24         |
+| Isa Jaques         | 1996-07-23 | 1997-01-27         |
+| Marie Brahms       | 1983-06-22 | 1983-12-26         |
+| Anmol Gupta        | 1981-09-11 | 1982-03-15         |
+| Mahala Burtwhistle | 1990-07-20 | 1991-01-21         |
+| Bryna McKenny      | 2001-10-11 | 2002-04-15         |
++--------------------+------------+--------------------+
+10 rows in set (0.00 sec)
+
+=====
+ Q18
+=====
+mysql> SELECT Ename,
+    ->        TIMESTAMPDIFF(MONTH, Hire_date, NOW())
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> WHERE Dname = 'Purchase';
++-----------------------+----------------------------------------+
+| Ename                 | TIMESTAMPDIFF(MONTH, Hire_date, NOW()) |
++-----------------------+----------------------------------------+
+| Mahala Burtwhistle    |                                    366 |
+| Oneida Hicklingbottom |                                    178 |
+| Desiri Allott         |                                    278 |
+| Alicia Jones          |                                    459 |
++-----------------------+----------------------------------------+
+4 rows in set (0.00 sec)
+
+=====
+ Q19
+=====
+mysql> SELECT CONCAT(
+    ->                Ename, ' earns $',
+    ->                Salary, ' monthly ',
+    ->                'but wants $', 3 * Salary
+    ->            )
+    ->            AS "Dream Salary"
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++-------------------------------------------------------------+
+| Dream Salary                                                |
++-------------------------------------------------------------+
+| Gurpreet Singh earns $521.37 monthly but wants $1564.11     |
+| Donielle Tuite earns $171.60 monthly but wants $514.80      |
+| Andy Beaford earns $502.30 monthly but wants $1506.90       |
+| Sherline Harbord earns $926.42 monthly but wants $2779.26   |
+| Sudipto Ghosh earns $2465.92 monthly but wants $7397.76     |
+| Isa Jaques earns $651.05 monthly but wants $1953.15         |
+| Marie Brahms earns $876.78 monthly but wants $2630.34       |
+| Anmol Gupta earns $2865.92 monthly but wants $8597.76       |
+| Mahala Burtwhistle earns $602.86 monthly but wants $1808.58 |
+| Bryna McKenny earns $693.63 monthly but wants $2080.89      |
++-------------------------------------------------------------+
+10 rows in set (0.00 sec)
+
+=====
+ Q20
+=====
+mysql> SELECT CONCAT(
+    ->                UPPER(SUBSTR(Ename, 1, 1)),
+    ->                LOWER(SUBSTR(Ename, 2))
+    ->            )
+    ->            AS "Name",
+    ->        LENGTH(Ename)
+    -> FROM EMPLOYEE
+    -> WHERE Ename LIKE 'J%'
+    ->    OR Ename LIKE 'A%'
+    ->    OR Ename LIKE 'M%';
++--------------------+---------------+
+| Name               | LENGTH(Ename) |
++--------------------+---------------+
+| Andy beaford       |            12 |
+| Marie brahms       |            12 |
+| Anmol gupta        |            11 |
+| Mahala burtwhistle |            18 |
+| Martha annies      |            13 |
+| John smith         |            10 |
+| Marcille occleshaw |            18 |
+| Ashil burney       |            12 |
+| Alicia jones       |            12 |
+| Mag giacomo        |            11 |
++--------------------+---------------+
+10 rows in set (0.00 sec)
+

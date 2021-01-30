@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImplicitIntentDataPassing</string>
+    <string name="go_back">Go Back</string>
+    <string name="hello">Hello</string>
+    <string name="submit">Submit</string>
+    <string name="enter_name">Enter Name</string>
+</resources>
