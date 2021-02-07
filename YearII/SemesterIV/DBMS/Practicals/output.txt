@@ -462,3 +462,263 @@ mysql> SELECT CONCAT(
 +--------------------+---------------+
 10 rows in set (0.00 sec)
 
+=====
+ Q21
+=====
+mysql> SELECT Ename,
+    ->        Hire_date,
+    ->        DAYNAME(Hire_date)
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++--------------------+------------+--------------------+
+| Ename              | Hire_date  | DAYNAME(Hire_date) |
++--------------------+------------+--------------------+
+| Gurpreet Singh     | 2008-05-15 | Thursday           |
+| Donielle Tuite     | 2016-06-12 | Sunday             |
+| Andy Beaford       | 2000-09-08 | Friday             |
+| Sherline Harbord   | 1995-08-05 | Saturday           |
+| Sudipto Ghosh      | 1981-11-21 | Saturday           |
+| Isa Jaques         | 1996-07-23 | Tuesday            |
+| Marie Brahms       | 1983-06-22 | Wednesday          |
+| Anmol Gupta        | 1981-09-11 | Friday             |
+| Mahala Burtwhistle | 1990-07-20 | Friday             |
+| Bryna McKenny      | 2001-10-11 | Thursday           |
++--------------------+------------+--------------------+
+10 rows in set (0.00 sec)
+
+=====
+ Q22
+=====
+mysql> SELECT Ename,
+    ->        Dno,
+    ->        Dname
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> LIMIT 10;
++------------------+------+--------------+
+| Ename            | Dno  | Dname        |
++------------------+------+--------------+
+| Ulberto Gosz     |   10 | Headquarters |
+| Druci Sixsmith   |   10 | Headquarters |
+| John Smith       |   10 | Headquarters |
+| Sudipto Ghosh    |   30 | IT           |
+| Netti Dellenbrok |   30 | IT           |
+| Skell Woolerton  |   30 | IT           |
+| Lowell Paule     |   30 | IT           |
+| Brandtr Wildbore |   30 | IT           |
+| Martha Annies    |   30 | IT           |
+| Gannie Quantrell |   30 | IT           |
++------------------+------+--------------+
+10 rows in set (0.00 sec)
+
+=====
+ Q23
+=====
+mysql> SELECT DISTINCT Job_type
+    -> FROM EMPLOYEE
+    -> WHERE Dno = 30;
++--------------------------+
+| Job_type                 |
++--------------------------+
+| SDE Manager              |
+| Graphic Designer         |
+| Software Test Engineer   |
+| Systems Administrator    |
+| Web Developer            |
+| Automation Engineer      |
+| Computer Systems Analyst |
+| Analyst Programmer       |
+| Software Consultant      |
+| SDE Intern               |
+| Help Desk Technician     |
+| Software Engineer        |
+| Backend Developer        |
+| GIS Technical Architect  |
++--------------------------+
+14 rows in set (0.00 sec)
+
+=====
+ Q24
+=====
+mysql> SELECT Ename,
+    ->        Dname
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> WHERE Ename LIKE '%A%'
+    -> LIMIT 15;
++-----------------------+----------------+
+| Ename                 | Dname          |
++-----------------------+----------------+
+| Andy Beaford          | Administration |
+| Sherline Harbord      | Administration |
+| Isa Jaques            | Legal          |
+| Marie Brahms          | Administration |
+| Anmol Gupta           | Administration |
+| Mahala Burtwhistle    | Purchase       |
+| Bryna McKenny         | Sales          |
+| Salmon Gough          | Sales          |
+| Berny Bonas           | Administration |
+| Lowell Paule          | IT             |
+| Nicholas Comelini     | Sales          |
+| Laurence Grosvener    | Sales          |
+| Brandtr Wildbore      | IT             |
+| Martha Annies         | IT             |
+| Oneida Hicklingbottom | Purchase       |
++-----------------------+----------------+
+15 rows in set (0.00 sec)
+
+=====
+ Q25
+=====
+mysql> SELECT Ename,
+    ->        Job_type,
+    ->        Dno,
+    ->        Dname
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> WHERE Location = 'Dallas';
++-----------------------+----------------------+------+----------+
+| Ename                 | Job_type             | Dno  | Dname    |
++-----------------------+----------------------+------+----------+
+| Mahala Burtwhistle    | Compensation Analyst |   95 | Purchase |
+| Oneida Hicklingbottom | Payment Coordinator  |   95 | Purchase |
+| Desiri Allott         | Payment Coordinator  |   95 | Purchase |
+| Alicia Jones          | Purchase Manager     |   95 | Purchase |
++-----------------------+----------------------+------+----------+
+4 rows in set (0.00 sec)
+
+=====
+ Q26
+=====
+mysql> SELECT E.Ename,
+    ->        E.Eno,
+    ->        S.Ename AS SupervisorName,
+    ->        S.Eno   AS SupervisorEno
+    -> FROM EMPLOYEE AS E
+    ->          LEFT OUTER JOIN EMPLOYEE AS S
+    ->                          ON E.SupervisorENo = S.Eno
+    -> LIMIT 15;
++--------------------+-----+----------------+---------------+
+| Ename              | Eno | SupervisorName | SupervisorEno |
++--------------------+-----+----------------+---------------+
+| Gurpreet Singh     | 125 | NULL           | NULL          |
+| Donielle Tuite     | 146 | King Hethron   | 520           |
+| Andy Beaford       | 153 | John Smith     | 778           |
+| Sherline Harbord   | 188 | John Smith     | 778           |
+| Sudipto Ghosh      | 23  | John Smith     | 778           |
+| Isa Jaques         | 232 | John Smith     | 778           |
+| Marie Brahms       | 243 | Sudipto Ghosh  | 23            |
+| Anmol Gupta        | 25  | John Smith     | 778           |
+| Mahala Burtwhistle | 299 | Alicia Jones   | 89            |
+| Bryna McKenny      | 354 | Andy Beaford   | 153           |
+| Ulberto Gosz       | 421 | NULL           | NULL          |
+| Netti Dellenbrok   | 442 | Sudipto Ghosh  | 23            |
+| Salmon Gough       | 492 | Tania Chauhan  | 86            |
+| Skell Woolerton    | 498 | Sudipto Ghosh  | 23            |
+| Berny Bonas        | 504 | John Smith     | 778           |
++--------------------+-----+----------------+---------------+
+15 rows in set (0.00 sec)
+
+=====
+ Q27
+=====
+mysql> SELECT L.Ename,
+    ->        L.Dno,
+    ->        L.Salary
+    -> FROM EMPLOYEE AS L,
+    ->      EMPLOYEE AS R
+    -> WHERE L.Dno = R.Dno
+    ->   AND L.Salary = R.Salary
+    ->   AND L.Eno <> R.Eno
+    ->   AND R.Commission IS NOT NULL;
++--------------------+------+--------+
+| Ename              | Dno  | Salary |
++--------------------+------+--------+
+| Blake Lewis        |   90 | 244.37 |
+| Laurence Grosvener |   90 | 244.37 |
++--------------------+------+--------+
+2 rows in set (0.00 sec)
+
+=====
+ Q28
+=====
+mysql> SELECT Ename,
+    ->        RPAD('*', Salary / 100, '*') AS Salary_Star
+    -> FROM EMPLOYEE
+    -> LIMIT 10;
++--------------------+-------------------------------+
+| Ename              | Salary_Star                   |
++--------------------+-------------------------------+
+| Gurpreet Singh     | *****                         |
+| Donielle Tuite     | **                            |
+| Andy Beaford       | *****                         |
+| Sherline Harbord   | *********                     |
+| Sudipto Ghosh      | *************************     |
+| Isa Jaques         | *******                       |
+| Marie Brahms       | *********                     |
+| Anmol Gupta        | ***************************** |
+| Mahala Burtwhistle | ******                        |
+| Bryna McKenny      | *******                       |
++--------------------+-------------------------------+
+10 rows in set (0.00 sec)
+
+=====
+ Q29
+=====
+mysql> SELECT MAX(Salary),
+    ->        MIN(Salary),
+    ->        SUM(Salary),
+    ->        AVG(Salary)
+    -> FROM EMPLOYEE;
++-------------+-------------+-------------+-------------+
+| MAX(Salary) | MIN(Salary) | SUM(Salary) | AVG(Salary) |
++-------------+-------------+-------------+-------------+
+|     5800.23 |      141.05 |    39467.46 |  877.054667 |
++-------------+-------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+=====
+ Q30
+=====
+mysql> SELECT Job_type,
+    ->        COUNT(DISTINCT Eno)
+    -> FROM EMPLOYEE
+    -> GROUP BY Job_type;
++--------------------------+---------------------+
+| Job_type                 | COUNT(DISTINCT Eno) |
++--------------------------+---------------------+
+| Accounts Manager         |                   1 |
+| Analyst Programmer       |                   1 |
+| Audit Manager            |                   1 |
+| Automation Engineer      |                   2 |
+| Backend Developer        |                   1 |
+| Compensation Analyst     |                   1 |
+| Computer Systems Analyst |                   1 |
+| Executive Secretary      |                   1 |
+| Financial Advisor        |                   1 |
+| GIS Technical Architect  |                   1 |
+| Graphic Designer         |                   2 |
+| Help Desk Technician     |                   2 |
+| Intern                   |                   1 |
+| Lawyer                   |                   2 |
+| Legal Manager            |                   1 |
+| Managing Director        |                   1 |
+| Marketing Assistant      |                   1 |
+| Office Assistant         |                   1 |
+| Payment Coordinator      |                   2 |
+| Purchase Manager         |                   1 |
+| Sales Intern             |                   2 |
+| Sales Manager            |                   2 |
+| Sales Representative     |                   1 |
+| SDE Intern               |                   1 |
+| SDE Manager              |                   1 |
+| Software Consultant      |                   2 |
+| Software Engineer        |                   2 |
+| Software Test Engineer   |                   2 |
+| Systems Administrator    |                   2 |
+| Systems Engineer         |                   1 |
+| Tax Accountant           |                   1 |
+| VP Accounting            |                   1 |
+| Web Developer            |                   2 |
++--------------------------+---------------------+
+33 rows in set (0.00 sec)

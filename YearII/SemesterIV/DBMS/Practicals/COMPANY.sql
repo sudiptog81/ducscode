@@ -68,7 +68,7 @@ VALUES ('778', 'John Smith', 'Managing Director', NULL, '1980-06-12', 10, NULL, 
        ('518', 'Nicholas Comelini', 'Tax Accountant', '188', '1997-03-20', 90, 546.04, 882.53);
 
 INSERT INTO EMPLOYEE
-VALUES ('528', 'Laurence Grosvener', 'Sales Intern', '520', '2019-09-06', 90, 950.33, 244.37),
+VALUES ('528', 'Laurence Grosvener', 'Sales Intern', '520', '2019-09-06', 90, 125.45, 244.37),
        ('611', 'Brandtr Wildbore', 'Software Test Engineer', '23', '2000-04-14', 30, NULL, 704.23),
        ('697', 'Druci Sixsmith', 'Help Desk Technician', NULL, '2005-07-27', 10, 530.53, 387.43),
        ('718', 'Oneida Hicklingbottom', 'Payment Coordinator', '89', '2006-03-25', 95, NULL, 789.82),
@@ -78,14 +78,14 @@ VALUES ('528', 'Laurence Grosvener', 'Sales Intern', '520', '2019-09-06', 90, 95
        ('811', 'Shay Restieaux', 'Lawyer', '232', '1999-04-16', 45, 574.68, 500.22),
        ('823', 'Marcille Occleshaw', 'Lawyer', '232', '2003-12-27', 45, 453.52, 507.10),
        ('832', 'Desiri Allott', 'Payment Coordinator', '89', '1997-11-04', 95, 239.84, 683.09),
-       ('87', 'Blake Lewis', 'Sales Intern', '86', '2008-05-02', 90, 125.45, 921.37),
+       ('87', 'Blake Lewis', 'Sales Intern', '86', '2008-05-02', 90, 125.45, 244.37),
        ('908', 'Gustav Waring', 'Software Engineer', '23', '2002-12-23', 30, NULL, 141.05),
        ('960', 'Virge Swancott', 'Web Developer', '23', '1984-01-23', 30, NULL, 292.48),
        ('969', 'Lee Prattin', 'Backend Developer', '23', '1986-01-23', 30, NULL, 296.48),
        ('997', 'Mag Giacomo', 'GIS Technical Architect', '23', '2002-12-23', 30, NULL, 427.98),
        ('785', 'Chandal McBrier', 'Software Consultant', '23', '1998-02-10', 30, NULL, 697.68),
        ('659', 'Martha Annies', 'Web Developer', '23', '2008-11-03', 30, NULL, 200.80),
-       ('932', 'Selestina Herries', 'Software Engineer III', '23', '2013-05-23', 30, NULL, 239.27),
+       ('932', 'Selestina Herries', 'Software Engineer', '23', '2013-05-23', 30, NULL, 239.27),
        ('837', 'Ashil Burney', 'Automation Engineer', '23', '1987-03-29', 30, NULL, 586.13);
 
 INSERT INTO EMPLOYEE

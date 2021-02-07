@@ -163,6 +163,12 @@ WHERE Ename LIKE 'J%'
    OR Ename LIKE 'A%'
    OR Ename LIKE 'M%';
 
+-- Q21
+SELECT Ename,
+       Hire_date,
+       DAYNAME(Hire_date)
+FROM EMPLOYEE;
+
 -- Q22
 SELECT Ename,
        Dno,
@@ -194,11 +200,22 @@ WHERE Location = 'Dallas';
 -- Q26
 SELECT E.Ename,
        E.Eno,
-       S.Ename,
-       S.Eno
-FROM EMPLOYEE AS E,
-     EMPLOYEE AS S
-WHERE E.SupervisorENo = S.Eno;
+       S.Ename AS SupervisorName,
+       S.Eno   AS SupervisorEno
+FROM EMPLOYEE AS E
+         LEFT OUTER JOIN EMPLOYEE AS S
+                         ON E.SupervisorENo = S.Eno;
+
+-- Q27
+SELECT L.Ename,
+       L.Dno,
+       L.Salary
+FROM EMPLOYEE AS L,
+     EMPLOYEE AS R
+WHERE L.Dno = R.Dno
+  AND L.Salary = R.Salary
+  AND L.Eno <> R.Eno
+  AND R.Commission IS NOT NULL;
 
 -- Q28
 SELECT Ename,
@@ -211,6 +228,12 @@ SELECT MAX(Salary),
        SUM(Salary),
        AVG(Salary)
 FROM EMPLOYEE;
+
+-- Q30
+SELECT Job_type,
+       COUNT(DISTINCT Eno)
+FROM EMPLOYEE
+GROUP BY Job_type;
 
 -- Q31
 SELECT COUNT(DISTINCT SupervisorENo)

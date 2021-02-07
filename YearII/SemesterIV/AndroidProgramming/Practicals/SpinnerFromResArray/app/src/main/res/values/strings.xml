@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SpinnerFromResArray</string>
+    <string-array name="icons">
+        <item>sdg1</item>
+        <item>sdg2</item>
+        <item>sdg5</item>
+        <item>sdg10</item>
+    </string-array>
+</resources>
