@@ -1,5 +1,6 @@
 package pro.ghosh.loginmodule;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,9 +34,19 @@ public class MemberModule extends AppCompatActivity {
         }
 
         btnLogout.setOnClickListener(v -> {
-            userService.logout();
-            Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
-            super.finish();
+            new AlertDialog.Builder(this)
+                    .setTitle("Logout")
+                    .setMessage("Are you sure you want to log out?")
+                    .setPositiveButton(android.R.string.ok, (dialog, which) -> logoutUser())
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
         });
+    }
+
+    private void logoutUser() {
+        userService.logout();
+        Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+        super.finish();
     }
 }

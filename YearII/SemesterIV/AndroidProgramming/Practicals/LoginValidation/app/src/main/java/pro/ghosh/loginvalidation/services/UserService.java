@@ -1,11 +1,11 @@
-package pro.ghosh.loginmodule.services;
+package pro.ghosh.loginvalidation.services;
 
 import android.content.Context;
 
 import androidx.room.Room;
 
-import pro.ghosh.loginmodule.data.UserDatabase;
-import pro.ghosh.loginmodule.models.User;
+import pro.ghosh.loginvalidation.data.UserDatabase;
+import pro.ghosh.loginvalidation.models.User;
 
 public class UserService {
     private User user = null;
