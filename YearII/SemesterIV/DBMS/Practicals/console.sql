@@ -239,6 +239,25 @@ GROUP BY Job_type;
 SELECT COUNT(DISTINCT SupervisorENo)
 FROM EMPLOYEE;
 
+-- Q32
+SELECT Dname,
+       Location,
+       COUNT(*)              AS NumberOfEmployees,
+       ROUND(AVG(Salary), 2) AS AvgSalary
+FROM EMPLOYEE
+         NATURAL JOIN DEPARTMENT
+GROUP BY EMPLOYEE.Dno;
+
+-- Q33
+SELECT Ename,
+       Hire_date
+FROM EMPLOYEE
+WHERE Dno IN (
+    SELECT Dno
+    FROM EMPLOYEE
+    WHERE Ename LIKE 'Blake%'
+);
+
 -- Q34
 SELECT Ename,
        Salary
@@ -248,6 +267,27 @@ WHERE Salary > (
     FROM EMPLOYEE
 );
 
+-- Q35
+SELECT Eno,
+       Ename
+FROM EMPLOYEE
+WHERE Dno IN
+      (
+          SELECT Dno
+          FROM EMPLOYEE
+          WHERE Ename LIKE '%T%'
+      );
+
+-- Q36
+SELECT Ename,
+       Salary
+FROM EMPLOYEE
+WHERE SupervisorENo IN (
+    SELECT Eno
+    FROM EMPLOYEE
+    WHERE Ename LIKE 'King%'
+);
+
 -- Q37
 SELECT Dno,
        Ename,
@@ -255,6 +295,18 @@ SELECT Dno,
 FROM (EMPLOYEE
          NATURAL JOIN DEPARTMENT)
 WHERE Dname = 'Sales';
+
+-- Q38
+SELECT Ename,
+       Dname
+FROM (EMPLOYEE
+         NATURAL JOIN DEPARTMENT)
+WHERE TIMESTAMPDIFF
+          (
+              YEAR,
+              Hire_date,
+              NOW()
+          ) > 20;
 
 -- Q39
 SELECT Location,
@@ -268,6 +320,51 @@ FROM (EMPLOYEE
          NATURAL JOIN DEPARTMENT)
 GROUP BY Dno
 HAVING COUNT(*) > 20;
+
+-- Q41
+(
+    SELECT Ename
+    FROM EMPLOYEE
+    WHERE Eno NOT IN (
+        SELECT DISTINCT SupervisorENo
+        FROM EMPLOYEE
+        WHERE SupervisorENo IS NOT NULL
+    )
+)
+UNION
+(
+    SELECT Ename
+    FROM EMPLOYEE
+    WHERE Eno IN (
+        SELECT SupervisorENo
+        FROM EMPLOYEE
+        WHERE SupervisorENo IS NOT NULL
+        GROUP BY SupervisorENo
+        HAVING COUNT(*) > 5
+    )
+);
+
+-- Q42
+WITH JOBCOUNT AS (
+    SELECT COUNT(*) AS ECount
+    FROM EMPLOYEE
+    GROUP BY Job_type
+)
+SELECT Job_type,
+       COUNT(*)
+FROM EMPLOYEE
+GROUP BY Job_type
+HAVING COUNT(*) IN (
+    (
+        SELECT MAX(ECount)
+        FROM JOBCOUNT
+    )
+    UNION
+    (
+        SELECT MIN(ECount)
+        FROM JOBCOUNT
+    )
+);
 
 -- Extra
 SELECT Dno,

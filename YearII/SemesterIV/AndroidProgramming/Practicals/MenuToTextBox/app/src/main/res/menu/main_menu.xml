@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/miSettings"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/miBackup"
+        android:title="@string/backup" />
+    <item
+        android:id="@+id/miReset"
+        android:title="@string/reset" />
+    <item
+        android:id="@+id/miAbout"
+        android:title="@string/about" />
+    <item
+        android:id="@+id/miHelp"
+        android:title="@string/help" />
+</menu>

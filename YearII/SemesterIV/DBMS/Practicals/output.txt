@@ -722,3 +722,312 @@ mysql> SELECT Job_type,
 | Web Developer            |                   2 |
 +--------------------------+---------------------+
 33 rows in set (0.00 sec)
+
+=====
+ Q31
+=====
+mysql> SELECT COUNT(DISTINCT SupervisorENo)
+    -> FROM EMPLOYEE;
++-------------------------------+
+| COUNT(DISTINCT SupervisorENo) |
++-------------------------------+
+|                             8 |
++-------------------------------+
+1 row in set (0.00 sec)
+
+=====
+ Q32
+=====
+mysql> SELECT Dname,
+    ->        Location,
+    ->        COUNT(*)              AS NumberOfEmployees,
+    ->        ROUND(AVG(Salary), 2) AS AvgSalary
+    -> FROM EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT
+    -> GROUP BY EMPLOYEE.Dno;
++----------------+-----------+-------------------+-----------+
+| Dname          | Location  | NumberOfEmployees | AvgSalary |
++----------------+-----------+-------------------+-----------+
+| Headquarters   | Mumbai    |                 3 |   2189.77 |
+| IT             | Bengaluru |                21 |    717.06 |
+| Administration | New Delhi |                 5 |   1190.15 |
+| Legal          | Mumbai    |                 3 |    552.79 |
+| Sales          | New Delhi |                 8 |    831.67 |
+| Purchase       | Dallas    |                 4 |    764.03 |
++----------------+-----------+-------------------+-----------+
+6 rows in set (0.00 sec)
+
+=====
+ Q33
+=====
+mysql> SELECT Ename,
+    ->        Hire_date
+    -> FROM EMPLOYEE
+    -> WHERE Dno IN (
+    ->     SELECT Dno
+    ->     FROM EMPLOYEE
+    ->     WHERE Ename LIKE 'Blake%'
+    -> );
++--------------------+------------+
+| Ename              | Hire_date  |
++--------------------+------------+
+| Donielle Tuite     | 2016-06-12 |
+| Bryna McKenny      | 2001-10-11 |
+| Salmon Gough       | 2008-12-13 |
+| Nicholas Comelini  | 1997-03-20 |
+| King Hethron       | 2015-10-13 |
+| Laurence Grosvener | 2019-09-06 |
+| Tania Chauhan      | 1983-08-14 |
+| Blake Lewis        | 2008-05-02 |
++--------------------+------------+
+8 rows in set (0.00 sec)
+
+=====
+ Q34
+=====
+mysql> SELECT Ename,
+    ->        Salary
+    -> FROM EMPLOYEE
+    -> WHERE Salary > (
+    ->     SELECT AVG(Salary)
+    ->     FROM EMPLOYEE
+    -> );
++-------------------+---------+
+| Ename             | Salary  |
++-------------------+---------+
+| Sherline Harbord  |  926.42 |
+| Sudipto Ghosh     | 2465.92 |
+| Anmol Gupta       | 2865.92 |
+| Salmon Gough      |  998.32 |
+| Lowell Paule      |  969.66 |
+| Nicholas Comelini |  882.53 |
+| John Smith        | 5800.23 |
+| Rahul Sahay       | 2921.37 |
+| Tania Chauhan     | 2921.37 |
+| Alicia Jones      |  980.35 |
+| Nina Fisby        |  920.84 |
++-------------------+---------+
+11 rows in set (0.00 sec)
+
+=====
+ Q35
+=====
+mysql> SELECT Eno,
+    ->        Ename
+    -> FROM EMPLOYEE
+    -> WHERE Dno IN
+    ->       (
+    ->           SELECT Dno
+    ->           FROM EMPLOYEE
+    ->           WHERE Ename LIKE '%T%'
+    ->       )
+    -> LIMIT 10;
++-----+--------------------+
+| Eno | Ename              |
++-----+--------------------+
+| 146 | Donielle Tuite     |
+| 354 | Bryna McKenny      |
+| 492 | Salmon Gough       |
+| 518 | Nicholas Comelini  |
+| 520 | King Hethron       |
+| 528 | Laurence Grosvener |
+| 86  | Tania Chauhan      |
+| 87  | Blake Lewis        |
+| 23  | Sudipto Ghosh      |
+| 442 | Netti Dellenbrok   |
++-----+--------------------+
+10 rows in set (0.00 sec)
+
+
+=====
+ Q36
+=====
+mysql> SELECT Ename,
+    ->        Salary
+    -> FROM EMPLOYEE
+    -> WHERE SupervisorENo IN (
+    ->     SELECT Eno
+    ->     FROM EMPLOYEE
+    ->     WHERE Ename LIKE 'King%'
+    -> );
++--------------------+--------+
+| Ename              | Salary |
++--------------------+--------+
+| Donielle Tuite     | 171.60 |
+| Laurence Grosvener | 244.37 |
++--------------------+--------+
+2 rows in set (0.00 sec)
+
+=====
+ Q37
+=====
+mysql> SELECT Dno,
+    ->        Ename,
+    ->        Job_type
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> WHERE Dname = 'Sales';
++------+--------------------+------------+
+| Dno  | Ename              | Job_type   |
++------+--------------------+------------+
+|   90 | Donielle Tuite     | Intern     |
+|   90 | Bryna McKenny      | Analyst    |
+|   90 | Salmon Gough       | Assistant  |
+|   90 | Nicholas Comelini  | Accountant |
+|   90 | King Hethron       | Manager    |
+|   90 | Laurence Grosvener | Intern     |
+|   90 | Tania Chauhan      | Manager    |
+|   90 | Blake Lewis        | Intern     |
++------+--------------------+------------+
+8 rows in set (0.00 sec)
+
+=====
+ Q38
+=====
+mysql> SELECT Ename,
+    ->        Dname
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> WHERE TIMESTAMPDIFF
+    ->           (
+    ->               YEAR,
+    ->               Hire_date,
+    ->               NOW()
+    ->           ) > 20;
++--------------------+----------------+
+| Ename              | Dname          |
++--------------------+----------------+
+| John Smith         | Headquarters   |
+| Sudipto Ghosh      | IT             |
+| Fran Lening        | IT             |
+| Chandal McBrier    | IT             |
+| Cornie Munby       | IT             |
+| Ashil Burney       | IT             |
+| Rivy Buzek         | IT             |
+| Virge Swancott     | IT             |
+| Lee Prattin        | IT             |
+| Sherline Harbord   | Administration |
+| Marie Brahms       | Administration |
+| Anmol Gupta        | Administration |
+| Isa Jaques         | Legal          |
+| Shay Restieaux     | Legal          |
+| Nicholas Comelini  | Sales          |
+| Tania Chauhan      | Sales          |
+| Mahala Burtwhistle | Purchase       |
+| Desiri Allott      | Purchase       |
+| Alicia Jones       | Purchase       |
++--------------------+----------------+
+19 rows in set (0.00 sec)
+
+=====
+ Q39
+=====
+mysql> SELECT Location,
+    ->        COUNT(*)
+    -> FROM DEPARTMENT
+    -> GROUP BY Location;
++-----------+----------+
+| Location  | COUNT(*) |
++-----------+----------+
+| Mumbai    |        2 |
+| Dallas    |        2 |
+| Bengaluru |        1 |
+| New Delhi |        3 |
++-----------+----------+
+4 rows in set (0.00 sec)
+
+=====
+ Q40
+=====
+mysql> SELECT Dname
+    -> FROM (EMPLOYEE
+    ->          NATURAL JOIN DEPARTMENT)
+    -> GROUP BY Dno
+    -> HAVING COUNT(*) > 20;
++-------+
+| Dname |
++-------+
+| IT    |
++-------+
+1 row in set (0.00 sec)
+
+=====
+ Q41
+=====
+mysql> (
+    ->     SELECT Ename
+    ->     FROM EMPLOYEE
+    ->     WHERE Eno NOT IN (
+    ->         SELECT DISTINCT SupervisorENo
+    ->         FROM EMPLOYEE
+    ->         WHERE SupervisorENo IS NOT NULL
+    ->     )
+    -> )
+    -> UNION
+    -> (
+    ->     SELECT Ename
+    ->     FROM EMPLOYEE
+    ->     WHERE Eno IN (
+    ->         SELECT SupervisorENo
+    ->         FROM EMPLOYEE
+    ->         WHERE SupervisorENo IS NOT NULL
+    ->         GROUP BY SupervisorENo
+    ->         HAVING COUNT(*) > 5
+    ->     )
+    -> ) LIMIT 20;
++-----------------------+
+| Ename                 |
++-----------------------+
+| Gurpreet Singh        |
+| Donielle Tuite        |
+| Marie Brahms          |
+| Anmol Gupta           |
+| Mahala Burtwhistle    |
+| Bryna McKenny         |
+| Ulberto Gosz          |
+| Netti Dellenbrok      |
+| Salmon Gough          |
+| Skell Woolerton       |
+| Berny Bonas           |
+| Lowell Paule          |
+| Nicholas Comelini     |
+| Laurence Grosvener    |
+| Brandtr Wildbore      |
+| Martha Annies         |
+| Druci Sixsmith        |
+| Oneida Hicklingbottom |
+| Gannie Quantrell      |
+| Rodrick Haighton      |
++-----------------------+
+20 rows in set (0.00 sec)
+
+=====
+ Q42
+=====
+mysql> WITH JOBCOUNT AS (
+    ->     SELECT COUNT(*) AS ECount
+    ->     FROM EMPLOYEE
+    ->     GROUP BY Job_type
+    -> )
+    -> SELECT Job_type,
+    ->        COUNT(*)
+    -> FROM EMPLOYEE
+    -> GROUP BY Job_type
+    -> HAVING COUNT(*) IN (
+    ->     (
+    ->         SELECT MAX(ECount)
+    ->         FROM JOBCOUNT
+    ->     )
+    ->     UNION
+    ->     (
+    ->         SELECT MIN(ECount)
+    ->         FROM JOBCOUNT
+    ->     )
+    -> );
++-------------------+----------+
+| Job_type          | COUNT(*) |
++-------------------+----------+
+| Manager           |        8 |
+| Managing Director |        1 |
++-------------------+----------+
+2 rows in set (0.00 sec)

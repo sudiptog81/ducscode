@@ -1,0 +1,12 @@
+2021-03-07 17:15:09.397 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Created
+2021-03-07 17:15:09.400 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Started
+2021-03-07 17:15:09.401 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Resumed
+2021-03-07 17:15:16.542 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Paused
+2021-03-07 17:15:17.022 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Stopped
+2021-03-07 17:15:17.023 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Destroyed
+2021-03-07 17:15:22.025 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Created
+2021-03-07 17:15:22.028 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Started
+2021-03-07 17:15:22.030 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Resumed
+2021-03-07 17:15:24.892 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Paused
+2021-03-07 17:15:25.451 17011-17011/pro.ghosh.activitylifecyclephases D/AnotherActivity: Activity Stopped
+
