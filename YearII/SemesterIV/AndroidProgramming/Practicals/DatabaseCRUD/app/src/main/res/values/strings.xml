@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DatabaseCRUD</string>
+    <string name="default_todo_added_at">YYYY-MM-DD HH:MM:SS</string>
+    <string name="default_todo_content">Todo</string>
+    <string name="default_todo_action">Mark as Done</string>
+    <string name="view_cards">View Cards</string>
+    <string name="default_todo_delete">Delete</string>
+</resources>
