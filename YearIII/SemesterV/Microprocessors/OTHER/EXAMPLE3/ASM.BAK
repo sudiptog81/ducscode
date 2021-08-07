@@ -1,0 +1,13 @@
+.MODEL TINY
+.CODE
+.STARTUP
+
+        MOV AX, 0H
+        MOV BX, 0H
+        MOV CX, 0H
+
+        MOV SI, AX
+        MOV DI, AX
+        MOV BP, AX
+
+.EXIT

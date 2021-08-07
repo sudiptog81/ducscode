@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GeographicalData2020</string>
+    <string-array name="states">
+        <item>Delhi</item>
+        <item>Uttar Pradesh</item>
+        <item>Himachal Pradesh</item>
+        <item>Bihar</item>
+        <item>Haryana</item>
+        <item>Rajasthan</item>
+    </string-array>
+</resources>

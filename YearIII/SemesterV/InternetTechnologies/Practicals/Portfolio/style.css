@@ -1,0 +1,193 @@
+* {
+  font-family: 'Fira Code', 'Consolas', 'Courier New', 'Courier', monospace;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 65%;
+  margin: auto;
+  padding: 3em;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row > .content-left, .row > div {
+  width: 70%;
+}
+
+.row > .content-left > h1, .row > div > h1 {
+  font-size: 2.5em;
+}
+
+.row > .content-right {
+  width: 30%;
+}
+
+.row > .content-right > img {
+  max-height: 15em;
+  border: #444444 solid .25em;
+  border-radius: 50%;
+}
+
+.nav-wrapper {
+  background-color: #fafafa;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-wrapper > div {
+  padding: 2em 2em;
+}
+
+.nav-logo-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-links {
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-item {
+  display: inline;
+  line-height: 2em;
+}
+
+.nav-item > a, .nav-item > a:visited {
+  color: #444444;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.nav-item > a:hover{
+  color: #fafafa;
+  background-color: #444444;
+}
+
+.footer-wrapper {
+  color: #fafafa;
+  background-color: #444444;
+  height: 100%;
+  width: 100%;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo > img {
+  max-height: 3em;
+}
+
+.pfp {
+  text-align: center;
+}
+
+.contact-form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form > form > * {
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.contact-form > form > input,
+.contact-form > form > textarea {
+  border: #444444 solid .25em;  
+}
+
+.contact-form > form > input:first-child {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.contact-form > form > input[type="submit"] {
+  width: 20%;
+  color: #fafafa;
+  background-color: #444444;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+table, th, td {
+  border: unset;
+  text-align: unset;
+  border-collapse: collapse;
+}
+
+#about {
+  background: url("https://media.giphy.com/media/3o7aDcrsww5Ybp18hq/source.gif") no-repeat center center fixed;
+  background-size: cover;
+  color: #fafafa;
+}
+
+.link {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+th, td {
+  padding-right: 2em;
+}
+
+tbody > tr:hover {
+  background-color: #fafafa;
+}
+
+ul.hobby-list, ul.plan-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.map {
+  width: 100%;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+}
+
+ul.plan-list > li input {
+  margin-right: 1em;
+}
+
+div.about {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: space-around;
+}
+
+div.about > h1 {
+  margin: 0;
+}
+
+.socials > a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.socials > a > i{
+  margin-right: 0.25em;
+}
