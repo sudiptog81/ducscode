@@ -1,0 +1,93 @@
+<!--
+  Create a form that takes data about a pet. The form must be well designed and should accept the pet’s name, age, weight, type, and what it likes most. At the submission of this form create a Pet object in JavaScript filled with these values and log that object and equivalent JSON on the console.
+
+  https://sudiptog81-it-pet-form.netlify.app
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetForm</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="left-container">
+        <h1>
+          Pet Survey
+        </h1>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png">
+      </div>
+      <div class="right-container">
+        <h1>information about your pet</h1>
+        <header>
+          <form id="petForm">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="Enter your pet's name" required />
+            </div>
+            <div class="field">
+              <label for="age">Age</label>
+              <input type="number" name="age" id="age" placeholder="Enter your pet's age" required />
+            </div>
+            <div class="field">
+              <label for="weight">Weight</label>
+              <input type="number" step="0.01" name="weight" id="weight" placeholder="Enter your pet's weight"
+                required />
+            </div>
+            <div class="field">
+              <label for="type">Type</label>
+              <select name="type" id="type" required>
+                <option value="" disabled selected>Select your pet type</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="likes">Likes</label>
+              <input type="text" name="likes" id="likes" placeholder="Enter what your pet likes" required />
+            </div>
+        </header>
+        <footer>
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </footer>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById('petForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const age = parseInt(document.getElementById('age').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+        const type = document.getElementById('type').value;
+        const likes = document.getElementById('likes').value;
+
+        const pet = {
+          name,
+          age,
+          weight,
+          type,
+          likes,
+        };
+
+        console.log(pet);
+        console.log(JSON.stringify(pet, null, 2));
+      });
+    </script>
+  </body>
+
+</html>

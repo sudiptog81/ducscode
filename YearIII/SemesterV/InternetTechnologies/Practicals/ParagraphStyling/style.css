@@ -1,0 +1,50 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+
+main {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top:0; 
+  bottom:0; 
+  right:0; 
+  left:0;
+}
+
+p {
+  padding: 0 2.85em;
+}
+
+.grid {
+  width: 60%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+button {
+  border: none;
+  margin: 1em auto;
+  width: 8em;
+  height: 2em;
+  transition-duration: 500ms;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+button:hover {
+  background-color: #ccc;
+}

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #aaa;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+main {
+  position: absolute;
+  top:0; 
+  bottom:0; 
+  right:0; 
+  left:0;
+  margin: auto ;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  width: 50%;
+  box-shadow: #444 0px 0px 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 80%;
+  }
+}
+
+.left-container, .right-container {
+  padding-top: 1em;
+}
+
+.left-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  text-align: center;
+  padding-top: 1em;
+  font-weight: 600;
+}
+
+.left-container h1 {
+  color: #fff;
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 2em;
+}
+
+.left-container img {
+  max-width: 200px;
+  filter: grayscale(1); 
+}
+
+.right-container {
+  flex: 2;
+  background: #fff;
+}
+
+.right-container h1 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5em;
+}
+
+.field {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  padding: 0.75em;
+}
+
+.field label {
+  font-size: large;
+  font-family: sans-serif;
+}
+
+.field input[type="text"], .field input[type="number"], .field select {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: large;
+  background-color: transparent;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer input {
+  border: none;
+  padding: 0.7em 2em;
+  border: 2px solid #444;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin: 0 2em;
+  background: transparent;
+  color: #444;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: large;
+  transition-duration: 500ms;
+}
+
+footer input:hover {
+  background: #444;
+  color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
