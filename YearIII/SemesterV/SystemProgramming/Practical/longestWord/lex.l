@@ -2,20 +2,16 @@
   int length = 0;
   char *word = NULL;
 %}
-
 %%
-
 [a-zA-Z]+ { 
   if (yyleng > length) {
     length = yyleng;
     word = yytext;
   }
 }
-[ |\n|\r|\t] { }
-. { }
-
+[ |\n|\r|\t] { ; }
+. { ; }
 %%
-
 int main(void) {
   yyin = fopen("input.txt", "r");
   yylex();

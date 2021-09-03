@@ -3,14 +3,14 @@
   int characters = 0;
 %}
 %%
-[\n] { lines++; }
-[ ] { ; }
+[\n|\r] { lines++; }
+[ |\t] { ; }
 . { characters++; }
 %%
 int main() {
   yyin = fopen("input.txt", "r");
   yylex();
-  printf("number of lines: %d\n", lines);
+  printf("number of lines: %d\n", lines + 1);
   printf("number of characters: %d", characters);
   return 1;
 }
