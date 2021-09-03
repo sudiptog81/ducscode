@@ -15,7 +15,7 @@ void|int|main|char|for|while|continue|switch|case|break|if|else|return|true|fals
 "="|"+"|"-"|"*"|"/"|"%" { ; } // other operators
 [']([^\\\']|\\.)?['] { ; } // characters
 ["]([^\\\"]|\\.)*["] { ; } // strings
-[A-Za-z_][A-Za-z0-9_]* { identifiers++; printf("%s <- identifier\n", yytext); } // identifiers
+[a-zA-Z_]+[a-zA-Z0-9_]* { identifiers++; printf("%s <- identifier\n", yytext); } // identifiers
 %%
 int main() {
   yyin = fopen("text.c", "r");
