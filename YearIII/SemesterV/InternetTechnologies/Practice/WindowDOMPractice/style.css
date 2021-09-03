@@ -1,0 +1,39 @@
+body, html {
+  width: 200vw;
+  height: 200vh;
+  margin: 0;
+  padding: 0;
+}
+
+pre#debugInfoWindow {
+  position: fixed;
+  top: 2em;
+  left: 2em;
+}
+
+div#controlsWindow {
+  position: fixed;
+  top: 11em;
+  left: 1.6em;  
+}
+
+pre#debugInfoDocument {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}
+
+div#controlsDocument{
+  position: fixed;
+  bottom: 2em;
+  right: 2em; 
+}
+
+.toast {
+  position: fixed;
+  top: 2em;
+  right: 2em; 
+  background-color: rgb(240, 128, 128);
+  padding: 0.5em 1em;
+  border-radius: 25px;
+}
