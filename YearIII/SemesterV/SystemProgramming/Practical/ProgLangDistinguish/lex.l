@@ -1,6 +1,3 @@
-%{
-    int identifiers = 0;
-%}
 %%
 [#].* { printf("%s <- preprocessor directive\n", yytext); } // preprocessor directives
 [ |\n|\t] { ; } // whitespaces

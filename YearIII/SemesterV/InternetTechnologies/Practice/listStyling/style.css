@@ -1,0 +1,53 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#tasks {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 20em;
+}
+
+.task {
+  padding: 1em 0;
+  margin: 0 auto;
+  width: 100%;
+  line-height: 1.5em;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.task.done {
+  background-color: yellowgreen;
+  text-decoration: line-through;
+}
+
+#addTaskForm {
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#addTaskForm input[type='text'],
+#addTaskForm button {
+  padding: 0.75em;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+

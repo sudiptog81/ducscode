@@ -1,0 +1,47 @@
+<!--
+  Create a List in HTML and colors it using CSS , then use JavaScript to access and manipulate the list data
+
+  https://sudiptog81-it-list-practice-css-js.netlify.app
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listCSSJS</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <main>
+      <ul id="tasks">
+        <li class="task done">
+          Task 1
+        </li>
+        <li class="task">
+          Task 2
+        </li>
+        <li class="task">
+          Task 3
+        </li>
+        <li class="task">
+          <div>Task 4</div>
+        </li>
+        <li class="task">
+          Task 5
+        </li>
+      </ul>
+
+      <form id="addTaskForm" action="javascript:null;">
+        <input type="text" id="newTask" placeholder="Add a new task" />
+        <button type="submit" id="addTask">Add</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>

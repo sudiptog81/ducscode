@@ -11,3 +11,6 @@ x86
 python**
 main
 !main/
+
+# Local Netlify folder
+.netlify

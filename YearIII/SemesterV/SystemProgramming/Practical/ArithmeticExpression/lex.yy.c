@@ -286,7 +286,7 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 #define YY_END_OF_BUFFER 9
 static yyconst short int yy_accept[18] =
     {   0,
-        0,    0,    9,    7,    3,    4,    5,    7,    2,    6,
+        0,    0,    9,    7,    3,    4,    5,    3,    2,    6,
         1,    2,    0,    1,    1,    2,    0
     } ;
 
@@ -364,9 +364,9 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lex.l"
+#line 1 ".\\lex.l"
 #define INITIAL 0
-#line 2 "lex.l"
+#line 2 ".\\lex.l"
   #include <stdio.h>
   int brackets = 0,
       operators = 0,
@@ -523,7 +523,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 8 "lex.l"
+#line 8 ".\\lex.l"
 
 #line 529 "lex.yy.c"
 
@@ -610,42 +610,42 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "lex.l"
+#line 9 ".\\lex.l"
 { numbersOridentifiers++; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 10 "lex.l"
+#line 10 ".\\lex.l"
 { numbersOridentifiers++; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 11 "lex.l"
+#line 11 ".\\lex.l"
 { operators++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 12 "lex.l"
+#line 12 ".\\lex.l"
 { brackets++; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 13 "lex.l"
+#line 13 ".\\lex.l"
 { brackets--; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 14 "lex.l"
+#line 14 ".\\lex.l"
 { flag = 1; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 15 "lex.l"
+#line 15 ".\\lex.l"
 { ; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 16 "lex.l"
+#line 16 ".\\lex.l"
 ECHO;
 	YY_BREAK
 #line 652 "lex.yy.c"
@@ -1534,13 +1534,16 @@ int main()
 	return 0;
 	}
 #endif
-#line 16 "lex.l"
+#line 16 ".\\lex.l"
 
 int main() {
   printf("Enter Arithmetic Expression: ");
   /* yyin = fopen("input.txt", "r"); */
   yylex();
-  if ((operators + 1) == numbersOridentifiers && brackets == 0 && flag == 0) {
+  if (
+    (operators + 1) == numbersOridentifiers
+      && brackets == 0 && flag == 0
+  ) {
     printf("Valid Eexpression\n");
   } else {
     printf("Invalid Expression\n");

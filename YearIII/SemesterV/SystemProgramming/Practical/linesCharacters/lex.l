@@ -4,7 +4,6 @@
 %}
 %%
 [\n|\r] { lines++; }
-[ |\t] { ; }
 . { characters++; }
 %%
 int main() {
