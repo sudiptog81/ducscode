@@ -27,13 +27,17 @@ main {
   line-height: 1.5em;
   background-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
 }
 
 .task.done {
   background-color: yellowgreen;
   text-decoration: line-through;
+}
+
+.task > div:nth-child(2) {
+  width: 10em;
 }
 
 #addTaskForm {
@@ -50,4 +54,15 @@ main {
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
 }
 
+.action {
+  cursor: pointer;
+}
+
+.action-delete {
+  color: red;
+}
+
+.action-edit {
+  margin-right: 1em;
+}
 
