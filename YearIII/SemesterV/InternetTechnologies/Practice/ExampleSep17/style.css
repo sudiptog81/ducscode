@@ -1,0 +1,46 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+  color: #fff;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  padding: 1em;
+  font-family: inherit;
+}
+
+input[name="array"] {
+  width: 35em;
+}
+
+#container {
+  margin: 2em auto;
+}
+
+div.row {
+  padding: 1em;
+}
+
+span.element {
+  padding: 0.25rem;
+  margin: 1em;
+}
+
+span.element[data-current="1"] {
+  background-color: #f0f0f0;
+  color: #444;
+}
