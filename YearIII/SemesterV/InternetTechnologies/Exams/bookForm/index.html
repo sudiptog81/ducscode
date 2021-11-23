@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Form</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>📚 Book Form 📚</h1>
+    </header>
+
+    <form id="form">
+      <div class="input-div">
+        <input class="input" type="text" name="name" id="name" required>
+        <label class="input-label" for="name">Name</label>
+      </div>
+
+      <div class="input-div">
+        <input class="input" type="text" name="author" id="author" required>
+        <label class="input-label" for="author">Author</label>
+      </div>
+
+      <div class="input-div">
+        <input class="input" type="number" name="price" id="price" min="0" step="0.01" required>
+        <label class="input-label" for="price">Price</label>
+      </div>
+
+      <div class="input-div">
+        <input class="input" type="text" name="publisher" id="publisher" required>
+        <label class="input-label" for="publisher">Publisher</label>
+      </div>
+      <div class="input-div">
+        <input class="input" type="text" name="category" id="category" required>
+        <label class="input-label" for="category">Category</label>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+
+    <footer>
+      <div>Created for IT Practical by Sudipto Ghosh on 20-11-2021</div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+
+</html>

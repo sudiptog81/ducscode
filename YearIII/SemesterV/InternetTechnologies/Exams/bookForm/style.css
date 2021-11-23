@@ -1,0 +1,142 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 100vh;
+  background-image: url('https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg');
+  background-size: cover;
+}
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+  padding: 0.5rem;
+  margin: 2em auto;
+  background-color: #ffffff;
+  border-radius: 80px;
+}
+
+form > label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+form > input {
+  padding: 0.75em;
+  margin: 0.5em 0;
+  border-radius: 20px;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.input-div + .input-div {
+  margin-top: 1.5rem;
+}
+
+.input-label {
+  color: #aaaaaa;
+  position: absolute;
+  top: 1.5rem;
+  transition: 0.25s ease;
+}
+
+.input {
+  border: 0;
+  z-index: 1;
+  background-color: transparent;
+  border-bottom: 2px solid #eee;
+  font: inherit;
+  font-size: 1.125rem;
+  padding: 0.25rem 0;
+}
+
+.input:focus, .input:valid {
+  outline: 0;
+  border-bottom-color: #444444;
+}
+
+.input:focus + .input, .input:valid + .input-label {
+  color: #444444;
+  transform: translateY(-1.5rem);
+}
+
+.btn-group {
+  margin-top: 1.5rem;
+}
+
+form > div > button {
+  color: #ffffff;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  padding: 1em 2em;
+  margin: 0.5em 0;
+  border-radius: 40px;
+  text-transform: uppercase;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+form > div > button[type="submit"] {
+  background-color: #444444;
+}
+
+form > div > button[type="reset"] {
+  color: #ffffff;
+  background-color: #ff2e2e;
+}
+
+form > div > button[type="submit"]:hover {
+  background-color: #eeeeee;
+  color: #444444;
+}
+
+form > div > button[type="reset"]:hover {
+  background-color: #eeeeee;
+  color: #ff2e2e;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #444444;
+}
+
+footer div {
+  padding: 1rem;
+  color: white;
+  font-weight: 600;
+}

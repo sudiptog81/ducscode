@@ -1,0 +1,47 @@
+#include <stdio.h> <- preprocessor directive
+#include <stdlib.h> <- preprocessor directive
+#include <string.h> <- preprocessor directive
+void <- keyword
+loop <- identifier
+int <- keyword
+i <- identifier
+j <- identifier
+= <- operator
+5 <- integer
+// okay <- comment
+for <- keyword
+int <- keyword
+i <- identifier
+= <- operator
+0 <- integer
+i <- identifier
+< <- operator
+j <- identifier
+i <- identifier
+++ <- operator
+printf <- identifier
+i <- identifier
++ <- operator
+1 <- integer
+int <- keyword
+main <- keyword
+double <- identifier
+a <- identifier
+= <- operator
+- <- operator
+3.14 <- float
+char <- keyword
+at <- identifier
+= <- operator
+tab <- identifier
+= <- operator
+loop <- identifier
+return <- keyword
+0 <- integer
+// sudipto <- comment
+
+number of integers: 4
+number of floats: 1
+number of identifiers: 14
+number of operators: 9
+number of comments: 2

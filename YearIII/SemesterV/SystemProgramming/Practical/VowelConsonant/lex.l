@@ -5,13 +5,13 @@
 %%
 A|E|I|O|U|a|e|i|o|u { vowels++; };
 [A-Za-z] { consonants++; };
-[ |\n|\t||r] { ; }
+[ |\t|\n] { ; }
 . { ; }
 %%
 int main()
 {
   yylex();
-  printf("%i vowels, %i consonants", vowels, consonants);
+  printf("%i vowels, %i consonants\n", vowels, consonants);
   return 0;
 }
 

@@ -1,6 +1,6 @@
 .MODEL SMALL
 .DATA
-    prompt0 DB    'Enter Length of Array: $'
+    prompt0 DB    'Enter Length of Array (<=10): $'
     prompt1 DB    13, 10, 'Enter Elements: $'
     prompt2 DB    13, 10, 'Enter Key: $'
     msg1    DB    13, 10, 'Element Not Found in array!$'
@@ -46,22 +46,8 @@ input:
     INT     21H
     MOV     key,  AL
 
-    ; LEA     DX,   msg3
-    ; MOV     AH,   09H
-    ; INT     21H
-
     LEA     SI,   array
     MOV     CX,   len
-
-; print:
-;     MOV     DL,   [SI]
-;     MOV     AH,   02H
-;     INT     21H
-;     MOV     DL,   20H
-;     MOV     AH,   02H
-;     INT     21H
-;     INC     SI
-;     LOOP    print
 
 search:
     MOV     BL,   [SI]
@@ -72,12 +58,13 @@ search:
     LEA     DX,   msg1
     MOV     AH,   09H
     INT     21H
-    MOV     AH,   4CH
-    INT     21H
+    JMP     final
 
 found:
     LEA     DX,   msg2
     MOV     AH,   09H
     INT     21H
+
+final:
 .EXIT
 END

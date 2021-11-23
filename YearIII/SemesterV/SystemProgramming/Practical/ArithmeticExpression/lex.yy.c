@@ -1544,7 +1544,7 @@ int main() {
     (operators + 1) == numbersOridentifiers
       && brackets == 0 && flag == 0
   ) {
-    printf("Valid Eexpression\n");
+    printf("Valid Expression\n");
   } else {
     printf("Invalid Expression\n");
   }
