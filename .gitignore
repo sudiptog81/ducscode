@@ -11,6 +11,7 @@ x86
 python**
 main
 !main/
+.Rhistory
 
 # Local Netlify folder
 .netlify

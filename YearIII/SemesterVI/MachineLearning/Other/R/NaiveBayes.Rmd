@@ -1,6 +1,6 @@
 ---
 title: "Naive Bayes Classifier"
-output: html_notebook
+output: rmarkdown::github_document
 ---
 
 ### Importing Libraries
