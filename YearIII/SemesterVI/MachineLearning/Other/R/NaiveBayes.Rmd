@@ -1,27 +1,65 @@
+---
+title: "Naive Bayes Classifier"
+output: html_notebook
+---
+
+### Importing Libraries
+
+```{r}
 library(caret)
 library(e1071)
 library(caTools)
+```
 
+### Preprocessing
+
+```{r}
 df <- read.csv('https://raw.githubusercontent.com/codebasics/py/master/ML/14_naive_bayes/titanic.csv')
 head(df)
-summary(df)
+```
 
+```{r}
+summary(df)
+```
+
+```{r}
 df <- df[c('Pclass', 'Sex', 'Age', 'Fare', 'Survived')]
 head(df)
+```
+
+```{r}
 colSums(is.na(df))
+```
+
+```{r}
 df$Age[is.na(df$Age)] <- mean(df$Age, na.rm = TRUE)
 colSums(is.na(df))
+```
+
+```{r}
 summary(df)
+```
+
+```{r}
 df$Sex <- as.factor(df$Sex)
 summary(df)
+```
 
+### Modelling
+
+```{r}
 split <- sample.split(df, SplitRatio = 0.7)
 train_nb <- subset(df, split == TRUE)
 test_nb <- subset(df, split == FALSE)
+```
 
+```{r}
 model_nb <- naiveBayes(as.factor(Survived) ~ ., train_nb)
-y_pred <- predict(model_nb, test_nb)
+model_nb
+```
 
+```{r}
+y_pred <- predict(model_nb, test_nb)
 cm <- table(test_nb$Survived, y_pred)
 confusionMatrix(cm)
-
+```
