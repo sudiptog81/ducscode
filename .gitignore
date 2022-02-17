@@ -12,6 +12,7 @@ python**
 main
 !main/
 .Rhistory
+node_modules
 
 # Local Netlify folder
 .netlify

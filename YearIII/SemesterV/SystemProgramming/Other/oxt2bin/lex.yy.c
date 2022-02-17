@@ -284,9 +284,9 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 
 #define YY_NUM_RULES 4
 #define YY_END_OF_BUFFER 5
-static yyconst short int yy_accept[10] =
+static yyconst short int yy_accept[11] =
     {   0,
-        0,    0,    5,    3,    2,    2,    1,    1,    0
+        0,    0,    5,    3,    2,    2,    3,    0,    1,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -295,15 +295,15 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    4,    4,    4,
-        4,    4,    4,    4,    4,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    4,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    1,    1,    1,
+        1,    1,    1,    1,    5,    5,    5,    5,    5,    5,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    5,    5,    5,    5,
 
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        5,    5,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    6,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -321,31 +321,33 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[5] =
+static yyconst int yy_meta[7] =
     {   0,
-        1,    1,    1,    2
+        1,    1,    1,    2,    2,    3
     } ;
 
-static yyconst short int yy_base[11] =
+static yyconst short int yy_base[13] =
     {   0,
-        0,    0,    6,    7,    7,    7,    0,    0,    7,    3
+        0,    0,    9,   10,   10,   10,    0,    0,    0,   10,
+        5,    5
     } ;
 
-static yyconst short int yy_def[11] =
+static yyconst short int yy_def[13] =
     {   0,
-        9,    1,    9,    9,    9,    9,   10,   10,    0,    9
+       10,    1,   10,   10,   10,   10,   11,   12,   12,    0,
+       10,   10
     } ;
 
-static yyconst short int yy_nxt[12] =
+static yyconst short int yy_nxt[17] =
     {   0,
-        4,    5,    6,    7,    8,    9,    3,    9,    9,    9,
-        9
+        4,    5,    6,    7,    4,    4,    9,    8,   10,    3,
+       10,   10,   10,   10,   10,   10
     } ;
 
-static yyconst short int yy_chk[12] =
+static yyconst short int yy_chk[17] =
     {   0,
-        1,    1,    1,    1,   10,    3,    9,    9,    9,    9,
-        9
+        1,    1,    1,    1,    1,    1,   12,   11,    3,   10,
+       10,   10,   10,   10,   10,   10
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -359,14 +361,15 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 ".\\lex.l"
+#line 1 "lex.l"
 #define INITIAL 0
-#line 2 ".\\lex.l"
+#line 2 "lex.l"
     #include <stdlib.h>
     #include <stdio.h>
     #include <math.h>
-    int valid, octal, decimal, binary;
-#line 370 "lex.yy.c"
+    char *hex;
+    int valid, hexlen, decimal, binary, value;
+#line 373 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -517,9 +520,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 7 ".\\lex.l"
+#line 8 "lex.l"
 
-#line 523 "lex.yy.c"
+#line 526 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -570,13 +573,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 10 )
+				if ( yy_current_state >= 11 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 7 );
+		while ( yy_base[yy_current_state] != 10 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -604,25 +607,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 ".\\lex.l"
-{ valid = 1; octal = atoi(yytext); }
+#line 9 "lex.l"
+{ valid = 1; hex = yytext; hexlen = yyleng; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 ".\\lex.l"
+#line 10 "lex.l"
 { ; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 ".\\lex.l"
+#line 11 "lex.l"
 { printf("INVALID\n"); return 0; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 ".\\lex.l"
+#line 12 "lex.l"
 ECHO;
 	YY_BREAK
-#line 626 "lex.yy.c"
+#line 629 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -914,7 +917,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 10 )
+			if ( yy_current_state >= 11 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -949,11 +952,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 10 )
+		if ( yy_current_state >= 11 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 9);
+	yy_is_jam = (yy_current_state == 10);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1508,15 +1511,23 @@ int main()
 	return 0;
 	}
 #endif
-#line 11 ".\\lex.l"
+#line 12 "lex.l"
 
-int oct2dec(int oct)
+int hex2dec(char *hex, int hexlen)
 {
     int dec = 0;
-    for (int i = 0; i < 2; i++)
+    hexlen = hexlen - 3;
+    for(int i = 2; hex[i] != '\0'; i++)
     {
-        dec += (oct % 10) * pow(8, i);
-        oct /= 10;
+        if(hex[i] >= '0' && hex[i] <= '9')
+            value = hex[i] - 48;
+        else if(hex[i] >= 'a' && hex[i] <= 'f')
+            value = hex[i] - 97 + 10;
+        else if(hex[i] >= 'A' && hex[i] <= 'F')
+            value = hex[i] - 65 + 10;
+
+        dec += value * pow(16, hexlen);
+        hexlen--;
     }
     return dec;
 }
@@ -1524,7 +1535,7 @@ int oct2dec(int oct)
 int dec2bin(int dec)
 {
     int bin = 0;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 16; i++)
     {
         bin += (dec % 2) * pow(10, i);
         dec /= 2;
@@ -1536,16 +1547,19 @@ int yywrap()
 {
     if (valid)
     {
-      decimal = oct2dec(octal);
+      decimal = hex2dec(hex, hexlen);
       binary = dec2bin(decimal);
-      printf("BINARY: %d\n", binary, octal);
+      printf("%d\n", binary);
+      fclose(yyin);
+      yyout = fopen("input.txt", "w");
+      fprintf(yyout, "%d\n", binary);
     }
     return 0;
 }
 
 int main()
 {
-    printf("OCTAL: ");
+    yyin = fopen("input.txt", "rw");
     yylex();
     return 0;
 }

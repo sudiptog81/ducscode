@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Parks</title>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>State</th>
+          <th>Speciality</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <br />
+    <form>
+      <input type="number" id="index" name="index" min="0" step="1" placeholder="Index">
+      <br />
+      <input type="text" id="property" name="propery" placeholder="Property">
+      <br />
+      <input type="submit" value="Submit">
+    </form>
+    <p id="result"></p>
+    <script>
+      const parks = [
+        {
+          name: "Jim Corbett National Park",
+          state: "Uttarakhand",
+          speciality: "Tigers"
+        },
+        {
+          name: "Kaziranga National Park",
+          state: "Assam",
+          speciality: "Rhinos"
+        },
+        {
+          name: "Asola Bhatti National Park",
+          state: "Delhi",
+          speciality: "Birds"
+        },
+        {
+          name: "Gir National Park",
+          state: "Gujarat",
+          speciality: "Lions"
+        }
+      ];
+
+      const tableBody = document.querySelector("tbody");
+
+      for (let i = 0; i < parks.length; i++) {
+        let row = document.createElement("tr");
+        for (let key of Object.keys(parks[i])) {
+          let td = document.createElement("td");
+          td.innerText = parks[i][key];
+          row.appendChild(td);
+        }
+        tableBody.appendChild(row);
+      }
+    </script>
+    <script src="./parks.js"></script>
+  </body>
+
+</html>
