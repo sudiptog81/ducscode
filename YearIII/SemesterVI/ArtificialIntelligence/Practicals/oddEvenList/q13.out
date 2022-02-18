@@ -1,0 +1,22 @@
+$ swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.4.1)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- [q13].
+true.
+
+?- evenlength([1, 2, 3, 4]).     
+true.
+
+?- evenlength([1, 2, 3]).    
+false.
+
+?- oddlength([1, 2, 3]).  
+true.
+
+?- oddlength([1, 2, 3, 4]).  
+false.
