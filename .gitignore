@@ -13,6 +13,7 @@ main
 !main/
 .Rhistory
 node_modules
+*.exe
 
 # Local Netlify folder
 .netlify

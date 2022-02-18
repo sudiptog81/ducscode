@@ -4,6 +4,7 @@
  * Written by Sudipto Ghosh for the University of Delhi
  */
 
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <cstdlib>
 #include <graphics.h>
