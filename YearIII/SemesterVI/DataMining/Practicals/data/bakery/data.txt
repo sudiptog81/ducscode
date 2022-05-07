@@ -1,0 +1,18 @@
+Extended BAKERY dataset
+This dataset extends the BAKERY? dataset with more information.
+
+Brief outline. A bakery chain has a menu of about 40 pastry items and 10 coffee drinks. It has a number of locations in West Coast states (California, Oregon, Arizona, Nevada). The database stores information about the food/drinks offered for sale, locations, employees at each location and individual sales (receipts) at those locations. The database consists of five tables:
+
+Goods: list of pastries and drinks on the menu
+Location: list of bakery locations
+Employee: list of employees working for the chain
+Receipts: list of sales (receipts)
+Items: list of purchased items (each receipt can have more than one)
+README: dataset description
+There are four canonical sets of data available for this dataset:
+
+1,000 Receipts
+5,000 Receipts
+20,000 Receipts
+75,000 Receipts
+EXTENDED BAKERY dataset can also be used for association rules mining.
